@@ -51,13 +51,13 @@
   --chart-5: #330f00;
 
   /* === SIDEBAR === */
-  --sidebar: #2e2f83;
+  --sidebar: #1e1f5c;
   --sidebar-foreground: #ffffff;
   --sidebar-primary: #ff4b00;
   --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #3d3e9a;
+  --sidebar-accent: #2e2f83;
   --sidebar-accent-foreground: #ffffff;
-  --sidebar-border: #3d3e9a;
+  --sidebar-border: #2e2f83;
   --sidebar-ring: #ff4b00;
 
   /* === CUSTOM SEMANTIC COLORS === */
@@ -105,13 +105,13 @@
   --chart-4: #7477c1;
   --chart-5: #330f00;
 
-  --sidebar: #0f1016;
-  --sidebar-foreground: #f8f9fa;
+  --sidebar: #0d0e2e;
+  --sidebar-foreground: #ffffff;
   --sidebar-primary: #ff4b00;
   --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #1e293b;
-  --sidebar-accent-foreground: #f8f9fa;
-  --sidebar-border: #334155;
+  --sidebar-accent: #1e1f5c;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #1e1f5c;
   --sidebar-ring: #ff4b00;
 
   --success: #059669;
@@ -144,6 +144,12 @@
   --color-ring: var(--ring);
   --color-sidebar: var(--sidebar);
   --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
   --color-success: var(--success);
   --color-success-foreground: var(--success-foreground);
   --color-warning: var(--warning);

@@ -14,11 +14,11 @@ export default function StyleguideLayout({
 
   return (
     <div className="flex min-h-screen">
-      <aside className="w-64 border-r bg-[var(--sidebar)] p-6 flex flex-col gap-6 fixed top-0 left-0 h-screen overflow-y-auto">
+      <aside className="w-64 border-r border-sidebar-border bg-sidebar p-6 flex flex-col gap-6 fixed top-0 left-0 h-screen overflow-y-auto">
         <div>
           <Link href="/styleguide" className="block">
             <span className="text-lg font-bold text-sidebar-foreground leading-tight">
-              mentoria<span className="text-accent">.</span>concursos
+              mentoria<span className="text-sidebar-primary">.</span>concursos
             </span>
             <p className="text-xs text-sidebar-foreground/60 mt-0.5">Design System</p>
           </Link>
