@@ -1,3 +1,4 @@
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import {
@@ -228,46 +229,62 @@ export default function TcePbPage() {
       </section>
 
       {/* ── AUTORIDADE ── */}
-      <section className="py-28 px-6">
-        <div className="max-w-5xl mx-auto">
-          <div className="flex flex-col items-center text-center mb-16 space-y-5">
-            <Badge variant="outline" className="text-sm px-4 py-1.5 font-bold tracking-widest uppercase border-[#1e1f5c] text-[#1e1f5c]">
-              Quem vai te guiar
-            </Badge>
-            <h2 className="text-3xl md:text-5xl font-extrabold text-[#1e1f5c] tracking-tight">
-              Eu sou Francisco.
-            </h2>
-            <p className="text-slate-600 text-xl max-w-3xl leading-relaxed">
-              Não sou professor que aprendeu sobre concurso em livro. Sou Auditor do TCE-PE — e cheguei
-              aqui passando pelos mesmos concursos que você quer passar.
-            </p>
-          </div>
+      <section className="py-28 px-6 bg-[#0a0f2c] overflow-hidden relative shadow-2xl">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-[#2e2f83] blur-[150px] pointer-events-none rounded-full translate-x-1/3 -translate-y-1/3" />
+        <div className="max-w-6xl mx-auto relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* Texto */}
+            <div className="flex flex-col items-start text-left space-y-6">
+              <Badge variant="outline" className="text-sm px-4 py-1.5 font-bold tracking-widest uppercase border-[#ff4b00] text-[#ff4b00]">
+                Quem vai te guiar
+              </Badge>
+              <h2 className="text-3xl md:text-5xl font-extrabold text-white tracking-tight">
+                Eu sou Francisco.
+              </h2>
+              <p className="text-slate-300 text-lg md:text-xl leading-relaxed">
+                Não sou professor que aprendeu sobre concurso em livro. Sou Auditor do TCE-PE — e cheguei
+                aqui passando pelos mesmos concursos que você quer passar. O meu método é real.
+              </p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {approvals.map((item, i) => {
-              const Icon = item.icon
-              return (
-                <div
-                  key={i}
-                  className="p-8 rounded-3xl bg-[#1e1f5c] text-white flex gap-6 items-start hover:-translate-y-1 transition-transform duration-300 shadow-xl"
-                >
-                  <Icon className="w-10 h-10 flex-shrink-0 text-[#ff4b00]" />
-                  <div>
-                    <h3 className="font-bold text-xl mb-2">{item.title}</h3>
-                    <p className="text-white/80 text-base leading-relaxed">{item.description}</p>
-                  </div>
-                </div>
-              )
-            })}
-          </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 w-full mt-6">
+                {approvals.map((item, i) => {
+                  const Icon = item.icon
+                  return (
+                    <div
+                      key={i}
+                      className="p-6 rounded-2xl bg-[#1e1f5c]/60 border border-[#2e2f83] text-white flex gap-4 items-start hover:-translate-y-1 transition-transform duration-300 shadow-xl backdrop-blur-sm"
+                    >
+                      <Icon className="w-8 h-8 flex-shrink-0 text-[#ff4b00]" />
+                      <div>
+                        <h3 className="font-bold text-lg mb-1">{item.title}</h3>
+                        <p className="text-white/70 text-sm leading-relaxed">{item.description}</p>
+                      </div>
+                    </div>
+                  )
+                })}
+              </div>
 
-          <div className="mt-16 text-center">
-            <a href={CTA_LINK} className="inline-block group">
-              <Button size="lg" className="text-base px-8 py-6 font-bold rounded-full bg-slate-900 hover:bg-slate-800 text-white transition-all hover:scale-105 active:scale-95 shadow-lg flex items-center gap-2">
-                Quero ser orientado por um Auditor
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </a>
+              <div className="mt-8">
+                <a href={CTA_LINK} className="inline-block group">
+                  <Button size="lg" className="text-base px-8 py-6 font-bold rounded-full bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 shadow-lg shadow-[#ff4b00]/30 flex items-center gap-2">
+                    Quero ser orientado por um Auditor
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </a>
+              </div>
+            </div>
+
+            {/* Foto */}
+            <div className="relative flex justify-center lg:justify-end mt-12 lg:mt-0 lg:ml-10">
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0a0f2c] via-transparent to-transparent z-10 bottom-0 h-full w-full pointer-events-none" />
+              <Image 
+                src="/tce-pb/francisco.png" 
+                alt="Francisco José - Auditor do TCE-PE" 
+                width={700} 
+                height={900} 
+                className="max-h-[700px] w-auto object-contain drop-shadow-2xl relative z-0"
+              />
+            </div>
           </div>
         </div>
       </section>
