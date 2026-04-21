@@ -17,16 +17,38 @@ import {
   ShieldCheck,
   Users,
   Coins,
+  CalendarClock,
   ArrowRight
 } from "lucide-react"
 
 const CTA_LINK = "https://chat.whatsapp.com/IlnZMRhz5ra8TnMpNlQF90?mode=gi_t"
 
 const benefits = [
-  { icon: Coins, text: "Salário de até R$ 18.866 — um dos maiores da região" },
-  { icon: Users, text: "+200 vagas previstas — oportunidade real para quem se preparar agora" },
-  { icon: ShieldCheck, text: "Estabilidade total — cargo efetivo, concurso público" },
-  { icon: Clock, text: "Tempo de preparação ainda disponível — edital não saiu, você ainda está no momento certo" },
+  {
+    icon: Coins,
+    title: "Salário de mais de R$ 20.000",
+    description: "Um dos maiores salários iniciais do serviço público do Nordeste — sem contar auxílio saúde de R$ 1.500 e auxílio alimentação de R$ 1.100.",
+  },
+  {
+    icon: Users,
+    title: "50 vagas — e a intenção de convocar todos",
+    description: "A intenção declarada do órgão é convocar todos os aprovados para suprir o déficit no quadro. É a maior oportunidade de entrada no Tribunal em quase uma década.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Estabilidade total — cargo efetivo",
+    description: "Concurso público. Cargo efetivo. Estabilidade garantida por lei. Você troca a incerteza do mercado por uma carreira sólida, com progressão e benefícios reais.",
+  },
+  {
+    icon: Clock,
+    title: "O edital ainda não saiu — e isso é uma vantagem",
+    description: "Edital previsto até junho de 2026. Você ainda tem tempo de chegar preparado antes da concorrência. Quem começa agora estuda com calma, com método e com direcionamento. Quem espera o edital sair, estuda correndo.",
+  },
+  {
+    icon: CalendarClock,
+    title: "Último concurso: 2017",
+    description: "Quase 10 anos sem abrir vagas. Quem não entrar nessa oportunidade, espera mais uma década. Simples assim.",
+  },
 ]
 
 const offerings = [
@@ -112,7 +134,7 @@ export default function TcePbPage() {
 
         <div className="relative z-10 w-full max-w-4xl mx-auto flex flex-col items-center gap-6 md:gap-8">
           <Badge className="text-xs sm:text-sm px-4 py-1.5 sm:px-5 sm:py-2 font-semibold tracking-wide bg-[#ff4b00] text-white hover:bg-[#e64300] border-none shadow-lg shadow-[#ff4b00]/20 transition-all max-w-[90vw] whitespace-normal text-center leading-snug">
-            🚨 TCE-PB pode abrir com +200 vagas — saia na frente
+            🚨 TCE-PB vai abrir 50 vagas — saia na frente
           </Badge>
 
           <h1 className="text-[1.75rem] sm:text-4xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight tracking-tight w-full">
@@ -122,18 +144,17 @@ export default function TcePbPage() {
           </h1>
 
           <p className="text-base sm:text-lg md:text-2xl text-slate-300 max-w-3xl leading-relaxed font-light">
-            Salário de até <span className="font-bold text-white">R$ 18 mil</span>, estabilidade e um dos
-            melhores editais do Nordeste. Receba o plano gratuito + direcionamento.
+            Mais de <span className="font-bold text-white">R$ 20 mil</span>, trabalho de 7 às 13h, estabilidade e uma das melhores capitais do Nordeste. Receba o plano + direcionamento completo.
           </p>
 
           <div className="flex flex-col items-center gap-3 md:gap-4 mt-2 md:mt-4 w-full">
             <a href={CTA_LINK} className="group w-full sm:w-auto" data-gtm="join-group">
               <Button size="lg" className="w-full sm:w-auto text-base md:text-lg px-8 md:px-10 py-6 md:py-8 font-bold rounded-full shadow-xl bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 group-hover:shadow-[#ff4b00]/30 flex items-center justify-center gap-2 hover:cursor-pointer">
-                Entrar no grupo agora
+                Entrar no grupo de lançamento agora
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </a>
-            <p className="text-white/60 text-sm font-medium">Gratuito. Sem compromisso. Com direcionamento real.</p>
+            <p className="text-white/60 text-sm font-medium">Vagas limitadas. Com direcionamento real.</p>
           </div>
         </div>
 
@@ -147,7 +168,7 @@ export default function TcePbPage() {
               Por que vale a pena
             </p>
             <h2 className="text-2xl sm:text-3xl md:text-5xl font-extrabold text-[#1e1f5c] tracking-tight">
-              A TCE-PB vale a sua preparação?
+              Vale a pena estudar para o TCE-PB?
             </h2>
           </div>
 
@@ -162,7 +183,10 @@ export default function TcePbPage() {
                   <div className="flex-shrink-0 w-11 h-11 md:w-14 md:h-14 rounded-xl md:rounded-2xl bg-[#f0f1fa] flex items-center justify-center text-[#2e2f83] group-hover:bg-[#ff4b00] group-hover:text-white transition-colors">
                     <Icon className="w-5 h-5 md:w-7 md:h-7" />
                   </div>
-                  <p className="text-base md:text-lg font-medium text-slate-700 leading-relaxed mt-0.5">{b.text}</p>
+                  <div>
+                    <p className="font-bold text-base text-[#1e1f5c] mb-1">{b.title}</p>
+                    <p className="text-sm md:text-base text-slate-500 leading-relaxed">{b.description}</p>
+                  </div>
                 </div>
               )
             })}
@@ -219,7 +243,7 @@ export default function TcePbPage() {
           <div className="mt-20 text-center">
             <a href={CTA_LINK} className="inline-block group" data-gtm="join-group">
               <Button size="lg" className="text-lg px-10 py-7 font-bold rounded-full bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 shadow-xl shadow-[#ff4b00]/20 flex items-center gap-2 hover:cursor-pointer">
-                Ter acesso a tudo isso agora
+                Quero uma das vagas da Mentoria para o TCE-PB
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </a>
@@ -229,7 +253,7 @@ export default function TcePbPage() {
 
       {/* ── AUTORIDADE ── */}
       <section className="py-16 md:py-28 px-5 md:px-6 bg-[#0a0f2c] overflow-hidden relative shadow-2xl">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-[#2e2f83] blur-[150px] pointer-events-none rounded-full translate-x-1/3 -translate-y-1/3" />
+        <div className="absolute top-0 right-0 w-96 h-96 bg-[#2e2f83] blur-[150px] pointer-events-none rounded-full translate-x-1/3 -translate-y-1/3 z-0" />
         <div className="max-w-6xl mx-auto relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Texto */}
@@ -267,7 +291,7 @@ export default function TcePbPage() {
               <div className="mt-8">
                 <a href={CTA_LINK} className="inline-block group" data-gtm="join-group">
                   <Button size="lg" className="text-base px-8 py-6 font-bold rounded-full bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 shadow-lg shadow-[#ff4b00]/30 flex items-center gap-2 hover:cursor-pointer">
-                    Quero ser orientado por um Auditor
+                    Quero estudar com um Auditor do TCE-PE
                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </a>
