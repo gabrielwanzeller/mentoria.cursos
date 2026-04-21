@@ -112,11 +112,11 @@ export default function TcePbPage() {
 
         <div className="relative z-10 max-w-4xl mx-auto flex flex-col items-center gap-8">
           <Badge className="text-sm px-5 py-2 font-semibold tracking-wide bg-[#ff4b00] text-white hover:bg-[#e64300] border-none shadow-lg shadow-[#ff4b00]/20 transition-all">
-            🚨 ALECE pode abrir com +200 vagas — saia na frente
+            🚨 TCE-PB pode abrir com +200 vagas — saia na frente
           </Badge>
 
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight tracking-tight">
-            O concurso da ALECE <br className="hidden md:block" />
+            O concurso da TCE-PB <br className="hidden md:block" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff4b00] to-[#ff7a45]">está chegando.</span>
           </h1>
 
@@ -148,7 +148,7 @@ export default function TcePbPage() {
               Por que vale a pena
             </p>
             <h2 className="text-3xl md:text-5xl font-extrabold text-[#1e1f5c] tracking-tight">
-              A ALECE vale a sua preparação?
+              A TCE-PB vale a sua preparação?
             </h2>
           </div>
 
@@ -246,24 +246,25 @@ export default function TcePbPage() {
                 aqui passando pelos mesmos concursos que você quer passar. O meu método é real.
               </p>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 w-full mt-6">
+              <div className="flex flex-col gap-6 w-full mt-6">
                 {approvals.map((item, i) => {
                   const Icon = item.icon
                   return (
                     <div
                       key={i}
-                      className="p-6 rounded-2xl bg-[#1e1f5c]/60 border border-[#2e2f83] text-white flex gap-4 items-start hover:-translate-y-1 transition-transform duration-300 shadow-xl backdrop-blur-sm"
+                      className="flex gap-5 items-start group"
                     >
-                      <Icon className="w-8 h-8 flex-shrink-0 text-[#ff4b00]" />
-                      <div>
-                        <h3 className="font-bold text-lg mb-1">{item.title}</h3>
-                        <p className="text-white/70 text-sm leading-relaxed">{item.description}</p>
+                      <div className="mt-1 flex items-center justify-center w-12 h-12 rounded-xl bg-[#1e1f5c] border border-[#2e2f83] text-[#ff4b00] group-hover:bg-[#ff4b00] group-hover:text-white transition-colors duration-300 shadow-lg flex-shrink-0">
+                        <Icon className="w-6 h-6" />
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="font-bold text-xl text-white mb-1">{item.title}</h3>
+                        <p className="text-slate-300 text-base leading-relaxed">{item.description}</p>
                       </div>
                     </div>
                   )
                 })}
               </div>
-
               <div className="mt-8">
                 <a href={CTA_LINK} className="inline-block group">
                   <Button size="lg" className="text-base px-8 py-6 font-bold rounded-full bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 shadow-lg shadow-[#ff4b00]/30 flex items-center gap-2">
@@ -278,11 +279,11 @@ export default function TcePbPage() {
             <div className="relative flex justify-center lg:justify-end mt-12 lg:mt-0 lg:ml-10">
               <div className="absolute inset-0 bg-gradient-to-t from-[#0a0f2c] via-transparent to-transparent z-10 bottom-0 h-full w-full pointer-events-none" />
               <Image 
-                src="/tce-pb/francisco.png" 
+                src="/tce-pb/francisco-w-bluer-v3.png" 
                 alt="Francisco José - Auditor do TCE-PE" 
-                width={700} 
-                height={900} 
-                className="max-h-[700px] w-auto object-contain drop-shadow-2xl relative z-0"
+                width={1000} 
+                height={1000} 
+                className="max-h-[1000px] w-auto object-contain drop-shadow-2xl relative z-0"
               />
             </div>
           </div>
@@ -290,7 +291,7 @@ export default function TcePbPage() {
       </section>
 
       {/* ── URGÊNCIA ── */}
-      <section className="py-24 px-6 mx-4 md:mx-8 mb-12 rounded-[3xl] bg-white border border-slate-200 shadow-sm relative overflow-hidden">
+      <section className="py-24 px-6 mb-12 rounded-[3xl] bg-white border border-slate-200 shadow-sm relative overflow-hidden">
         {/* Abstract pattern */}
         <div className="absolute top-0 right-0 w-64 h-64 bg-orange-50 rounded-full blur-3xl pointer-events-none -mr-20 -mt-20" />
         
