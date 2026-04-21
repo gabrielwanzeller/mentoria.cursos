@@ -14,7 +14,7 @@ export default function StyleguideLayout({
 
   return (
     <div className="flex min-h-screen">
-      <aside className="w-64 border-r bg-sidebar p-6 flex flex-col gap-6 fixed top-0 left-0 h-screen overflow-y-auto">
+      <aside className="w-64 border-r bg-[var(--sidebar)] p-6 flex flex-col gap-6 fixed top-0 left-0 h-screen overflow-y-auto">
         <div>
           <Link href="/styleguide" className="block">
             <span className="text-lg font-bold text-sidebar-foreground leading-tight">
@@ -52,7 +52,7 @@ export default function StyleguideLayout({
         </nav>
 
         <div className="mt-auto text-xs text-sidebar-foreground/40">
-          Dom Design por Adriano Mendes
+          Made by Gabriel Wanzeller
         </div>
       </aside>
 

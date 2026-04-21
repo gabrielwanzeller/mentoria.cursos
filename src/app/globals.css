@@ -51,13 +51,13 @@
   --chart-5: #330f00;
 
   /* === SIDEBAR === */
-  --sidebar: #fafafa;
-  --sidebar-foreground: #111111;
+  --sidebar: #2e2f83;
+  --sidebar-foreground: #ffffff;
   --sidebar-primary: #ff4b00;
   --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #f1f3f5;
-  --sidebar-accent-foreground: #111111;
-  --sidebar-border: #e2e8f0;
+  --sidebar-accent: #3d3e9a;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #3d3e9a;
   --sidebar-ring: #ff4b00;
 
   /* === CUSTOM SEMANTIC COLORS === */
