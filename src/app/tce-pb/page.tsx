@@ -18,10 +18,39 @@ import {
   Users,
   Coins,
   CalendarClock,
-  ArrowRight
+  ArrowRight,
+  Star
 } from "lucide-react"
 
 const CTA_LINK = "https://chat.whatsapp.com/IlnZMRhz5ra8TnMpNlQF90?mode=gi_t"
+
+const testimonials = [
+  {
+    name: "Marcos Soares",
+    role: "Aprovado como Analista do TJ-PA",
+    text: "Mais um aluno que chegou com método e saiu com aprovação.",
+  },
+  {
+    name: "Sarah",
+    role: "Aprovada como Analista da ALECE",
+    text: "Minha primeira aluna. Prova de que o método funciona desde o início.",
+  },
+  {
+    name: "Lucas",
+    role: "Aprovado como Auditor do TCE-PA",
+    text: "6 meses de estudo. Do zero à aprovação num dos concursos mais disputados do Norte do Brasil.",
+  },
+  {
+    name: "Victor Cortez",
+    role: "1º lugar — Auditor da SEFA-PA",
+    text: "Primeiro lugar. Não é sorte. É método aplicado com consistência.",
+  },
+  {
+    name: "Maria Sena",
+    role: "2º lugar — TJ-AP",
+    text: "Segundo lugar num concurso estadual disputadíssimo. Resultado de quem estuda com direcionamento real.",
+  },
+]
 
 const benefits = [
   {
@@ -313,6 +342,56 @@ export default function TcePbPage() {
         </div>
       </section>
 
+      {/* ── PROVA SOCIAL ── */}
+      <section className="py-16 md:py-28 px-5 md:px-6 bg-slate-50">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16 space-y-4">
+            <p className="text-sm font-bold uppercase tracking-widest text-[#ff4b00]">
+              Aprovações que falam por si
+            </p>
+            <h2 className="text-3xl md:text-5xl font-extrabold text-[#1e1f5c] tracking-tight">
+              Quem estudou com método aprovou.
+            </h2>
+            <p className="text-slate-600 text-xl max-w-2xl mx-auto">
+              Resultados reais de quem acreditou no direcionamento.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            {testimonials.map((t, i) => (
+              <div
+                key={i}
+                className="flex flex-col gap-4 p-8 rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 relative"
+              >
+                <div className="flex text-[#ff4b00] gap-1 mb-2">
+                  <Star className="w-5 h-5 fill-current" />
+                  <Star className="w-5 h-5 fill-current" />
+                  <Star className="w-5 h-5 fill-current" />
+                  <Star className="w-5 h-5 fill-current" />
+                  <Star className="w-5 h-5 fill-current" />
+                </div>
+                <p className="text-lg text-slate-700 italic leading-relaxed flex-grow">
+                  &quot;{t.text}&quot;
+                </p>
+                <div className="mt-6 pt-6 border-t border-slate-100">
+                  <p className="font-bold text-[#1e1f5c] text-lg">{t.name}</p>
+                  <p className="text-[#ff4b00] text-sm font-semibold mt-1 leading-snug">{t.role}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-16 text-center">
+            <a href={CTA_LINK} className="inline-block group w-full sm:w-auto" data-gtm="join-group">
+              <Button size="lg" className="w-full sm:w-auto text-base md:text-lg px-8 md:px-10 py-6 md:py-7 font-bold rounded-full bg-[#1e1f5c] hover:bg-[#151642] text-white transition-all hover:scale-105 active:scale-95 shadow-xl flex items-center justify-center gap-2 hover:cursor-pointer">
+                Quero o meu nome nessa lista
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* ── URGÊNCIA ── */}
       <section className="py-16 md:py-24 px-5 md:px-6 mb-8 md:mb-12  bg-white border border-slate-200 shadow-sm relative overflow-hidden">
         {/* Abstract pattern */}
@@ -333,8 +412,11 @@ export default function TcePbPage() {
             Quem entrar no grupo agora já começa com vantagem real sobre quem vai esperar
             o edital sair.
           </p>
-          <div className="inline-block px-8 py-6 rounded-2xl bg-amber-50 text-amber-900 border border-amber-200 text-lg font-bold shadow-sm mb-12">
-            Quem começou depois, correu atrás de quem começou antes.
+          <div className="inline-block px-8 py-8 rounded-2xl bg-amber-50 text-amber-900 border border-amber-200 text-lg shadow-sm mb-12 text-left max-w-2xl">
+            <p className="font-bold mb-4 text-xl text-amber-950">Sabe o que eu aprendi passando em 4 concursos?</p>
+            <p className="mb-4 leading-relaxed">Ninguém começa preparado. Ninguém tem o momento perfeito. Ninguém tem tudo resolvido antes de dar o primeiro passo.</p>
+            <p className="mb-5 leading-relaxed">O que separa quem passa de quem fica tentando não é talento. <span className="font-semibold">É a decisão de começar</span> — mesmo sem ter tudo, mesmo com medo, mesmo sem certeza. Começa hoje com o que você tem. O caminho se constrói andando.</p>
+            <p className="font-bold text-amber-950">Seu futuro agradece.</p>
           </div>
 
           <a href={CTA_LINK} className="inline-block group" data-gtm="join-group">
