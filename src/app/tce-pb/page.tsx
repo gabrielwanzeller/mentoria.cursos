@@ -20,7 +20,7 @@ import {
   ArrowRight
 } from "lucide-react"
 
-const CTA_LINK = "#"
+const CTA_LINK = "https://chat.whatsapp.com/KiRQaXSiztuEeKEkRE05mZ?mode=gi_t"
 
 const benefits = [
   { icon: Coins, text: "Salário de até R$ 18.866 — um dos maiores da região" },
@@ -126,8 +126,8 @@ export default function TcePbPage() {
           </p>
 
           <div className="flex flex-col items-center gap-4 mt-4">
-            <a href={CTA_LINK} className="group">
-              <Button size="lg" className="text-lg px-10 py-7 md:py-8 font-bold rounded-full shadow-xl bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 group-hover:shadow-[#ff4b00]/30 flex items-center gap-2">
+            <a href={CTA_LINK} className="group" data-gtm="join-group">
+              <Button size="lg" className="text-lg px-10 py-7 md:py-8 font-bold rounded-full shadow-xl bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 group-hover:shadow-[#ff4b00]/30 flex items-center gap-2 hover:cursor-pointer">
                 Entrar no grupo agora
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
@@ -170,8 +170,8 @@ export default function TcePbPage() {
           </div>
 
           <div className="mt-16 text-center">
-            <a href={CTA_LINK} className="inline-block group">
-              <Button size="lg" className="text-base px-8 py-6 font-bold rounded-full bg-[#1e1f5c] hover:bg-[#151642] text-white transition-all hover:scale-105 active:scale-95 shadow-lg flex items-center gap-2">
+            <a href={CTA_LINK} className="inline-block group" data-gtm="join-group">
+              <Button size="lg" className="text-base px-8 py-6 font-bold rounded-full bg-[#1e1f5c] hover:bg-[#151642] text-white transition-all hover:scale-105 active:scale-95 shadow-lg flex items-center gap-2 hover:cursor-pointer">
                 Quero aproveitar essa oportunidade
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Button>
@@ -218,8 +218,8 @@ export default function TcePbPage() {
           </div>
 
           <div className="mt-20 text-center">
-            <a href={CTA_LINK} className="inline-block group">
-              <Button size="lg" className="text-lg px-10 py-7 font-bold rounded-full bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 shadow-xl shadow-[#ff4b00]/20 flex items-center gap-2">
+            <a href={CTA_LINK} className="inline-block group" data-gtm="join-group">
+              <Button size="lg" className="text-lg px-10 py-7 font-bold rounded-full bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 shadow-xl shadow-[#ff4b00]/20 flex items-center gap-2 hover:cursor-pointer">
                 Ter acesso a tudo isso agora
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
@@ -266,8 +266,8 @@ export default function TcePbPage() {
                 })}
               </div>
               <div className="mt-8">
-                <a href={CTA_LINK} className="inline-block group">
-                  <Button size="lg" className="text-base px-8 py-6 font-bold rounded-full bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 shadow-lg shadow-[#ff4b00]/30 flex items-center gap-2">
+                <a href={CTA_LINK} className="inline-block group" data-gtm="join-group">
+                  <Button size="lg" className="text-base px-8 py-6 font-bold rounded-full bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 shadow-lg shadow-[#ff4b00]/30 flex items-center gap-2 hover:cursor-pointer">
                     Quero ser orientado por um Auditor
                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </Button>
@@ -314,8 +314,8 @@ export default function TcePbPage() {
             Quem começou depois, correu atrás de quem começou antes.
           </div>
 
-          <a href={CTA_LINK} className="inline-block group">
-            <Button size="lg" className="text-lg px-10 py-7 md:py-8 font-bold rounded-full bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 shadow-xl shadow-[#ff4b00]/20 flex items-center gap-2">
+          <a href={CTA_LINK} className="inline-block group" data-gtm="join-group">
+            <Button size="lg" className="text-lg px-10 py-7 md:py-8 font-bold rounded-full bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 shadow-xl shadow-[#ff4b00]/20 flex items-center gap-2 hover:cursor-pointer">
               Não vou perder mais tempo
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
