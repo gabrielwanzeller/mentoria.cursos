@@ -19,7 +19,8 @@ import {
   Coins,
   CalendarClock,
   ArrowRight,
-  Star
+  Star,
+  HelpCircle
 } from "lucide-react"
 
 const CTA_LINK = "https://chat.whatsapp.com/IlnZMRhz5ra8TnMpNlQF90?mode=gi_t"
@@ -49,6 +50,33 @@ const testimonials = [
     name: "Maria Sena",
     role: "2º lugar — TJ-AP",
     text: "Segundo lugar num concurso estadual disputadíssimo. Resultado de quem estuda com direcionamento real.",
+  },
+]
+
+const faqs = [
+  {
+    question: "É muito cedo para começar sem edital?",
+    answer: "Cedo é exatamente onde você quer estar. Quem espera o edital sair estuda correndo. Quem começa agora chega na frente.",
+  },
+  {
+    question: "Consigo estudar sozinho.",
+    answer: "Talvez. Mas quanto tempo vai perder descobrindo o que funciona? Passei em 4 concursos — coloco tudo isso na sua mão desde o primeiro dia.",
+  },
+  {
+    question: "Sou iniciante. É pra mim?",
+    answer: "É exatamente pra você. Iniciante não é desvantagem — é tela em branco. A gente constrói do zero, do jeito certo.",
+  },
+  {
+    question: "O suporte é realmente personalizado?",
+    answer: "Quando você manda mensagem, respondo eu. Sem robô. Sem IA. Direto no seu WhatsApp, de segunda a segunda.",
+  },
+  {
+    question: "O valor é elevado?",
+    answer: "O salário do Auditor TCE-PB supera R$ 240 mil por ano. O investimento na mentoria representa menos de 0,7% disso.",
+  },
+  {
+    question: "E se eu não for aprovado?",
+    answer: "Nenhuma mentoria garante aprovação. O que garanto é o melhor método, material completo e acompanhamento direto de quem passou nesse concurso. O resto depende de você.",
   },
 ]
 
@@ -163,11 +191,11 @@ export default function TcePbPage() {
 
         <div className="relative z-10 w-full max-w-4xl mx-auto flex flex-col items-center gap-6 md:gap-8">
           <Badge className="text-xs sm:text-sm px-4 py-1.5 sm:px-5 sm:py-2 font-semibold tracking-wide bg-[#ff4b00] text-white hover:bg-[#e64300] border-none shadow-lg shadow-[#ff4b00]/20 transition-all max-w-[90vw] whitespace-normal text-center leading-snug">
-            🚨 TCE-PB vai abrir 50 vagas — saia na frente
+            🚨 TCE-PB vai abrir cerca de 50 vagas — saia na frente
           </Badge>
 
           <h1 className="text-[1.75rem] sm:text-4xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight tracking-tight w-full">
-            O concurso da TCE-PB{" "}
+            O concurso do TCE-PB{" "}
             <br className="hidden md:block" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff4b00] to-[#ff7a45]">está chegando.</span>
           </h1>
@@ -392,8 +420,51 @@ export default function TcePbPage() {
         </div>
       </section>
 
+      {/* ── FAQ ── */}
+      <section className="py-16 md:py-28 px-5 md:px-6 bg-slate-100">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-16 space-y-4">
+            <p className="text-sm font-bold uppercase tracking-widest text-[#ff4b00]">
+              Perguntas Frequentes
+            </p>
+            <h2 className="text-3xl md:text-5xl font-extrabold text-[#1e1f5c] tracking-tight">
+              Ainda tem alguma dúvida?
+            </h2>
+            <p className="text-slate-600 text-xl max-w-2xl mx-auto">
+              As respostas para as perguntas mais comuns de quem está decidindo entrar.
+            </p>
+          </div>
+
+          <div className="flex flex-col gap-6">
+            {faqs.map((faq, i) => (
+              <div
+                key={i}
+                className="flex items-start gap-5 p-6 md:p-8 rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-md transition-shadow group"
+              >
+                <div className="flex-shrink-0 w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#f0f1fa] flex items-center justify-center text-[#2e2f83] group-hover:bg-[#ff4b00] group-hover:text-white transition-colors">
+                  <HelpCircle className="w-6 h-6" />
+                </div>
+                <div>
+                  <h3 className="font-bold text-lg md:text-xl text-[#1e1f5c] mb-2">{faq.question}</h3>
+                  <p className="text-base md:text-lg text-slate-600 leading-relaxed">{faq.answer}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-16 text-center">
+            <a href={CTA_LINK} className="inline-block group w-full sm:w-auto" data-gtm="join-group">
+              <Button size="lg" className="w-full sm:w-auto text-base md:text-lg px-8 md:px-10 py-6 md:py-7 font-bold rounded-full bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 shadow-xl flex items-center justify-center gap-2 hover:cursor-pointer shadow-[#ff4b00]/20">
+                Tirar outra dúvida com o Francisco
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* ── URGÊNCIA ── */}
-      <section className="py-16 md:py-24 px-5 md:px-6 mb-8 md:mb-12  bg-white border border-slate-200 shadow-sm relative overflow-hidden">
+      <section className="py-16 md:py-24 px-5 md:px-6 mb-8 md:mb-12 bg-white">
         {/* Abstract pattern */}
         <div className="absolute top-0 right-0 w-64 h-64 bg-orange-50 rounded-full blur-3xl pointer-events-none -mr-20 -mt-20" />
         
@@ -428,6 +499,11 @@ export default function TcePbPage() {
           <p className="text-slate-500 text-sm mt-4">Vagas limitadas para acompanhamento.</p>
         </div>
       </section>
+
+      {/* ── FOOTER ── */}
+      <footer className="py-8 text-center text-slate-500 text-sm border-t border-slate-200 mt-auto bg-slate-50">
+        <p>Copyright &copy; Francisco José 2026. Todos os direitos reservados.</p>
+      </footer>
 
     </main>
   )
