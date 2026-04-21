@@ -183,12 +183,12 @@ const approvals = [
 
 export default function TcePbPage() {
   return (
-    <main className="min-h-screen font-sans bg-slate-50 selection:bg-[#ff4b00] selection:text-white pb-12">
+    <main className="min-h-screen font-sans selection:bg-[#ff4b00] selection:text-white pb-12">
       {/* ── HERO ── */}
       <section className="relative flex flex-col items-center justify-center min-h-[92dvh] text-center px-5 pt-16 pb-20 md:py-28 overflow-hidden bg-gradient-to-br from-[#1e1f5c] via-[#2e2f83] to-[#1e1f5c]">
         {/* Glow Effects */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-2xl h-64 bg-[#ff4b00]/20 blur-[120px] rounded-full pointer-events-none" />
-
+        
         <div className="relative z-10 w-full max-w-4xl mx-auto flex flex-col items-center gap-6 md:gap-8">
           <Badge className="text-xs sm:text-sm px-4 py-1.5 sm:px-5 sm:py-2 font-semibold tracking-wide bg-[#ff4b00] text-white hover:bg-[#e64300] border-none shadow-lg shadow-[#ff4b00]/20 transition-all max-w-[90vw] whitespace-normal text-center leading-snug">
             🚨 TCE-PB vai abrir cerca de 50 vagas — saia na frente
@@ -300,7 +300,7 @@ export default function TcePbPage() {
           <div className="mt-20 text-center">
             <a href={CTA_LINK} className="inline-block group" data-gtm="join-group">
               <Button size="lg" className="text-lg px-10 py-7 font-bold rounded-full bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 shadow-xl shadow-[#ff4b00]/20 flex items-center gap-2 hover:cursor-pointer">
-                Quero uma das vagas da Mentoria para o TCE-PB
+                Quero uma das vagas
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </a>
@@ -348,7 +348,7 @@ export default function TcePbPage() {
               <div className="mt-8">
                 <a href={CTA_LINK} className="inline-block group" data-gtm="join-group">
                   <Button size="lg" className="text-base px-8 py-6 font-bold rounded-full bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 shadow-lg shadow-[#ff4b00]/30 flex items-center gap-2 hover:cursor-pointer">
-                    Quero estudar com um Auditor do TCE-PE
+                    Quero estudar com um Auditor
                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </a>
@@ -464,7 +464,7 @@ export default function TcePbPage() {
       </section>
 
       {/* ── URGÊNCIA ── */}
-      <section className="py-16 md:py-24 px-5 md:px-6 mb-8 md:mb-12 bg-white">
+      <section className="py-16 md:py-24 px-5 md:px-6 mb-8 md:mb-12 bg-white relative overflow-hidden">
         {/* Abstract pattern */}
         <div className="absolute top-0 right-0 w-64 h-64 bg-orange-50 rounded-full blur-3xl pointer-events-none -mr-20 -mt-20" />
         
