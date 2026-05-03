@@ -29,7 +29,7 @@ import {
   Medal,
   Star,
   HelpCircle,
-  PlayCircle
+  PlayCircle,
 } from "lucide-react"
 
 const CTA_LINK = "#"
@@ -98,7 +98,7 @@ const faqs = [
   },
   {
     question: "E se eu não for aprovado?",
-    answer: "Nenhuma mentoria garante aprovação. O que garanto é o melhor método, material completo e acompanhamento direto de quem passou nesse concurso. O resto depende de você — e é por isso que preciso dos 15 com sangue nos olhos.",
+    answer: "Nenhuma mentoria garante aprovação. O que garanto é o melhor método, material completo e acompanhamento direto de quem passou nesse concurso. O resto depende de você.",
   },
 ]
 
@@ -148,13 +148,13 @@ const reasonsToStudy = [
   },
   {
     icon: Hourglass,
-    title: "O edital ainda não saiu — e isso é uma vantagem",
-    description: "Edital previsto até junho de 2026. Você ainda tem tempo de chegar preparado antes da concorrência. Quem começa agora estuda com calma, com método e com direcionamento. Quem espera o edital sair, estuda correndo.",
+    title: "Edital previsto até junho de 2026",
+    description: "Você ainda tem tempo de chegar preparado antes da concorrência — se começar agora.",
   },
   {
     icon: Calendar,
     title: "Último concurso: 2017",
-    description: "Quase 10 anos sem abrir vagas. Quem não entrar nessa oportunidade, espera mais uma década. Simples assim.",
+    description: "Quase 10 anos sem abrir vagas. Quem não entrar nessa oportunidade, espera mais uma década.",
   },
 ]
 
@@ -163,13 +163,13 @@ const offerings = [
     icon: Target,
     title: "Plano de Estudos 100% Personalizado",
     description:
-      "Esqueça o plano genérico que serve pra todo mundo e não funciona pra ninguém. Começa com um questionário individualizado — parto do seu nível, não de um modelo pronto. Você recebe um planejamento feito exclusivamente pra você, com metas ordenadas pelos assuntos mais cobrados pela banca e técnicas de estudo aplicadas especificamente a Tribunais de Contas.",
+      "Começa com um questionário individualizado — parto do seu nível, não de um modelo pronto. Planejamento com metas ordenadas pelos assuntos mais cobrados pela banca e técnicas de estudo aplicadas especificamente a Tribunais de Contas.",
   },
   {
     icon: MonitorPlay,
     title: "Assinatura Estratégia Concursos Premium — 6 meses",
     description:
-      "Estou tirando o peso do investimento do seu colo. Guarde seu dinheiro para a taxa de inscrição — porque o material de base eu vou te dar. PDFs, videoaulas e sistema de questões. O melhor material do mercado, com o seu login e a sua senha. Sem custo extra. Sem precisar assinar nada por fora.",
+      "Guarde seu dinheiro para a taxa de inscrição — o material de base eu vou te dar. PDFs, videoaulas e sistema de questões. O melhor material do mercado, com o seu login e a sua senha. Sem custo extra.",
   },
   {
     icon: Smartphone,
@@ -185,8 +185,8 @@ const offerings = [
   },
   {
     icon: BookOpen,
-    title: "Técnicas de Estudo + Cadernos de Questões + Revisões Programadas",
-    description: "Plataforma com revisões programadas para fixar o conteúdo certo na hora certa. Cadernos de questões direcionados para o perfil da banca.",
+    title: "Cadernos de Questões + Revisões Programadas",
+    description: "Plataforma com revisões programadas para fixar o conteúdo certo na hora certa. Cadernos direcionados para o perfil da banca.",
   },
   {
     icon: Search,
@@ -205,7 +205,7 @@ const bonuses = [
   {
     icon: RotateCcw,
     title: "Bônus 1 — Rota Adaptável",
-    description: "Pivotou de órgão? Mudou o foco da preparação? Eu refaço o seu plano do zero, sem custo adicional. Sua preparação nunca fica travada por uma mudança de rota."
+    description: "Pivotou de órgão? Mudou o foco? Eu refaço o seu plano do zero, sem custo adicional. Sua preparação nunca fica travada por uma mudança de rota."
   },
   {
     icon: Video,
@@ -215,7 +215,7 @@ const bonuses = [
   {
     icon: Book,
     title: "Bônus 3 — E-book Apostas Pós-Edital",
-    description: "Análise completa dos temas com maior chance de cair, atualizada assim que o edital for publicado. Direto ao ponto, sem enrolação."
+    description: "Análise completa dos temas com maior chance de cair, atualizada assim que o edital for publicado. Direto ao ponto."
   },
   {
     icon: Scale,
@@ -238,49 +238,51 @@ const approvals = [
   {
     icon: CheckCircle2,
     title: "TCE-PE — Auditor",
-    description:
-      "Hoje ocupo o cargo de Auditor no melhor Tribunal de Contas do Brasil. Carreira construída com método — não com sorte.",
+    description: "Hoje ocupo o cargo de Auditor no melhor Tribunal de Contas do Brasil.",
   },
   {
     icon: CheckCircle2,
     title: "ISS Sobral — 1º lugar",
-    description:
-      "Mais um Primeiro Lugar na prova objetiva. Método que funciona em qualquer banca, qualquer concurso.",
+    description: "Método que funciona em qualquer banca, qualquer concurso.",
   },
 ]
 
 export default function TcePbSalePage() {
   return (
-    <main className="min-h-screen font-sans selection:bg-[#ff4b00] selection:text-white pb-12 pt-14">
+    <main className="min-h-screen font-sans selection:bg-[#ff4b00] selection:text-white">
       {/* ── STICKY BAR ── */}
-      <div className="fixed top-0 left-0 w-full z-50 bg-[#1e1f5c] text-white py-3 px-4 shadow-md flex items-center justify-center gap-3 flex-wrap">
+      {/* <div className="fixed top-0 left-0 w-full z-50 bg-[#1e1f5c] text-white py-3 px-4 shadow-md flex items-center justify-center gap-3 flex-wrap">
         <Lock className="w-4 h-4 text-[#ff4b00]" />
         <span className="text-sm md:text-base font-semibold text-center">Somente 15 vagas · R$ 1.497 ou 6x de R$ 275 sem juros</span>
         <a href={CTA_LINK} className="text-[#ff4b00] hover:text-[#ff7a45] text-sm md:text-base font-bold flex items-center gap-1 transition-colors">
           Garantir minha vaga <ArrowRight className="w-4 h-4" />
         </a>
-      </div>
+      </div> */}
 
       {/* ── HERO ── */}
       <section className="relative flex flex-col items-center justify-center min-h-[92dvh] text-center px-5 pt-16 pb-20 md:py-28 overflow-hidden bg-gradient-to-br from-[#1e1f5c] via-[#2e2f83] to-[#1e1f5c]">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-2xl h-64 bg-[#ff4b00]/20 blur-[120px] rounded-full pointer-events-none" />
-        
+
         <div className="relative z-10 w-full max-w-4xl mx-auto flex flex-col items-center gap-6 md:gap-8">
-          {/* ── BADGE TOPO ── */}
           <Badge className="h-fit text-xs sm:text-sm px-4 py-1.5 sm:px-5 sm:py-2 font-semibold tracking-wide bg-[#151642] border border-[#ff4b00]/30 text-slate-200 shadow-lg flex items-center gap-2 max-w-[90vw] whitespace-normal text-center leading-snug rounded-full">
             <Lock className="w-3 h-3 text-[#ff4b00]" /> Somente 15 vagas · Acompanhamento individual · 2026
           </Badge>
 
           <h1 className="text-[1.75rem] sm:text-4xl md:text-6xl font-extrabold text-white leading-tight tracking-tight w-full">
-            O concurso do TCE-PB{" "}
+            Se você esperar{" "}
             <br className="hidden md:block" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff4b00] to-[#ff7a45]">está chegando.</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff4b00] to-[#ff7a45]">o edital sair,</span>
             <br />
-            Você vai entrar preparado — ou vai ficar de fora.
+            já vai estar atrasado.
           </h1>
 
+          <p className="text-base sm:text-lg md:text-2xl text-slate-300 max-w-3xl leading-relaxed font-light">
+            O TCE-PB vem aí. Quem começa agora chega competitivo.{" "}
+            <span className="font-semibold text-white">Quem espera, corre atrás.</span>
+          </p>
+
           {/* VSL Placeholder */}
-          <div className="w-full max-w-3xl aspect-video bg-black/50 border border-white/10 rounded-2xl shadow-2xl overflow-hidden relative flex items-center justify-center group cursor-pointer mt-4">
+          <div className="w-full max-w-3xl aspect-video bg-black/50 border border-white/10 rounded-2xl shadow-2xl overflow-hidden relative flex items-center justify-center group cursor-pointer mt-2">
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
             <PlayCircle className="w-20 h-20 text-white/80 group-hover:text-[#ff4b00] group-hover:scale-110 transition-all duration-300 z-10" />
             <div className="absolute bottom-4 left-4 right-4 text-center z-10">
@@ -291,12 +293,12 @@ export default function TcePbSalePage() {
           <div className="flex flex-col items-center gap-3 md:gap-4 mt-2 md:mt-4 w-full">
             <a href={CTA_LINK} className="group w-full sm:w-auto" data-gtm="checkout">
               <Button size="lg" className="w-full sm:w-auto text-base md:text-lg px-8 md:px-10 py-6 md:py-8 font-bold rounded-full shadow-xl bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 group-hover:shadow-[#ff4b00]/30 flex items-center justify-center gap-2 hover:cursor-pointer">
-                Quero garantir minha vaga na Turma 2
+                Quero começar agora
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </a>
             <p className="text-white/80 text-sm md:text-base font-medium flex items-center gap-2">
-              <AlertTriangle className="w-4 h-4 text-[#ff4b00]" /> Somente 15 vagas · Acompanhamento individual real · Sem bot, sem IA
+              <AlertTriangle className="w-4 h-4 text-[#ff4b00]" /> Somente 15 vagas · Sem bot, sem IA
             </p>
           </div>
         </div>
@@ -336,10 +338,10 @@ export default function TcePbSalePage() {
 
           <div className="mt-12 p-8 bg-[#1e1f5c] text-white rounded-3xl text-center shadow-xl">
             <p className="text-xl md:text-2xl font-bold mb-4">Último concurso: 2017. Quase uma década sem abrir vagas.</p>
-            <p className="text-slate-300 text-lg mb-6 max-w-3xl mx-auto">Quem não entrar agora, espera mais uma década. Simples assim. A pergunta não é se você quer esse cargo. A pergunta é: você vai esperar o edital sair e perder a chance de chegar preparado?</p>
+            <p className="text-slate-300 text-lg mb-6 max-w-3xl mx-auto">Essa é a maior oportunidade de entrada no TCE-PB em quase 10 anos. A pergunta não é se você quer esse cargo — é se você vai chegar preparado quando o edital sair.</p>
             <a href={CTA_LINK} className="inline-block group w-full sm:w-auto">
               <Button size="lg" className="w-full sm:w-auto text-base px-8 py-6 font-bold rounded-full bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 shadow-lg flex items-center justify-center gap-2 hover:cursor-pointer">
-                Quero entrar preparado para o TCE-PB
+                Quero minha vaga no TCE-PB
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Button>
             </a>
@@ -378,32 +380,38 @@ export default function TcePbSalePage() {
               )
             })}
           </div>
+        </div>
+      </section>
 
-          <div className="mt-10 md:mt-16 text-center">
-            <a href={CTA_LINK} className="inline-block group w-full sm:w-auto">
-              <Button size="lg" className="w-full sm:w-auto text-base px-8 py-6 font-bold rounded-full bg-[#1e1f5c] hover:bg-[#151642] text-white transition-all hover:scale-105 active:scale-95 shadow-lg flex items-center justify-center gap-2 hover:cursor-pointer">
-                Quero essa oportunidade
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </a>
-          </div>
+      {/* ── MINI PREÇO (após seção 3) ── */}
+      <section className="py-12 md:py-16 px-5 md:px-6 bg-[#1e1f5c]">
+        <div className="max-w-3xl mx-auto text-center flex flex-col items-center gap-6">
+          <p className="text-sm font-bold uppercase tracking-widest text-[#ff4b00]">Investimento</p>
+          <h2 className="text-2xl md:text-4xl font-extrabold text-white tracking-tight">
+            A mentoria completa custa <span className="text-[#ff4b00]">R$ 1.497</span>
+          </h2>
+          <p className="text-slate-300 text-lg">ou <strong className="text-white">6x de R$ 275</strong> sem juros · acesso em até 24h</p>
+          <a href={CTA_LINK} className="group w-full sm:w-auto" data-gtm="checkout">
+            <Button size="lg" className="w-full sm:w-auto text-base md:text-lg px-8 md:px-10 py-6 font-bold rounded-full shadow-xl bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 flex items-center justify-center gap-2 hover:cursor-pointer">
+              Quero parar de estudar errado
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </Button>
+          </a>
+          <p className="text-slate-400 text-sm">Garantia de 7 dias — se não for pra você, devolvemos tudo.</p>
         </div>
       </section>
 
       {/* ── SEÇÃO 4: BLOCO DE RUPTURA ── */}
-      <section className="py-20 md:py-32 px-5 md:px-6 bg-[#ff4b00] text-white text-center relative overflow-hidden">
+      <section className="py-20 md:py-28 px-5 md:px-6 bg-[#ff4b00] text-white text-center relative overflow-hidden">
         <div className="max-w-4xl mx-auto relative z-10 flex flex-col items-center">
-          <Badge className="bg-white/20 text-white hover:bg-white/30 border-none mb-8 px-4 py-1.5 font-bold tracking-widest uppercase">
+          <Badge className="bg-gray-800/20 text-white hover:bg-white/30 border-none mb-8 px-4 py-1.5 font-bold tracking-widest uppercase">
             Se você já investiu em curso antes
           </Badge>
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
-            Você não foi enganado pelo curso.<br className="hidden md:block" />
-            <span className="text-[#ffe0d4]">Você foi abandonado por ele.</span>
+            Curso entrega conteúdo. Mentoria entrega resultado.<br className="hidden md:block" />
           </h2>
-          <p className="text-xl md:text-3xl font-bold mb-8">Curso entrega conteúdo. Mentoria entrega resultado.</p>
           <p className="text-lg md:text-xl max-w-3xl leading-relaxed text-white/90">
-            A diferença é que na mentoria eu sei onde você está, o que você precisa estudar agora, e corrijo o rumo quando necessário.<br/><br/>
-            Não é curso gravado. Não é plano genérico. É acompanhamento real — de alguém que passou pelos mesmos concursos que você quer passar.
+            Na mentoria eu sei onde você está, o que você precisa estudar agora, e corrijo o rumo quando necessário. Não é curso gravado. Não é plano genérico. É acompanhamento real — de alguém que passou pelos mesmos concursos que você quer passar.
           </p>
         </div>
       </section>
@@ -475,12 +483,11 @@ export default function TcePbSalePage() {
           <div className="mt-12 text-center bg-[#f0f1fa] p-8 rounded-3xl">
             <h3 className="text-2xl md:text-3xl font-bold text-[#1e1f5c] mb-4">Curso te dá conteúdo.<br/>Mentoria te dá resultado.</h3>
             <p className="text-lg text-slate-600 max-w-3xl mx-auto mb-8">
-              A diferença é simples: no curso, você estuda e torce para estar no caminho certo. Na mentoria, eu sei onde você está, o que você precisa agora, e corrijo quando necessário.
-              Você pode tentar montar isso sozinho. Mas quanto tempo vai perder até descobrir o que funciona — enquanto outros já estão na frente?
+              No curso, você estuda e torce. Na mentoria, eu sei onde você está, o que você precisa agora, e corrijo quando necessário.
             </p>
             <a href={CTA_LINK} className="inline-block group w-full sm:w-auto">
               <Button size="lg" className="w-full sm:w-auto text-base px-8 py-6 font-bold rounded-full bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 shadow-lg flex items-center justify-center gap-2 hover:cursor-pointer">
-                Quero estudar com método — e não sozinho
+                Quero estudar com direção — não sozinho
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Button>
             </a>
@@ -491,7 +498,7 @@ export default function TcePbSalePage() {
       {/* ── SEÇÃO 6: O QUE ESTÁ INCLUSO ── */}
       <section className="py-16 md:py-28 px-5 md:px-6 bg-slate-100 rounded-[2rem] md:rounded-[3rem] mx-3 md:mx-8">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16 space-y-4">
+          <div className="text-center mb-10 space-y-4">
             <p className="text-sm font-bold uppercase tracking-widest text-[#ff4b00]">
               Tudo incluso na mentoria
             </p>
@@ -499,8 +506,28 @@ export default function TcePbSalePage() {
               O que está incluso na sua vaga
             </h2>
             <p className="text-slate-600 text-xl max-w-2xl mx-auto">
-              O pacote completo. Sem surpresa. Sem custo extra. Você não vai precisar comprar mais nada. Tudo o que você precisa para chegar competitivo no TCE-PB está aqui.
+              O pacote completo. Sem surpresa. Sem custo extra.
             </p>
+          </div>
+
+          {/* Resumo rápido */}
+          <div className="bg-white border border-slate-200 rounded-2xl p-6 md:p-8 mb-12 max-w-3xl mx-auto shadow-sm">
+            <p className="font-bold text-[#1e1f5c] text-lg mb-4">Você vai receber:</p>
+            <ul className="space-y-2">
+              {[
+                "Plano de estudos 100% personalizado",
+                "Assinatura Estratégia Concursos Premium — 6 meses inclusa",
+                "Suporte direto comigo pelo WhatsApp, de segunda a segunda",
+                "6 lives mensais exclusivas com a turma",
+                "Cadernos de questões + revisões programadas",
+                "Live de análise completa do edital assim que sair",
+              ].map((item, i) => (
+                <li key={i} className="flex items-center gap-3 text-slate-700">
+                  <CheckCircle2 className="w-5 h-5 text-[#ff4b00] shrink-0" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
@@ -574,19 +601,22 @@ export default function TcePbSalePage() {
       {/* ── SEÇÃO 8: OFERTA + PREÇO ── */}
       <section className="py-20 md:py-32 px-5 md:px-6 bg-[#0a0f2c] overflow-hidden relative shadow-2xl">
         <div className="absolute top-0 left-0 w-96 h-96 bg-[#ff4b00] blur-[200px] pointer-events-none rounded-full -translate-x-1/2 -translate-y-1/2 z-0 opacity-20" />
-        
+
         <div className="max-w-5xl mx-auto relative z-10 text-center">
           <Badge className="bg-[#ff4b00]/20 text-[#ff4b00] border-none mb-6 px-4 py-1.5 font-bold tracking-widest uppercase">
             Investimento · Turma 2 · 2026
           </Badge>
-          <h2 className="text-3xl md:text-5xl font-extrabold text-white tracking-tight mb-12">
+          <h2 className="text-3xl md:text-5xl font-extrabold text-white tracking-tight mb-4">
             Tudo isso por quanto?
           </h2>
+          <p className="text-slate-400 text-lg max-w-2xl mx-auto mb-12">
+            Só o Estratégia já custa R$ 1.319. Aqui você recebe isso + acompanhamento de um Auditor do TCE-PE por praticamente o mesmo valor.
+          </p>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
             {/* Tabela de Preços Isolados */}
             <div className="bg-white/5 border border-white/10 rounded-3xl p-8 flex flex-col justify-center">
-              <h3 className="text-xl font-bold text-white mb-6 text-left">Veja o que custa montar isso separado:</h3>
+              <h3 className="text-xl font-bold text-white mb-6 text-left">Montando separado:</h3>
               <ul className="space-y-4 text-left">
                 <li className="flex justify-between items-center border-b border-white/10 pb-4">
                   <span className="text-slate-300">Assinatura Estratégia Premium 6 meses</span>
@@ -616,7 +646,7 @@ export default function TcePbSalePage() {
             <div className="bg-white rounded-3xl p-8 flex flex-col items-center justify-center shadow-2xl relative overflow-hidden">
               <div className="absolute top-0 w-full h-2 bg-[#ff4b00]" />
               <p className="text-[#1e1f5c] font-bold tracking-widest text-sm mb-4">PLANO · MATERIAL · SUPORTE · BÔNUS</p>
-              
+
               <div className="text-center mb-6">
                 <p className="text-slate-500 font-medium mb-1">ou 6x de</p>
                 <p className="text-5xl md:text-6xl font-black text-[#1e1f5c] tracking-tighter">R$ 275<span className="text-2xl font-bold">,00</span></p>
@@ -644,19 +674,6 @@ export default function TcePbSalePage() {
                   <AlertTriangle className="w-3 h-3" /> Somente 15 vagas disponíveis
                 </div>
               </div>
-            </div>
-          </div>
-
-          <div className="mt-12 bg-[#151642] border border-[#2e2f83] rounded-3xl p-8 text-left max-w-3xl mx-auto flex gap-6 items-start">
-            <div className="bg-[#ff4b00] rounded-full p-3 shrink-0">
-              <CircleDollarSign className="w-6 h-6 text-white" />
-            </div>
-            <div>
-              <p className="text-white font-bold text-xl mb-2">Essa conta fecha fácil:</p>
-              <p className="text-slate-300 leading-relaxed mb-4">
-                Renovar o Estratégia sozinho custa R$ 1.319 — sem plano, sem suporte, sem ninguém para guiar. Aqui você paga R$ 178 a mais e recebe um Auditor do TCE-PE do seu lado.
-              </p>
-              <p className="text-white font-bold text-lg">Faz sentido ou não faz?</p>
             </div>
           </div>
         </div>
@@ -695,20 +712,18 @@ export default function TcePbSalePage() {
             Esse lugar é seu — se você for esse perfil
           </Badge>
           <h2 className="text-3xl md:text-5xl font-extrabold text-[#1e1f5c] tracking-tight mb-8">
-            Preciso ser direto sobre quem estou buscando.
+            Para quem quer levar concurso a sério.
           </h2>
           <div className="space-y-6 text-lg text-slate-600 text-left">
             <p>
-              Quero os 15 que têm <strong className="text-[#ff4b00]">sangue nos olhos para mudar de vida.</strong>
-            </p>
-            <p>
-              Que encaram 3 horas de estudo por dia como mínimo — não como meta. Que entendem que aprovação em Tribunal de Contas exige disciplina — não só nas semanas em que o ânimo está alto.
+              Estou buscando os 15 que estão{" "}
+              <strong className="text-[#1e1f5c]">dispostos a seguir um plano até a prova</strong> — e entendem que aprovação em Tribunal de Contas exige disciplina, não só ânimo.
             </p>
             <p className="font-bold text-[#1e1f5c] text-xl p-6 bg-slate-50 rounded-2xl border border-slate-200 shadow-sm">
-              Se você quer estabilidade, salário acima de R$ 20 mil e uma carreira que pouquíssimos conseguem — e está disposto a fazer o que a maioria não faz — esse lugar é seu.
+              Se você quer estabilidade, salário acima de R$ 20 mil e uma carreira que pouquíssimos conseguem — esse lugar é seu.
             </p>
             <p>
-              Se está procurando algo leve, sem compromisso, para estudar quando der — sem problema. Mas não é aqui.
+              Se está procurando algo sem compromisso — sem problema. Mas não é aqui.
             </p>
           </div>
         </div>
@@ -719,7 +734,6 @@ export default function TcePbSalePage() {
         <div className="absolute top-0 right-0 w-96 h-96 bg-[#2e2f83] blur-[150px] pointer-events-none rounded-full translate-x-1/3 -translate-y-1/3 z-0" />
         <div className="max-w-6xl mx-auto relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            {/* Texto */}
             <div className="flex flex-col items-start text-left space-y-6">
               <Badge variant="outline" className="text-sm px-4 py-1.5 font-bold tracking-widest uppercase border-[#ff4b00] text-[#ff4b00]">
                 Quem vai te guiar
@@ -727,42 +741,51 @@ export default function TcePbSalePage() {
               <h2 className="text-3xl md:text-5xl font-extrabold text-white tracking-tight">
                 Eu sou Francisco.
               </h2>
+
+              {/* Resumo visual de autoridade */}
+              <div className="grid grid-cols-3 gap-4 w-full">
+                <div className="bg-white/5 border border-white/10 rounded-2xl p-4 text-center">
+                  <p className="text-3xl font-black text-[#ff4b00]">4</p>
+                  <p className="text-slate-300 text-sm mt-1">aprovações</p>
+                </div>
+                <div className="bg-white/5 border border-white/10 rounded-2xl p-4 text-center">
+                  <p className="text-3xl font-black text-[#ff4b00]">2</p>
+                  <p className="text-slate-300 text-sm mt-1">primeiros lugares</p>
+                </div>
+                <div className="bg-white/5 border border-white/10 rounded-2xl p-4 text-center">
+                  <p className="text-2xl font-black text-[#ff4b00]">TCE-PE</p>
+                  <p className="text-slate-300 text-sm mt-1">Auditor hoje</p>
+                </div>
+              </div>
+
               <div className="space-y-4 text-slate-300 text-lg leading-relaxed">
                 <p>
                   Não sou professor que aprendeu sobre concurso em livro. Sou Auditor do TCE-PE — e cheguei
                   aqui passando pelos mesmos concursos que você quer passar.
-                </p>
-                <p className="font-bold text-white">
-                  Consegui 4 aprovações. Duas delas em 1º lugar. E não fechei o edital em nenhuma.
-                </p>
-                <p>
-                  Não é sorte. É método. E é exatamente esse método que você recebe na Turma 2.
                 </p>
                 <blockquote className="border-l-4 border-[#ff4b00] pl-4 italic bg-white/5 p-4 rounded-r-xl text-white/90">
                   "Você não terá um professor passando conteúdo. Terá um Auditor do TCE-PE que passou no TCE-PB — do seu lado, todos os dias. Isso não existe em curso nenhum."
                 </blockquote>
               </div>
 
-              <div className="flex flex-col gap-6 w-full mt-6">
+              <div className="flex flex-col gap-4 w-full mt-2">
                 {approvals.map((item, i) => {
                   const Icon = item.icon
                   return (
-                    <div
-                      key={i}
-                      className="flex gap-5 items-start group"
-                    >
-                      <div className="mt-1 flex items-center justify-center w-12 h-12 rounded-xl bg-[#1e1f5c] border border-[#2e2f83] text-[#ff4b00] group-hover:bg-[#ff4b00] group-hover:text-white transition-colors duration-300 shadow-lg flex-shrink-0">
-                        <Icon className="w-6 h-6" />
+                    <div key={i} className="flex gap-4 items-start group">
+                      <div className="mt-1 flex items-center justify-center w-10 h-10 rounded-xl bg-[#1e1f5c] border border-[#2e2f83] text-[#ff4b00] group-hover:bg-[#ff4b00] group-hover:text-white transition-colors duration-300 shadow-lg flex-shrink-0">
+                        <Icon className="w-5 h-5" />
                       </div>
                       <div className="flex-1">
-                        <h3 className="font-bold text-xl text-white mb-1">{item.title}</h3>
-                        <p className="text-slate-300 text-base leading-relaxed">{item.description}</p>
+                        <h3 className="font-bold text-lg text-white">{item.title}</h3>
+                        <p className="text-slate-400 text-sm leading-relaxed">{item.description}</p>
                       </div>
                     </div>
                   )
                 })}
               </div>
-              <div className="mt-8 w-full sm:w-auto">
+
+              <div className="mt-4 w-full sm:w-auto">
                 <a href={CTA_LINK} className="inline-block group w-full" data-gtm="checkout">
                   <Button size="lg" className="w-full text-base px-8 py-6 font-bold rounded-full bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 shadow-lg shadow-[#ff4b00]/30 flex items-center justify-center gap-2 hover:cursor-pointer">
                     Quero estudar com quem já passou no TCE-PB
@@ -772,14 +795,13 @@ export default function TcePbSalePage() {
               </div>
             </div>
 
-            {/* Foto */}
             <div className="relative flex justify-center lg:justify-end mt-12 lg:mt-0 lg:ml-10">
               <div className="absolute inset-0 bg-gradient-to-t from-[#0a0f2c] via-transparent to-transparent z-10 bottom-0 h-full w-full pointer-events-none" />
-              <Image 
-                src="/tce-pb/francisco-w-bluer-v3.png" 
-                alt="Francisco José - Auditor do TCE-PE" 
-                width={1000} 
-                height={1000} 
+              <Image
+                src="/tce-pb/francisco-w-bluer-v3.png"
+                alt="Francisco José - Auditor do TCE-PE"
+                width={1000}
+                height={1000}
                 className="max-h-[1000px] w-auto object-contain drop-shadow-2xl relative z-0"
               />
             </div>
@@ -797,9 +819,6 @@ export default function TcePbSalePage() {
             <h2 className="text-3xl md:text-5xl font-extrabold text-[#1e1f5c] tracking-tight">
               Quem estudou com método aprovou.
             </h2>
-            <p className="text-slate-600 text-xl max-w-2xl mx-auto">
-              Resultados reais de quem acreditou no direcionamento.
-            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
@@ -847,9 +866,6 @@ export default function TcePbSalePage() {
             <h2 className="text-3xl md:text-5xl font-extrabold text-[#1e1f5c] tracking-tight">
               Ainda tem alguma dúvida?
             </h2>
-            <p className="text-slate-600 text-xl max-w-2xl mx-auto">
-              As respostas para as perguntas mais comuns de quem está decidindo entrar.
-            </p>
           </div>
 
           <div className="flex flex-col gap-6">
@@ -880,31 +896,20 @@ export default function TcePbSalePage() {
         </div>
       </section>
 
-      {/* ── SEÇÃO 14: URGÊNCIA + CTA FINAL ── */}
+      {/* ── SEÇÃO 14: CTA FINAL ── */}
       <section className="py-16 md:py-24 px-5 md:px-6 mb-8 md:mb-12 bg-white relative overflow-hidden">
         <div className="absolute top-0 right-0 w-64 h-64 bg-orange-50 rounded-full blur-3xl pointer-events-none -mr-20 -mt-20" />
-        
+
         <div className="max-w-3xl mx-auto text-center relative z-10 flex flex-col items-center">
           <div className="w-16 h-16 bg-orange-100 text-[#ff4b00] rounded-full flex items-center justify-center mb-6">
             <Clock className="w-8 h-8" />
           </div>
-          <p className="text-sm font-bold uppercase tracking-widest text-[#ff4b00] mb-4">
-            O tempo está passando
-          </p>
           <h2 className="text-3xl md:text-5xl font-extrabold text-[#1e1f5c] mb-6 tracking-tight">
             O edital pode sair a qualquer momento.
           </h2>
-          <p className="text-slate-600 text-xl leading-relaxed mb-10">
-            Comissão formada. Banca a definir. O processo está em andamento. Já se visualiza no próximo curso de formação de Auditor do TCE-PB. Não como fantasia — como consequência direta de meses de preparação séria, com o método certo, com um Auditor do TCE-PE do seu lado.<br/><br/>
-            <strong>R$ 21.500 por mês. Jornada de 6h. 50 dias de recesso e férias. Teletrabalho. João Pessoa.</strong>
+          <p className="text-slate-600 text-xl leading-relaxed mb-10 max-w-2xl">
+            Você pode começar agora — com plano, material e um Auditor do seu lado — ou correr atrás depois que o edital sair. A escolha é simples.
           </p>
-          <div className="inline-block px-8 py-8 rounded-2xl bg-amber-50 text-amber-900 border border-amber-200 text-lg shadow-sm mb-12 text-left max-w-2xl">
-            <p className="font-bold mb-4 text-xl text-amber-950 italic">Sabe o que aprendi passando em 4 concursos?</p>
-            <p className="mb-4 leading-relaxed">Ninguém começa preparado. Ninguém tem o momento perfeito. Ninguém tem tudo resolvido antes de dar o primeiro passo.</p>
-            <p className="mb-5 leading-relaxed">O que separa quem passa de quem fica tentando não é talento. <span className="font-bold">É a decisão de começar</span> — mesmo sem ter tudo, mesmo com medo, mesmo sem certeza.</p>
-            <p className="mb-4 leading-relaxed font-semibold">Começa hoje com o que você tem. O caminho se constrói andando.</p>
-            <p className="font-bold text-amber-950 mt-6 text-xl">Seu futuro agradece.</p>
-          </div>
 
           <a href={CTA_LINK} className="inline-block group w-full sm:w-auto" data-gtm="checkout">
             <Button size="lg" className="w-full sm:w-auto text-lg px-10 py-7 md:py-8 font-bold rounded-full bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 shadow-xl shadow-[#ff4b00]/20 flex items-center justify-center gap-2 hover:cursor-pointer">
@@ -912,7 +917,7 @@ export default function TcePbSalePage() {
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
           </a>
-          <p className="text-slate-500 text-sm mt-4 font-semibold text-center max-w-sm">Somente 15 vagas para acompanhamento individual. Quando a Turma 2 fechar, a próxima só abre após o edital — sem garantia de mesmas condições.</p>
+          <p className="text-slate-500 text-sm mt-4 font-semibold text-center max-w-sm">Somente 15 vagas. Garantia de 7 dias.</p>
         </div>
       </section>
 
