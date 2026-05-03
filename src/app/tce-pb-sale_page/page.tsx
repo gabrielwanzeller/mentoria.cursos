@@ -1,3 +1,6 @@
+"use client"
+
+import { useState } from "react"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -25,10 +28,11 @@ import {
   Book,
   Scale,
   CheckCircle2,
+  XCircle,
   Trophy,
   Medal,
   Star,
-  HelpCircle,
+  ChevronDown,
   PlayCircle,
 } from "lucide-react"
 
@@ -248,19 +252,21 @@ const approvals = [
 ]
 
 export default function TcePbSalePage() {
+  const [openFaq, setOpenFaq] = useState<number | null>(null)
+
   return (
     <main className="min-h-screen font-sans selection:bg-[#ff4b00] selection:text-white">
       {/* ── STICKY BAR ── */}
-      {/* <div className="fixed top-0 left-0 w-full z-50 bg-[#1e1f5c] text-white py-3 px-4 shadow-md flex items-center justify-center gap-3 flex-wrap">
+      <div className="fixed top-0 left-0 w-full z-50 bg-[#1e1f5c] text-white py-3 px-4 shadow-md flex items-center justify-center gap-3 flex-wrap">
         <Lock className="w-4 h-4 text-[#ff4b00]" />
         <span className="text-sm md:text-base font-semibold text-center">Somente 15 vagas · R$ 1.497 ou 6x de R$ 275 sem juros</span>
         <a href={CTA_LINK} className="text-[#ff4b00] hover:text-[#ff7a45] text-sm md:text-base font-bold flex items-center gap-1 transition-colors">
           Garantir minha vaga <ArrowRight className="w-4 h-4" />
         </a>
-      </div> */}
+      </div>
 
       {/* ── HERO ── */}
-      <section className="relative flex flex-col items-center justify-center min-h-[92dvh] text-center px-5 pt-16 pb-20 md:py-28 overflow-hidden bg-gradient-to-br from-[#1e1f5c] via-[#2e2f83] to-[#1e1f5c]">
+      <section className="relative flex flex-col items-center justify-center min-h-[92dvh] text-center px-5 pt-20 pb-20 md:py-32 overflow-hidden bg-gradient-to-br from-[#1e1f5c] via-[#2e2f83] to-[#1e1f5c]">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-2xl h-64 bg-[#ff4b00]/20 blur-[120px] rounded-full pointer-events-none" />
 
         <div className="relative z-10 w-full max-w-4xl mx-auto flex flex-col items-center gap-6 md:gap-8">
@@ -305,6 +311,7 @@ export default function TcePbSalePage() {
       </section>
 
       {/* ── SEÇÃO 2: O QUE ESPERA POR VOCÊ ── */}
+      {/* Layout: grade de cards com ícone centralizado — claro, convidativo */}
       <section className="py-16 md:py-24 px-5 md:px-6 relative z-10 bg-white">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-10 md:mb-16 space-y-3">
@@ -350,9 +357,10 @@ export default function TcePbSalePage() {
       </section>
 
       {/* ── SEÇÃO 3: POR QUE VALE A PENA ── */}
-      <section className="py-16 md:py-24 px-5 md:px-6 relative z-10 bg-slate-50 border-t border-slate-200">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-10 md:mb-16 space-y-3">
+      {/* Layout: lista numerada — visualmente oposto à grade de cards da seção anterior */}
+      <section className="py-16 md:py-24 px-5 md:px-6 bg-slate-50 border-t border-slate-200">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12 space-y-3">
             <p className="text-sm font-bold uppercase tracking-widest text-[#ff4b00]">
               Por que vale a pena
             </p>
@@ -361,30 +369,24 @@ export default function TcePbSalePage() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
-            {reasonsToStudy.map((b, i) => {
-              const Icon = b.icon
-              return (
-                <div
-                  key={i}
-                  className={`flex items-start gap-4 md:gap-5 p-5 md:p-8 rounded-2xl md:rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-md transition-shadow group ${i === 4 ? 'md:col-span-2 md:w-1/2 md:mx-auto' : ''}`}
-                >
-                  <div className="flex-shrink-0 w-11 h-11 md:w-14 md:h-14 rounded-xl md:rounded-2xl bg-[#f0f1fa] flex items-center justify-center text-[#2e2f83] group-hover:bg-[#ff4b00] group-hover:text-white transition-colors">
-                    <Icon className="w-5 h-5 md:w-7 md:h-7" />
-                  </div>
-                  <div>
-                    <p className="font-bold text-base text-[#1e1f5c] mb-1">{b.title}</p>
-                    <p className="text-sm md:text-base text-slate-500 leading-relaxed">{b.description}</p>
-                  </div>
+          <div className="flex flex-col divide-y divide-slate-200">
+            {reasonsToStudy.map((b, i) => (
+              <div key={i} className="flex items-start gap-6 py-8 first:pt-0 last:pb-0">
+                <span className="text-5xl md:text-6xl font-black text-[#ff4b00]/25 leading-none shrink-0 w-14 text-right select-none">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <div className="flex-1 pt-1">
+                  <p className="font-bold text-lg md:text-xl text-[#1e1f5c] mb-1.5">{b.title}</p>
+                  <p className="text-slate-500 leading-relaxed">{b.description}</p>
                 </div>
-              )
-            })}
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* ── MINI PREÇO (após seção 3) ── */}
-      <section className="py-12 md:py-16 px-5 md:px-6 bg-[#1e1f5c]">
+      <section className="py-12 md:py-16 px-5 md:px-6 bg-[#0a0f2c]">
         <div className="max-w-3xl mx-auto text-center flex flex-col items-center gap-6">
           <p className="text-sm font-bold uppercase tracking-widest text-[#ff4b00]">Investimento</p>
           <h2 className="text-2xl md:text-4xl font-extrabold text-white tracking-tight">
@@ -404,11 +406,12 @@ export default function TcePbSalePage() {
       {/* ── SEÇÃO 4: BLOCO DE RUPTURA ── */}
       <section className="py-20 md:py-28 px-5 md:px-6 bg-[#ff4b00] text-white text-center relative overflow-hidden">
         <div className="max-w-4xl mx-auto relative z-10 flex flex-col items-center">
-          <Badge className="bg-gray-800/20 text-white hover:bg-white/30 border-none mb-8 px-4 py-1.5 font-bold tracking-widest uppercase">
+          <Badge className="bg-white/20 text-white hover:bg-white/30 border-none mb-8 px-4 py-1.5 font-bold tracking-widest uppercase">
             Se você já investiu em curso antes
           </Badge>
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
-            Curso entrega conteúdo. Mentoria entrega resultado.<br className="hidden md:block" />
+            Curso entrega conteúdo.<br className="hidden md:block" />
+            Mentoria entrega resultado.
           </h2>
           <p className="text-lg md:text-xl max-w-3xl leading-relaxed text-white/90">
             Na mentoria eu sei onde você está, o que você precisa estudar agora, e corrijo o rumo quando necessário. Não é curso gravado. Não é plano genérico. É acompanhamento real — de alguém que passou pelos mesmos concursos que você quer passar.
@@ -434,54 +437,76 @@ export default function TcePbSalePage() {
           <div className="overflow-x-auto rounded-2xl md:rounded-3xl border border-slate-200 shadow-lg">
             <table className="w-full text-left min-w-[600px] border-collapse">
               <thead>
-                <tr className="bg-slate-50">
-                  <th className="p-5 md:p-6 text-[#1e1f5c] font-bold text-lg border-b border-slate-200 w-1/4"></th>
-                  <th className="p-5 md:p-6 text-slate-500 font-bold text-lg border-b border-slate-200 border-l w-1/3">Estudando Sozinho</th>
-                  <th className="p-5 md:p-6 bg-[#1e1f5c] text-white font-bold text-lg border-b border-[#2e2f83] border-l w-[40%] rounded-tr-xl md:rounded-tr-3xl">Turma 2 — Mentoria TCE-PB</th>
+                <tr>
+                  <th className="p-5 md:p-6 text-[#1e1f5c] font-bold text-lg border-b border-slate-200 bg-slate-50 w-1/4"></th>
+                  <th className="p-5 md:p-6 text-slate-500 font-bold text-lg border-b border-slate-200 border-l bg-slate-50 w-1/3">Estudando Sozinho</th>
+                  {/* Coluna Mentoria: borda superior laranja + header escuro */}
+                  <th className="p-5 md:p-6 bg-[#1e1f5c] text-white font-bold text-lg border-b border-[#ff4b00] border-l-4 border-l-[#ff4b00] w-[40%] rounded-tr-xl md:rounded-tr-3xl">
+                    ✦ Turma 2 — Mentoria TCE-PB
+                  </th>
                 </tr>
               </thead>
               <tbody className="bg-white">
-                <tr>
-                  <td className="p-5 border-b border-slate-200 font-bold text-[#1e1f5c]">Plano de estudos</td>
-                  <td className="p-5 border-b border-slate-200 border-l text-slate-600">Genérico, copiado da internet, serve pra todo mundo e não funciona pra ninguém</td>
-                  <td className="p-5 border-b border-slate-200 border-l bg-slate-50 text-[#1e1f5c] font-semibold flex items-start gap-2"><CheckCircle2 className="w-5 h-5 text-[#ff4b00] shrink-0 mt-0.5"/> 100% personalizado pro seu nível, seu tempo e os temas mais cobrados no TCE-PB</td>
-                </tr>
-                <tr>
-                  <td className="p-5 border-b border-slate-200 font-bold text-[#1e1f5c]">Material</td>
-                  <td className="p-5 border-b border-slate-200 border-l text-slate-600">Você paga separado — Estratégia, PDFs, videoaulas</td>
-                  <td className="p-5 border-b border-slate-200 border-l bg-slate-50 text-[#1e1f5c] font-semibold flex items-start gap-2"><CheckCircle2 className="w-5 h-5 text-[#ff4b00] shrink-0 mt-0.5"/> Estratégia Premium 6 meses já incluso. Login próprio. Zero custo extra</td>
-                </tr>
-                <tr>
-                  <td className="p-5 border-b border-slate-200 font-bold text-[#1e1f5c]">Dúvidas</td>
-                  <td className="p-5 border-b border-slate-200 border-l text-slate-600">Fórum, grupo aleatório, IA — quando alguém responde</td>
-                  <td className="p-5 border-b border-slate-200 border-l bg-slate-50 text-[#1e1f5c] font-semibold flex items-start gap-2"><CheckCircle2 className="w-5 h-5 text-[#ff4b00] shrink-0 mt-0.5"/> WhatsApp direto com Francisco, Auditor do TCE-PE, de segunda a segunda</td>
-                </tr>
-                <tr>
-                  <td className="p-5 border-b border-slate-200 font-bold text-[#1e1f5c]">Quando trava</td>
-                  <td className="p-5 border-b border-slate-200 border-l text-slate-600">Fica perdido, perde dias, muda de plano sem critério</td>
-                  <td className="p-5 border-b border-slate-200 border-l bg-slate-50 text-[#1e1f5c] font-semibold flex items-start gap-2"><CheckCircle2 className="w-5 h-5 text-[#ff4b00] shrink-0 mt-0.5"/> Eu corrijo o rumo — se mudar de órgão, refaço o plano sem custo</td>
-                </tr>
-                <tr>
-                  <td className="p-5 border-b border-slate-200 font-bold text-[#1e1f5c]">Edital</td>
-                  <td className="p-5 border-b border-slate-200 border-l text-slate-600">Você tenta entender sozinho o que priorizar</td>
-                  <td className="p-5 border-b border-slate-200 border-l bg-slate-50 text-[#1e1f5c] font-semibold flex items-start gap-2"><CheckCircle2 className="w-5 h-5 text-[#ff4b00] shrink-0 mt-0.5"/> Live de análise completa do edital assim que sair — você não perde um dia</td>
-                </tr>
-                <tr>
-                  <td className="p-5 border-b border-slate-200 font-bold text-[#1e1f5c]">Resultado</td>
-                  <td className="p-5 border-b border-slate-200 border-l text-slate-600">Incerteza. Sem saber se está no caminho certo</td>
-                  <td className="p-5 border-b border-slate-200 border-l bg-slate-50 text-[#1e1f5c] font-semibold flex items-start gap-2"><CheckCircle2 className="w-5 h-5 text-[#ff4b00] shrink-0 mt-0.5"/> Método comprovado em 4 aprovações — 2 delas em 1º lugar</td>
-                </tr>
-                <tr>
-                  <td className="p-5 font-bold text-[#1e1f5c] rounded-bl-xl md:rounded-bl-3xl">Risco</td>
-                  <td className="p-5 border-l border-slate-200 text-slate-600">Alto — tempo perdido não volta</td>
-                  <td className="p-5 border-l border-slate-200 bg-[#eef0ff] text-[#1e1f5c] font-semibold flex items-start gap-2 rounded-br-xl md:rounded-br-3xl"><CheckCircle2 className="w-5 h-5 text-[#ff4b00] shrink-0 mt-0.5"/> Garantia de 7 dias. Se não for pra você, devolvemos tudo</td>
-                </tr>
+                {[
+                  {
+                    label: "Plano de estudos",
+                    solo: "Genérico, copiado da internet, serve pra todo mundo e não funciona pra ninguém",
+                    mentoria: "100% personalizado pro seu nível, seu tempo e os temas mais cobrados no TCE-PB",
+                  },
+                  {
+                    label: "Material",
+                    solo: "Você paga separado — Estratégia, PDFs, videoaulas",
+                    mentoria: "Estratégia Premium 6 meses já incluso. Login próprio. Zero custo extra",
+                  },
+                  {
+                    label: "Dúvidas",
+                    solo: "Fórum, grupo aleatório, IA — quando alguém responde",
+                    mentoria: "WhatsApp direto com Francisco, Auditor do TCE-PE, de segunda a segunda",
+                  },
+                  {
+                    label: "Quando trava",
+                    solo: "Fica perdido, perde dias, muda de plano sem critério",
+                    mentoria: "Eu corrijo o rumo — se mudar de órgão, refaço o plano sem custo",
+                  },
+                  {
+                    label: "Edital",
+                    solo: "Você tenta entender sozinho o que priorizar",
+                    mentoria: "Live de análise completa do edital assim que sair — você não perde um dia",
+                  },
+                  {
+                    label: "Resultado",
+                    solo: "Incerteza. Sem saber se está no caminho certo",
+                    mentoria: "Método comprovado em 4 aprovações — 2 delas em 1º lugar",
+                  },
+                  {
+                    label: "Risco",
+                    solo: "Alto — tempo perdido não volta",
+                    mentoria: "Garantia de 7 dias. Se não for pra você, devolvemos tudo",
+                    isLast: true,
+                  },
+                ].map((row, i, arr) => (
+                  <tr key={i}>
+                    <td className={`p-5 font-bold text-[#1e1f5c] ${!row.isLast ? 'border-b border-slate-200' : 'rounded-bl-xl md:rounded-bl-3xl'}`}>
+                      {row.label}
+                    </td>
+                    <td className={`p-5 border-l border-slate-200 text-slate-500 ${!row.isLast ? 'border-b border-slate-200' : ''}`}>
+                      {row.solo}
+                    </td>
+                    {/* Coluna Mentoria: borda laranja forte + fundo tintado */}
+                    <td className={`p-5 border-l-4 border-l-[#ff4b00] border-slate-200 bg-[#f5f7ff] text-[#1e1f5c] font-semibold ${!row.isLast ? 'border-b' : 'rounded-br-xl md:rounded-br-3xl'}`}>
+                      <span className="flex items-start gap-2">
+                        <CheckCircle2 className="w-5 h-5 text-[#ff4b00] shrink-0 mt-0.5" />
+                        {row.mentoria}
+                      </span>
+                    </td>
+                  </tr>
+                ))}
               </tbody>
             </table>
           </div>
 
           <div className="mt-12 text-center bg-[#f0f1fa] p-8 rounded-3xl">
-            <h3 className="text-2xl md:text-3xl font-bold text-[#1e1f5c] mb-4">Curso te dá conteúdo.<br/>Mentoria te dá resultado.</h3>
+            <h3 className="text-2xl md:text-3xl font-bold text-[#1e1f5c] mb-4">Curso te dá conteúdo.<br />Mentoria te dá resultado.</h3>
             <p className="text-lg text-slate-600 max-w-3xl mx-auto mb-8">
               No curso, você estuda e torce. Na mentoria, eu sei onde você está, o que você precisa agora, e corrijo quando necessário.
             </p>
@@ -564,7 +589,7 @@ export default function TcePbSalePage() {
       </section>
 
       {/* ── SEÇÃO 7: BÔNUS ── */}
-      <section className="py-16 md:py-24 px-5 md:px-6 relative z-10 bg-white">
+      <section className="py-16 md:py-24 px-5 md:px-6 bg-white">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-10 md:mb-16 space-y-3">
             <p className="text-sm font-bold uppercase tracking-widest text-[#ff4b00]">
@@ -647,16 +672,24 @@ export default function TcePbSalePage() {
               <div className="absolute top-0 w-full h-2 bg-[#ff4b00]" />
               <p className="text-[#1e1f5c] font-bold tracking-widest text-sm mb-4">PLANO · MATERIAL · SUPORTE · BÔNUS</p>
 
-              <div className="text-center mb-6">
+              <div className="text-center mb-4">
                 <p className="text-slate-500 font-medium mb-1">ou 6x de</p>
                 <p className="text-5xl md:text-6xl font-black text-[#1e1f5c] tracking-tighter">R$ 275<span className="text-2xl font-bold">,00</span></p>
                 <p className="text-slate-500 font-medium mt-1">sem juros</p>
               </div>
 
-              <div className="mb-8 text-center">
+              <div className="mb-4 text-center">
                 <p className="text-slate-400 text-sm mb-1">à vista por</p>
                 <p className="text-3xl font-bold text-[#1e1f5c]">R$ 1.497</p>
-                <p className="text-slate-400 text-xs mt-1">Menos de R$ 9 por dia</p>
+              </div>
+
+              {/* R$9/dia — callout destacado */}
+              <div className="w-full bg-orange-50 border border-orange-200 rounded-xl px-4 py-3 text-center mb-6">
+                <p className="text-orange-900 font-semibold text-sm">
+                  Menos de{" "}
+                  <span className="text-2xl font-black text-[#ff4b00]">R$ 9</span>
+                  {" "}por dia — menos que um café
+                </p>
               </div>
 
               <a href={CTA_LINK} className="w-full group" data-gtm="checkout">
@@ -680,7 +713,8 @@ export default function TcePbSalePage() {
       </section>
 
       {/* ── SEÇÃO 9: GARANTIA ── */}
-      <section className="py-16 md:py-20 px-5 md:px-6 bg-slate-50">
+      {/* bg-white — separa do escuro da seção anterior */}
+      <section className="py-16 md:py-20 px-5 md:px-6 bg-white">
         <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-10">
           <div className="shrink-0 relative">
             <div className="w-32 h-32 md:w-40 md:h-40 rounded-full bg-green-100 flex items-center justify-center border-8 border-white shadow-xl relative z-10">
@@ -706,25 +740,58 @@ export default function TcePbSalePage() {
       </section>
 
       {/* ── SEÇÃO 10: PARA QUEM É ── */}
-      <section className="py-16 md:py-24 px-5 md:px-6 bg-white border-t border-slate-200">
-        <div className="max-w-3xl mx-auto text-center">
-          <Badge className="bg-slate-100 text-slate-500 border-none mb-6 px-4 py-1.5 font-bold tracking-widest uppercase">
-            Esse lugar é seu — se você for esse perfil
-          </Badge>
-          <h2 className="text-3xl md:text-5xl font-extrabold text-[#1e1f5c] tracking-tight mb-8">
-            Para quem quer levar concurso a sério.
-          </h2>
-          <div className="space-y-6 text-lg text-slate-600 text-left">
-            <p>
-              Estou buscando os 15 que estão{" "}
-              <strong className="text-[#1e1f5c]">dispostos a seguir um plano até a prova</strong> — e entendem que aprovação em Tribunal de Contas exige disciplina, não só ânimo.
-            </p>
-            <p className="font-bold text-[#1e1f5c] text-xl p-6 bg-slate-50 rounded-2xl border border-slate-200 shadow-sm">
-              Se você quer estabilidade, salário acima de R$ 20 mil e uma carreira que pouquíssimos conseguem — esse lugar é seu.
-            </p>
-            <p>
-              Se está procurando algo sem compromisso — sem problema. Mas não é aqui.
-            </p>
+      {/* bg-slate-50 — alterna com o branco da garantia */}
+      <section className="py-16 md:py-24 px-5 md:px-6 bg-slate-50 border-t border-slate-200">
+        <div className="max-w-3xl mx-auto">
+          <div className="text-center mb-10">
+            <Badge className="bg-slate-100 text-slate-500 border-none mb-6 px-4 py-1.5 font-bold tracking-widest uppercase">
+              Esse lugar é seu — se você for esse perfil
+            </Badge>
+            <h2 className="text-3xl md:text-5xl font-extrabold text-[#1e1f5c] tracking-tight mt-4">
+              Para quem quer levar concurso a sério.
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            {/* É pra você */}
+            <div className="bg-green-50 border border-green-200 rounded-2xl p-6">
+              <p className="font-bold text-green-800 mb-4 flex items-center gap-2 text-base">
+                <CheckCircle2 className="w-5 h-5 text-green-600 shrink-0" /> É pra você se:
+              </p>
+              <ul className="space-y-3">
+                {[
+                  "Quer levar concurso a sério e seguir um plano até a prova",
+                  "Entende que aprovação em Tribunal de Contas exige disciplina real",
+                  "Quer estabilidade, salário acima de R$ 20 mil e uma carreira sólida",
+                  "Aceita ser guiado por quem já passou nesse concurso",
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-2 text-green-900 text-sm">
+                    <CheckCircle2 className="w-4 h-4 text-green-500 shrink-0 mt-0.5" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Não é pra você */}
+            <div className="bg-red-50 border border-red-200 rounded-2xl p-6">
+              <p className="font-bold text-red-800 mb-4 flex items-center gap-2 text-base">
+                <XCircle className="w-5 h-5 text-red-500 shrink-0" /> Não é pra você se:
+              </p>
+              <ul className="space-y-3">
+                {[
+                  "Quer algo sem compromisso, para estudar só quando der",
+                  "Espera aprovação garantida sem esforço consistente",
+                  "Prefere tentar sozinho indefinidamente",
+                  "Não está pronto para seguir um método e ser cobrado",
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-2 text-red-900 text-sm">
+                    <XCircle className="w-4 h-4 text-red-400 shrink-0 mt-0.5" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </section>
@@ -742,19 +809,20 @@ export default function TcePbSalePage() {
                 Eu sou Francisco.
               </h2>
 
-              {/* Resumo visual de autoridade */}
-              <div className="grid grid-cols-3 gap-4 w-full">
+              {/* Stats com hierarquia: "2 primeiros lugares" em destaque */}
+              <div className="grid grid-cols-3 gap-3 w-full">
                 <div className="bg-white/5 border border-white/10 rounded-2xl p-4 text-center">
                   <p className="text-3xl font-black text-[#ff4b00]">4</p>
-                  <p className="text-slate-300 text-sm mt-1">aprovações</p>
+                  <p className="text-slate-400 text-xs mt-1">aprovações</p>
+                </div>
+                {/* Destaque no número mais impactante */}
+                <div className="bg-[#ff4b00]/10 border-2 border-[#ff4b00]/50 rounded-2xl p-4 text-center ring-1 ring-[#ff4b00]/20 relative">
+                  <p className="text-5xl font-black text-[#ff4b00] leading-none">2</p>
+                  <p className="text-slate-200 text-xs mt-2 font-bold">1ºs lugares</p>
                 </div>
                 <div className="bg-white/5 border border-white/10 rounded-2xl p-4 text-center">
-                  <p className="text-3xl font-black text-[#ff4b00]">2</p>
-                  <p className="text-slate-300 text-sm mt-1">primeiros lugares</p>
-                </div>
-                <div className="bg-white/5 border border-white/10 rounded-2xl p-4 text-center">
-                  <p className="text-2xl font-black text-[#ff4b00]">TCE-PE</p>
-                  <p className="text-slate-300 text-sm mt-1">Auditor hoje</p>
+                  <p className="text-xl font-black text-[#ff4b00] leading-none mt-1">TCE-PE</p>
+                  <p className="text-slate-400 text-xs mt-2">Auditor hoje</p>
                 </div>
               </div>
 
@@ -810,7 +878,8 @@ export default function TcePbSalePage() {
       </section>
 
       {/* ── SEÇÃO 12: DEPOIMENTOS ── */}
-      <section className="py-16 md:py-28 px-5 md:px-6 bg-slate-50">
+      {/* bg-white — vem após o escuro da autoridade, respira */}
+      <section className="py-16 md:py-28 px-5 md:px-6 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16 space-y-4">
             <p className="text-sm font-bold uppercase tracking-widest text-[#ff4b00]">
@@ -825,7 +894,7 @@ export default function TcePbSalePage() {
             {testimonials.map((t, i) => (
               <div
                 key={i}
-                className="flex flex-col gap-4 p-8 rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 relative"
+                className="flex flex-col gap-4 p-8 rounded-3xl bg-slate-50 border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 relative"
               >
                 <div className="flex text-[#ff4b00] gap-1 mb-2">
                   <Star className="w-5 h-5 fill-current" />
@@ -837,9 +906,15 @@ export default function TcePbSalePage() {
                 <p className="text-lg text-slate-700 italic leading-relaxed flex-grow">
                   &quot;{t.text}&quot;
                 </p>
-                <div className="mt-6 pt-6 border-t border-slate-100">
-                  <p className="font-bold text-[#1e1f5c] text-lg">{t.name}</p>
-                  <p className="text-[#ff4b00] text-sm font-semibold mt-1 leading-snug">{t.role}</p>
+                <div className="mt-6 pt-6 border-t border-slate-200 flex items-center gap-3">
+                  {/* Avatar com inicial */}
+                  <div className="w-10 h-10 rounded-full bg-[#1e1f5c] flex items-center justify-center shrink-0">
+                    <span className="text-white font-bold text-sm">{t.name.charAt(0)}</span>
+                  </div>
+                  <div>
+                    <p className="font-bold text-[#1e1f5c] text-base leading-tight">{t.name}</p>
+                    <p className="text-[#ff4b00] text-xs font-semibold mt-0.5 leading-snug">{t.role}</p>
+                  </div>
                 </div>
               </div>
             ))}
@@ -856,7 +931,7 @@ export default function TcePbSalePage() {
         </div>
       </section>
 
-      {/* ── SEÇÃO 13: FAQ ── */}
+      {/* ── SEÇÃO 13: FAQ (accordion) ── */}
       <section className="py-16 md:py-28 px-5 md:px-6 bg-slate-100">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16 space-y-4">
@@ -868,21 +943,35 @@ export default function TcePbSalePage() {
             </h2>
           </div>
 
-          <div className="flex flex-col gap-6">
-            {faqs.map((faq, i) => (
-              <div
-                key={i}
-                className="flex items-start gap-5 p-6 md:p-8 rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-md transition-shadow group"
-              >
-                <div className="flex-shrink-0 w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#f0f1fa] flex items-center justify-center text-[#2e2f83] group-hover:bg-[#ff4b00] group-hover:text-white transition-colors">
-                  <HelpCircle className="w-6 h-6" />
+          <div className="flex flex-col gap-3">
+            {faqs.map((faq, i) => {
+              const isOpen = openFaq === i
+              return (
+                <div
+                  key={i}
+                  className="bg-white border border-slate-200 rounded-2xl shadow-sm overflow-hidden"
+                >
+                  <button
+                    onClick={() => setOpenFaq(isOpen ? null : i)}
+                    className="w-full flex items-center justify-between gap-4 p-6 md:p-8 text-left hover:bg-slate-50 transition-colors group"
+                  >
+                    <span className="font-bold text-base md:text-lg text-[#1e1f5c] leading-snug">
+                      {faq.question}
+                    </span>
+                    <ChevronDown
+                      className={`w-5 h-5 shrink-0 text-[#ff4b00] transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
+                    />
+                  </button>
+                  {isOpen && (
+                    <div className="px-6 md:px-8 pb-6 md:pb-8 border-t border-slate-100">
+                      <p className="text-base md:text-lg text-slate-600 leading-relaxed pt-4">
+                        {faq.answer}
+                      </p>
+                    </div>
+                  )}
                 </div>
-                <div>
-                  <h3 className="font-bold text-lg md:text-xl text-[#1e1f5c] mb-2">{faq.question}</h3>
-                  <p className="text-base md:text-lg text-slate-600 leading-relaxed">{faq.answer}</p>
-                </div>
-              </div>
-            ))}
+              )
+            })}
           </div>
 
           <div className="mt-16 text-center">
