@@ -92,7 +92,7 @@ const faqs = [
   },
   {
     question: "É muito cedo para começar sem edital lançado?",
-    answer: "O edital já saiu. A prova é em 9 de agosto. Cada dia que passa é um dia a menos de preparo. Quem começa hoje ainda tem tempo. Quem espera mais, corre atrás.",
+    answer: "O edital já saiu. A prova será em 9 de agosto. Cada dia que passa é um dia a menos de preparo. Quem começa hoje ainda tem tempo. Quem espera mais, corre atrás.",
   },
   {
     question: "Sou iniciante. É pra mim?",
@@ -235,7 +235,7 @@ export default function TjCePage() {
       {/* ── STICKY BAR ── */}
       <div className="fixed top-0 left-0 w-full z-50 bg-[#1e1f5c] text-white py-2.5 px-4 shadow-md flex items-center justify-center gap-4 flex-wrap">
         <Lock className="w-4 h-4 text-[#ff4b00] shrink-0" />
-        <span className="text-sm font-semibold">A prova é em 9 de agosto —</span>
+        <span className="text-sm font-semibold">A prova será em 9 de agosto —</span>
         <div className="flex items-center gap-3">
           {[
             { v: countdown.days, l: "dias" },
@@ -264,7 +264,7 @@ export default function TjCePage() {
           <h1 className="text-[1.75rem] sm:text-4xl md:text-6xl font-extrabold text-white leading-tight tracking-tight w-full">
             O TJ-CE abriu.{" "}
             <br className="hidden sm:block" />
-            A prova é em{" "}
+            A prova será em {" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff4b00] to-[#ff7a45]">
               9 de agosto.
             </span>
@@ -804,7 +804,7 @@ export default function TjCePage() {
             <Clock className="w-8 h-8" />
           </div>
           <h2 className="text-3xl md:text-5xl font-extrabold text-[#1e1f5c] tracking-tight">
-            A prova é em 9 de agosto.{" "}
+            A prova será em 9 de agosto.{" "}
             <br className="hidden md:block" />
             O relógio já está correndo.
           </h2>
