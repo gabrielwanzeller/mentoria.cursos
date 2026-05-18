@@ -402,7 +402,7 @@ export default function TjCePage() {
           <div className="mt-12 text-center">
             <a href={CTA_LINK} className="inline-block group w-full sm:w-auto" data-gtm="checkout">
               <Button size="lg" className="w-full sm:w-auto text-base px-8 py-6 font-bold rounded-full bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 shadow-lg flex items-center justify-center gap-2 hover:cursor-pointer">
-                Quero estudar com direção — não sozinho
+                Quero o método certo
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Button>
             </a>
@@ -467,7 +467,7 @@ export default function TjCePage() {
 
               <a href={CTA_LINK} className="inline-block group w-full" data-gtm="checkout">
                 <Button size="lg" className="w-full text-base px-8 py-6 font-bold rounded-full bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 shadow-lg shadow-[#ff4b00]/30 flex items-center justify-center gap-2 hover:cursor-pointer">
-                  Quero estudar com quem já passou nesse nível
+                  Quero estudar com o Francisco
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </a>
