@@ -288,7 +288,7 @@ export default function TjCePage() {
           </div>
 
           <div className="flex flex-col items-center gap-3 md:gap-4 w-full">
-            <a href={CTA_LINK} className="group w-full sm:w-auto" data-gtm="checkout">
+            <a href={CTA_LINK} className="group w-full sm:w-auto" data-gtm="TJ-CE Button" data-gtm-event="click_whatsapp">
               <Button size="lg" className="w-full sm:w-auto text-base md:text-lg px-8 md:px-10 py-6 md:py-8 font-bold rounded-full shadow-xl bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 group-hover:shadow-[#ff4b00]/30 flex items-center justify-center gap-2 hover:cursor-pointer">
                 Garantir minha vaga
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -346,7 +346,7 @@ export default function TjCePage() {
           </div>
 
           <div className="mt-12 text-center">
-            <a href={CTA_LINK} className="inline-block group w-full sm:w-auto" data-gtm="checkout">
+            <a href={CTA_LINK} className="inline-block group w-full sm:w-auto" data-gtm="TJ-CE Button" data-gtm-event="click_whatsapp">
               <Button size="lg" className="w-full sm:w-auto text-base px-8 py-6 font-bold rounded-full bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 shadow-lg flex items-center justify-center gap-2 hover:cursor-pointer">
                 Garantir minha vaga no TJ-CE
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -400,7 +400,7 @@ export default function TjCePage() {
           </div>
 
           <div className="mt-12 text-center">
-            <a href={CTA_LINK} className="inline-block group w-full sm:w-auto" data-gtm="checkout">
+            <a href={CTA_LINK} className="inline-block group w-full sm:w-auto" data-gtm="TJ-CE Button" data-gtm-event="click_whatsapp">
               <Button size="lg" className="w-full sm:w-auto text-base px-8 py-6 font-bold rounded-full bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 shadow-lg flex items-center justify-center gap-2 hover:cursor-pointer">
                 Quero o método certo
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -465,7 +465,7 @@ export default function TjCePage() {
                 })}
               </div>
 
-              <a href={CTA_LINK} className="inline-block group w-full" data-gtm="checkout">
+              <a href={CTA_LINK} className="inline-block group w-full" data-gtm="TJ-CE Button" data-gtm-event="click_whatsapp">
                 <Button size="lg" className="w-full text-base px-8 py-6 font-bold rounded-full bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 shadow-lg shadow-[#ff4b00]/30 flex items-center justify-center gap-2 hover:cursor-pointer">
                   Quero estudar com o Francisco
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -522,7 +522,7 @@ export default function TjCePage() {
           </div>
 
           <div className="mt-14 text-center">
-            <a href={CTA_LINK} className="inline-block group w-full sm:w-auto" data-gtm="checkout">
+            <a href={CTA_LINK} className="inline-block group w-full sm:w-auto" data-gtm="TJ-CE Button" data-gtm-event="click_whatsapp">
               <Button size="lg" className="w-full sm:w-auto text-base md:text-lg px-8 md:px-10 py-6 font-bold rounded-full bg-[#1e1f5c] hover:bg-[#151642] text-white transition-all hover:scale-105 active:scale-95 shadow-xl flex items-center justify-center gap-2 hover:cursor-pointer">
                 Quero o meu nome nessa lista
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -566,7 +566,7 @@ export default function TjCePage() {
           </div>
 
           <div className="mt-14 text-center">
-            <a href={CTA_LINK} className="inline-block group" data-gtm="checkout">
+            <a href={CTA_LINK} className="inline-block group" data-gtm="TJ-CE Button" data-gtm-event="click_whatsapp">
               <Button size="lg" className="text-lg px-10 py-7 font-bold rounded-full bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 shadow-xl shadow-[#ff4b00]/20 flex items-center gap-2 hover:cursor-pointer">
                 Quero uma das vagas
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -634,7 +634,7 @@ export default function TjCePage() {
                 </p>
               </div>
 
-              <a href={CTA_LINK} className="w-full group" data-gtm="checkout">
+              <a href={CTA_LINK} className="w-full group" data-gtm="TJ-CE Button" data-gtm-event="click_whatsapp">
                 <Button size="lg" className="w-full text-lg px-8 py-8 font-bold rounded-full bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 shadow-xl shadow-[#ff4b00]/20 flex items-center justify-center gap-2">
                   Garantir minha vaga
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -786,7 +786,7 @@ export default function TjCePage() {
             <p className="text-white/60 text-base">ou 6x de R$ 140,00 sem juros</p>
             <p className="text-5xl md:text-6xl font-black text-white tracking-tight">R$ 797</p>
           </div>
-          <a href={CTA_LINK} className="group w-full sm:w-auto" data-gtm="checkout">
+          <a href={CTA_LINK} className="group w-full sm:w-auto" data-gtm="TJ-CE Button" data-gtm-event="click_whatsapp">
             <Button size="lg" className="w-full sm:w-auto text-base md:text-lg px-8 md:px-10 py-6 font-bold rounded-full shadow-xl bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 flex items-center justify-center gap-2 hover:cursor-pointer">
               Garantir minha vaga agora
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -813,13 +813,13 @@ export default function TjCePage() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-            <a href={CTA_LINK} className="group w-full sm:w-auto" data-gtm="checkout">
+            <a href={CTA_LINK} className="group w-full sm:w-auto" data-gtm="TJ-CE Button" data-gtm-event="click_whatsapp">
               <Button size="lg" className="w-full text-base md:text-lg px-8 md:px-10 py-6 font-bold rounded-full shadow-xl bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 flex items-center justify-center gap-2 hover:cursor-pointer">
                 Garantir minha vaga agora
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </a>
-            <a href={CTA_LINK} className="group w-full sm:w-auto" data-gtm="whatsapp">
+            <a href={CTA_LINK} className="group w-full sm:w-auto" data-gtm="TJ-CE Button" data-gtm-event="click_whatsapp">
               <Button size="lg" className="w-full text-base md:text-lg px-8 md:px-10 py-6 font-bold rounded-full bg-[#25d366] hover:bg-[#1da354] text-white transition-all hover:scale-105 active:scale-95 shadow-xl flex items-center justify-center gap-2 hover:cursor-pointer">
                 Falar com o Francisco
                 <MessageCircle className="w-5 h-5" />
