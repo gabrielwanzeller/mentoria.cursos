@@ -104,7 +104,7 @@ const faqs = [
   },
   {
     question: "O valor é elevado?",
-    answer: "O salário inicial do TJ-CE é R$ 8.800 por mês. O investimento aqui representa menos de um mês de salário — para uma carreira de décadas. Parcelar em 6x sai menos de R$ 140 por mês.",
+    answer: "O salário inicial do TJ-CE é R$ 8.800 por mês — R$ 105.600 por ano. O investimento na mentoria representa menos de 1% do salário anual do cargo. Parcelar em 12x sai menos de R$ 75 por mês. Uma carreira de décadas por menos de 1% do que ela vai te pagar no primeiro ano.",
   },
   {
     question: "Como funciona depois que eu entro?",
@@ -179,7 +179,7 @@ const offerings = [
     title: "Suporte e Interação Direta",
     items: [
       "WhatsApp direto comigo — sem robô, sem IA, de segunda a segunda",
-      "6 lives mensais exclusivas com a turma limitada",
+      "Lives mensais exclusivas com a turma limitada",
       "Live de análise completa do edital — dissecamos tudo ao vivo",
       "O único que está disponível DIARIAMENTE para te guiar.",
     ],
@@ -241,7 +241,7 @@ export default function TjCePage() {
 
         <div className="relative z-10 w-full max-w-4xl mx-auto flex flex-col items-center gap-6 md:gap-8">
           <Badge className="h-fit text-xs sm:text-sm px-4 py-1.5 sm:px-5 sm:py-2 font-semibold tracking-wide bg-[#151642] border border-[#ff4b00]/30 text-slate-200 shadow-lg flex items-center gap-2 max-w-[90vw] whitespace-normal text-center leading-snug rounded-full">
-            <Lock className="w-3 h-3 text-[#ff4b00]" /> Vagas limitadas · Acompanhamento individual · TJ-CE 2026
+            <Lock className="w-3 h-3 text-[#ff4b00]" /> Somente 10 vagas · Acompanhamento individual · TJ-CE 2026
           </Badge>
 
           <h1 className="text-[1.75rem] sm:text-4xl md:text-6xl font-extrabold text-white leading-tight tracking-tight w-full">
@@ -676,7 +676,7 @@ export default function TjCePage() {
                   <Lock className="w-3 h-3 text-green-500" /> Pagamento 100% seguro · Acesso em até 24h
                 </div>
                 <div className="flex items-center gap-1 text-[#ff4b00]">
-                  <AlertTriangle className="w-3 h-3" /> Vagas limitadas disponíveis
+                  <AlertTriangle className="w-3 h-3" /> Somente 10 vagas disponíveis
                 </div>
               </div>
             </div>
@@ -864,11 +864,7 @@ export default function TjCePage() {
       {/* ── FOOTER ── */}
       <footer className="py-8 text-center text-slate-500 text-sm border-t border-slate-200 bg-slate-50">
         <p className="mb-2">Copyright &copy; Francisco José 2026. Todos os direitos reservados.</p>
-        <p className="text-xs">Mentoria Concursos · CNPJ: XX.XXX.XXX/XXXX-XX</p>
-        <div className="flex items-center justify-center gap-4 mt-4 text-xs">
-          <a href="#" className="hover:text-slate-800 transition-colors">Política de Privacidade</a>
-          <a href="#" className="hover:text-slate-800 transition-colors">Termos de Uso</a>
-        </div>
+        <p className="text-xs">Mentoria Concursos</p>
       </footer>
     </main>
   )
