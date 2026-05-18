@@ -30,7 +30,7 @@ import {
   Layers,
 } from "lucide-react"
 
-const CTA_LINK = "https://wa.me/5588997430323?text=Quero%20uma%20das%2010%20vagas%20da%20mentoria"
+const CTA_LINK = "https://wa.me/5588988058933?text=Quero%20uma%20das%2010%20vagas%20da%20mentoria"
 const EXAM_DATE = new Date("2026-08-09T08:00:00")
 
 function useCountdown(target: Date) {
