@@ -131,12 +131,7 @@ const benefits = [
     icon: Target,
     title: "Banca FCC — perfil previsível",
     description: "A FCC tem padrão. Quem treina com foco no estilo da banca leva vantagem real sobre quem estuda de forma genérica.",
-  },
-  {
-    icon: Layers,
-    title: "Seleção de 3 fases para a prova",
-    description: "Com objetivo e discursiva, é preciso dominar tanto a objetiva quanto a escrita. O método cobre as duas frentes.",
-  },
+  }
 ]
 
 const comparisonRows = [
@@ -149,16 +144,6 @@ const comparisonRows = [
     topic: "Conteúdo",
     solo: "Conteúdo genérico da internet — sem saber o que a FCC realmente cobra.",
     mentoria: "Conteúdo direcionado para o perfil da FCC — o que cai, na ordem certa.",
-  },
-  {
-    topic: "Discursiva",
-    solo: "Sem treino de discursiva — descobre na prova que não sabe estruturar uma resposta.",
-    mentoria: "Discursiva acompanhada com feedback real — você chega treinado para as 3 fases.",
-  },
-  {
-    topic: "Desempenho",
-    solo: "Sem análise de desempenho — não sabe o que está falhando nem quando mudar.",
-    mentoria: "Análise de desempenho semanal — ajuste de rota em tempo real, não depois da prova.",
   },
   {
     topic: "Foco",
@@ -178,14 +163,12 @@ const offerings = [
     items: [
       "Plano de estudo 100% personalizado para o TJ-CE",
       "Planejamento com metas ordenadas pelos assuntos mais cobrados pela FCC",
-      "Periodização para você chegar no pico no dia da prova",
-      "Acompanhamento semanal de desempenho com ajuste de rota",
       "Técnicas de estudo aplicadas especificamente a concursos jurídicos",
       "Revisão periódica do plano ao longo dos 3 meses",
     ],
   },
   {
-    title: "Assinatura Estratégia Concursos + 6 Meses Premium!",
+    title: "Assinatura Estratégia Concursos + 3 Meses Premium!",
     items: [
       "Acesso completo às videoaulas e PDFs — login próprio, sem custo extra",
       "Sistema de questões por disciplina e por banca (FCC inclusa)",
@@ -204,6 +187,7 @@ const offerings = [
   {
     title: "Bônus Exclusivos",
     items: [
+      "Raio-X do Edital — 8 matérias mapeadas com mais de 4.305 questões analisadas, subtemas ranqueados por frequência e apostas ordenadas por probabilidade de cobrança",
       "E-book de apostas pós-edital — temas com maior probabilidade de cair",
       "E-book de jurisprudência selecionada para concursos jurídicos estaduais",
       "Rota adaptável: mudou o foco? Eu refaço o plano sem custo adicional",
@@ -219,10 +203,10 @@ const approvals = [
 ]
 
 const priceItems = [
-  { label: "Assinatura Estratégia Premium 6 meses", value: "R$ 1.319" },
-  { label: "6 Lives Mensais Exclusivas", value: "R$ 600" },
+  { label: "Assinatura Estratégia Premium 3 meses", value: "R$ 659,70" },
   { label: "E-books de Apostas e Jurisprudência", value: "R$ 150" },
   { label: "Mentoria individual com Auditor aprovado", value: "R$ 1.200" },
+  { label: "Bônus Raio-X do Edital", value: "R$ 100" },
 ]
 
 export default function TjCePage() {
@@ -576,6 +560,53 @@ export default function TjCePage() {
         </div>
       </section>
 
+      {/* ── BÔNUS RAIO-X ── */}
+      <section className="py-16 md:py-24 px-5 md:px-6 bg-[#1e1f5c]">
+        <div className="max-w-3xl mx-auto">
+          <div className="text-center mb-10 space-y-4">
+            <Badge className="bg-[#ff4b00]/20 text-[#ff4b00] border-none px-4 py-1.5 font-bold tracking-widest uppercase">
+              Bônus Exclusivo — Raio-X do Edital
+            </Badge>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-white leading-tight">
+              8 matérias mapeadas.{" "}
+              <br className="hidden sm:block" />
+              Mais de 4.305 questões analisadas.
+            </h2>
+            <p className="text-slate-300 text-lg leading-relaxed max-w-2xl mx-auto">
+              Cada matéria com análise própria, subtemas ranqueados por frequência e apostas ordenadas por probabilidade de cobrança.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 gap-3 md:gap-4">
+            {[
+              { emoji: "⚖️",  name: "Direito Constitucional",      count: "712 questões" },
+              { emoji: "🏛️", name: "Direito Administrativo",       count: "1.131 questões" },
+              { emoji: "📜",  name: "Direito Civil",                count: "409 questões" },
+              { emoji: "⚡",  name: "Direito Processual Civil",     count: "416 questões" },
+              { emoji: "🔴",  name: "Direito Penal",                count: "262 questões" },
+              { emoji: "🔒",  name: "Direito Processual Penal",     count: "232 questões" },
+              { emoji: "📖",  name: "Língua Portuguesa",            count: "753 questões" },
+              { emoji: "🧮",  name: "Raciocínio Lógico e Matemática", count: "390 questões" },
+            ].map((m, i) => (
+              <div key={i} className="flex flex-col items-center text-center gap-3 p-5 md:p-6 rounded-2xl bg-white/8 border border-white/10 hover:bg-white/12 transition-colors">
+                <span className="text-3xl">{m.emoji}</span>
+                <p className="font-bold text-white text-sm md:text-base leading-snug">{m.name}</p>
+                <p className="text-[#ff4b00] font-bold text-sm">{m.count}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-10 text-center">
+            <a href={CTA_LINK} className="inline-block group w-full sm:w-auto" data-gtm="TJ-CE Button" data-gtm-event="click_whatsapp">
+              <Button size="lg" className="w-full sm:w-auto text-base md:text-lg px-8 md:px-10 py-6 font-bold rounded-full bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 shadow-xl shadow-[#ff4b00]/20 flex items-center justify-center gap-2 hover:cursor-pointer">
+                Quero o bônus Raio-X
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* ── PRICING ── */}
       <section className="py-20 md:py-32 px-5 md:px-6 bg-[#0a0f2c] overflow-hidden relative">
         <div className="absolute top-0 left-0 w-96 h-96 bg-[#ff4b00] blur-[200px] pointer-events-none rounded-full -translate-x-1/2 -translate-y-1/2 z-0 opacity-20" />
@@ -603,7 +634,7 @@ export default function TjCePage() {
                 ))}
                 <li className="flex justify-between items-center pt-2">
                   <span className="text-slate-300 text-lg">Total separado</span>
-                  <span className="text-red-400 font-bold text-xl line-through">R$ 3.269</span>
+                  <span className="text-red-400 font-bold text-xl line-through">R$ 2.109,70</span>
                 </li>
               </ul>
               <p className="mt-8 text-[#ff4b00] font-bold text-xl">Agora esquece esse valor.</p>
@@ -614,9 +645,9 @@ export default function TjCePage() {
               <p className="text-[#1e1f5c] font-bold tracking-widest text-sm mb-4">PLANO · MATERIAL · SUPORTE · BÔNUS</p>
 
               <div className="text-center mb-4">
-                <p className="text-slate-500 font-medium mb-1">ou 6x de</p>
+                <p className="text-slate-500 font-medium mb-1">ou 12x de</p>
                 <p className="text-5xl md:text-6xl font-black text-[#1e1f5c] tracking-tighter">
-                  R$ 140<span className="text-2xl font-bold">,00</span>
+                  R$ 79<span className="text-2xl font-bold">,00</span>
                 </p>
                 <p className="text-slate-500 font-medium mt-1">sem juros</p>
               </div>
@@ -783,7 +814,7 @@ export default function TjCePage() {
         <div className="max-w-3xl mx-auto text-center flex flex-col items-center gap-5">
           <p className="text-sm font-bold uppercase tracking-widest text-[#ff4b00]">É recomendado me antecipar!</p>
           <div className="flex flex-col items-center gap-1">
-            <p className="text-white/60 text-base">ou 6x de R$ 140,00 sem juros</p>
+            <p className="text-white/60 text-base">ou 12x de R$ 79,00</p>
             <p className="text-5xl md:text-6xl font-black text-white tracking-tight">R$ 797</p>
           </div>
           <a href={CTA_LINK} className="group w-full sm:w-auto" data-gtm="TJ-CE Button" data-gtm-event="click_whatsapp">
