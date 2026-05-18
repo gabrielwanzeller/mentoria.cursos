@@ -190,7 +190,6 @@ const offerings = [
       "Raio-X do Edital — 8 matérias mapeadas com mais de 4.305 questões analisadas, subtemas ranqueados por frequência e apostas ordenadas por probabilidade de cobrança",
       "E-book de apostas pós-edital — temas com maior probabilidade de cair",
       "E-book de jurisprudência selecionada para concursos jurídicos estaduais",
-      "Rota adaptável: mudou o foco? Eu refaço o plano sem custo adicional",
     ],
   },
 ]
