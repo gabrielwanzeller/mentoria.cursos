@@ -30,7 +30,7 @@ import {
   Layers,
 } from "lucide-react"
 
-const CTA_LINK = "#"
+const CTA_LINK = "https://wa.me/5588997430323?text=Quero%20uma%20das%2010%20vagas%20da%20mentoria"
 const EXAM_DATE = new Date("2026-08-09T08:00:00")
 
 function useCountdown(target: Date) {
@@ -798,7 +798,7 @@ export default function TjCePage() {
           </div>
 
           <div className="mt-14 text-center">
-            <a href={CTA_LINK} className="inline-block group w-full sm:w-auto">
+            <a href={CTA_LINK} className="inline-block group w-full sm:w-auto" data-gtm="TJ-CE Button" data-gtm-event="click_whatsapp">
               <Button size="lg" variant="outline" className="w-full sm:w-auto text-base md:text-lg px-8 md:px-10 py-6 font-bold rounded-full border-2 border-[#ff4b00] text-[#ff4b00] hover:bg-[#ff4b00] hover:text-white transition-all hover:scale-105 active:scale-95 shadow-xl flex items-center justify-center gap-2 hover:cursor-pointer bg-transparent">
                 Tirar outra dúvida com o Francisco
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
