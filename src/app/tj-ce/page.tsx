@@ -619,7 +619,7 @@ export default function TjCePage() {
             Tudo isso por quanto?
           </h2>
           <p className="text-slate-400 text-lg max-w-2xl mx-auto mb-12">
-            Só o Estratégia já custa R$ 1.319. Aqui você recebe isso + acompanhamento de um Auditor aprovado em 4 concursos, por praticamente o mesmo valor.
+            Só o Estratégia já custa R$ 659,70. Aqui você recebe isso + acompanhamento de um Auditor aprovado em 4 concursos, por praticamente o mesmo valor.
           </p>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
