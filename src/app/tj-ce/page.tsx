@@ -43,8 +43,9 @@ function useCountdown(target: Date) {
       seconds: Math.floor((diff / 1000) % 60),
     }
   }
-  const [time, setTime] = useState(calc)
+  const [time, setTime] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 })
   useEffect(() => {
+    setTime(calc())
     const id = setInterval(() => setTime(calc()), 1000)
     return () => clearInterval(id)
   }, [])
@@ -271,7 +272,7 @@ export default function TjCePage() {
           </div>
 
           <div className="flex flex-col items-center gap-3 md:gap-4 w-full">
-            <a href={CTA_LINK} className="group w-full sm:w-auto" data-gtm="TJ-CE Button" data-gtm-event="click_whatsapp">
+            <a href="#price" className="group w-full sm:w-auto">
               <Button size="lg" className="w-full sm:w-auto text-base md:text-lg px-8 md:px-10 py-6 md:py-8 font-bold rounded-full shadow-xl bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 group-hover:shadow-[#ff4b00]/30 flex items-center justify-center gap-2 hover:cursor-pointer">
                 Garantir minha vaga
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -329,7 +330,7 @@ export default function TjCePage() {
           </div>
 
           <div className="mt-12 text-center">
-            <a href={CTA_LINK} className="inline-block group w-full sm:w-auto" data-gtm="TJ-CE Button" data-gtm-event="click_whatsapp">
+            <a href="#price" className="inline-block group w-full sm:w-auto">
               <Button size="lg" className="w-full sm:w-auto text-base px-8 py-6 font-bold rounded-full bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 shadow-lg flex items-center justify-center gap-2 hover:cursor-pointer">
                 Garantir minha vaga no TJ-CE
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -383,7 +384,7 @@ export default function TjCePage() {
           </div>
 
           <div className="mt-12 text-center">
-            <a href={CTA_LINK} className="inline-block group w-full sm:w-auto" data-gtm="TJ-CE Button" data-gtm-event="click_whatsapp">
+            <a href="#price" className="inline-block group w-full sm:w-auto">
               <Button size="lg" className="w-full sm:w-auto text-base px-8 py-6 font-bold rounded-full bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 shadow-lg flex items-center justify-center gap-2 hover:cursor-pointer">
                 Quero o método certo
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -448,7 +449,7 @@ export default function TjCePage() {
                 })}
               </div>
 
-              <a href={CTA_LINK} className="inline-block group w-full" data-gtm="TJ-CE Button" data-gtm-event="click_whatsapp">
+              <a href="#price" className="inline-block group w-full">
                 <Button size="lg" className="w-full text-base px-8 py-6 font-bold rounded-full bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 shadow-lg shadow-[#ff4b00]/30 flex items-center justify-center gap-2 hover:cursor-pointer">
                   Quero estudar com o Francisco
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -505,7 +506,7 @@ export default function TjCePage() {
           </div>
 
           <div className="mt-14 text-center">
-            <a href={CTA_LINK} className="inline-block group w-full sm:w-auto" data-gtm="TJ-CE Button" data-gtm-event="click_whatsapp">
+            <a href="#price" className="inline-block group w-full sm:w-auto">
               <Button size="lg" className="w-full sm:w-auto text-base md:text-lg px-8 md:px-10 py-6 font-bold rounded-full bg-[#1e1f5c] hover:bg-[#151642] text-white transition-all hover:scale-105 active:scale-95 shadow-xl flex items-center justify-center gap-2 hover:cursor-pointer">
                 Quero o meu nome nessa lista
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -549,7 +550,7 @@ export default function TjCePage() {
           </div>
 
           <div className="mt-14 text-center">
-            <a href={CTA_LINK} className="inline-block group" data-gtm="TJ-CE Button" data-gtm-event="click_whatsapp">
+            <a href="#price" className="inline-block group">
               <Button size="lg" className="text-lg px-10 py-7 font-bold rounded-full bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 shadow-xl shadow-[#ff4b00]/20 flex items-center gap-2 hover:cursor-pointer">
                 Quero uma das vagas
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -596,7 +597,7 @@ export default function TjCePage() {
           </div>
 
           <div className="mt-10 text-center">
-            <a href={CTA_LINK} className="inline-block group w-full sm:w-auto" data-gtm="TJ-CE Button" data-gtm-event="click_whatsapp">
+            <a href="#price" className="inline-block group w-full sm:w-auto">
               <Button size="lg" className="w-full sm:w-auto text-base md:text-lg px-8 md:px-10 py-6 font-bold rounded-full bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 shadow-xl shadow-[#ff4b00]/20 flex items-center justify-center gap-2 hover:cursor-pointer">
                 Quero o bônus Raio-X
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -607,7 +608,7 @@ export default function TjCePage() {
       </section>
 
       {/* ── PRICING ── */}
-      <section className="py-20 md:py-32 px-5 md:px-6 bg-[#0a0f2c] overflow-hidden relative">
+      <section id="price" className="py-20 md:py-32 px-5 md:px-6 bg-[#0a0f2c] overflow-hidden relative">
         <div className="absolute top-0 left-0 w-96 h-96 bg-[#ff4b00] blur-[200px] pointer-events-none rounded-full -translate-x-1/2 -translate-y-1/2 z-0 opacity-20" />
 
         <div className="max-w-5xl mx-auto relative z-10 text-center">
@@ -659,7 +660,7 @@ export default function TjCePage() {
               <div className="w-full bg-orange-50 border border-orange-200 rounded-xl px-4 py-3 text-center mb-6">
                 <p className="text-orange-900 font-semibold text-sm">
                   Menos de{" "}
-                  <span className="text-2xl font-black text-[#ff4b00]">R$ 9</span>
+                  <span className="text-2xl font-black text-[#ff4b00]">R$ 3,00</span>
                   {" "}por dia — menos que um café
                 </p>
               </div>
