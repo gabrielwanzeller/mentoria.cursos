@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1920" width="1080" height="1920" font-family="'Segoe UI', Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0f2c"/>
+      <stop offset="45%" style="stop-color:#1e1f5c"/>
+      <stop offset="100%" style="stop-color:#0a0f2c"/>
+    </linearGradient>
+    <linearGradient id="accent2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ff4b00"/>
+      <stop offset="100%" style="stop-color:#ff7a45"/>
+    </linearGradient>
+    <radialGradient id="glow2" cx="50%" cy="25%" r="45%">
+      <stop offset="0%" style="stop-color:#ff4b00;stop-opacity:0.3"/>
+      <stop offset="100%" style="stop-color:#ff4b00;stop-opacity:0"/>
+    </radialGradient>
+    <radialGradient id="glow3" cx="50%" cy="75%" r="40%">
+      <stop offset="0%" style="stop-color:#2e2f83;stop-opacity:0.6"/>
+      <stop offset="100%" style="stop-color:#2e2f83;stop-opacity:0"/>
+    </radialGradient>
+    <filter id="shadow2">
+      <feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+    <filter id="btnshadow">
+      <feDropShadow dx="0" dy="8" stdDeviation="20" flood-color="#ff4b00" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1080" height="1920" fill="url(#bg2)"/>
+  <rect width="1080" height="1920" fill="url(#glow2)"/>
+  <rect width="1080" height="1920" fill="url(#glow3)"/>
+
+  <!-- Decorative grid lines -->
+  <line x1="0" y1="480" x2="1080" y2="480" stroke="#ffffff" stroke-width="1" stroke-opacity="0.04"/>
+  <line x1="0" y1="960" x2="1080" y2="960" stroke="#ffffff" stroke-width="1" stroke-opacity="0.04"/>
+  <line x1="0" y1="1440" x2="1080" y2="1440" stroke="#ffffff" stroke-width="1" stroke-opacity="0.04"/>
+  <line x1="360" y1="0" x2="360" y2="1920" stroke="#ffffff" stroke-width="1" stroke-opacity="0.03"/>
+  <line x1="720" y1="0" x2="720" y2="1920" stroke="#ffffff" stroke-width="1" stroke-opacity="0.03"/>
+
+  <!-- Diagonal accent lines -->
+  <line x1="0" y1="600" x2="600" y2="0" stroke="#ff4b00" stroke-width="2" stroke-opacity="0.1"/>
+  <line x1="0" y1="720" x2="720" y2="0" stroke="#ff4b00" stroke-width="1" stroke-opacity="0.07"/>
+  <line x1="480" y1="1920" x2="1080" y2="1320" stroke="#ff4b00" stroke-width="2" stroke-opacity="0.1"/>
+
+  <!-- Top bar -->
+  <rect x="0" y="0" width="1080" height="10" fill="url(#accent2)"/>
+
+  <!-- ── SECTION 1: URGENCY ── -->
+  <!-- Countdown badge -->
+  <rect x="90" y="80" width="900" height="80" rx="16" fill="#ff4b00" fill-opacity="0.12" stroke="#ff4b00" stroke-width="1.5" stroke-opacity="0.4"/>
+  <text x="540" y="130" text-anchor="middle" fill="#ff4b00" font-size="26" font-weight="700" letter-spacing="4">⚠ VAGAS LIMITADAS · TJ-CE 2026</text>
+
+  <!-- Headline block -->
+  <text x="90" y="250" fill="#ffffff" font-size="92" font-weight="900" letter-spacing="-3">O TJ-CE</text>
+  <text x="90" y="350" fill="#ffffff" font-size="92" font-weight="900" letter-spacing="-3">abriu.</text>
+  <text x="90" y="460" fill="#94a3b8" font-size="46" font-weight="400">A prova será em</text>
+  <text x="90" y="570" fill="url(#accent2)" font-size="100" font-weight="900" letter-spacing="-3">9 de agosto.</text>
+
+  <!-- Subtext -->
+  <text x="90" y="650" fill="#e2e8f0" font-size="38" font-weight="400">Você tem menos de</text>
+  <text x="90" y="700" fill="#ffffff" font-size="38" font-weight="700">3 meses para chegar preparado.</text>
+
+  <!-- Divider with icon -->
+  <rect x="90" y="745" width="900" height="2" fill="#ff4b00" fill-opacity="0.25"/>
+
+  <!-- ── SECTION 2: AUTHORITY ── -->
+  <text x="90" y="820" fill="#94a3b8" font-size="24" font-weight="600" letter-spacing="3">QUEM VAI TE GUIAR</text>
+
+  <!-- Profile card -->
+  <rect x="90" y="850" width="900" height="280" rx="24" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-width="1" stroke-opacity="0.12"/>
+
+  <!-- Avatar circle -->
+  <circle cx="195" cy="990" r="75" fill="#1e1f5c" stroke="#ff4b00" stroke-width="3"/>
+  <text x="195" y="1003" text-anchor="middle" fill="#ff4b00" font-size="52" font-weight="900">F</text>
+
+  <!-- Author info -->
+  <text x="305" y="940" fill="#ffffff" font-size="44" font-weight="900">Francisco José</text>
+  <text x="305" y="985" fill="#ff4b00" font-size="28" font-weight="700">Auditor · TCE-PE</text>
+  <text x="305" y="1025" fill="#94a3b8" font-size="24">4 aprovações · 2 primeiros lugares</text>
+  <text x="305" y="1060" fill="#94a3b8" font-size="24">Aprovado TCE-PA · TCE-PB · TCE-PE · ISS</text>
+  <text x="305" y="1095" fill="#64748b" font-size="20">Sem IA. Sem robô. Direto no seu WhatsApp.</text>
+
+  <!-- ── SECTION 3: WHAT YOU GET ── -->
+  <rect x="90" y="1155" width="900" height="2" fill="#ffffff" fill-opacity="0.08"/>
+  <text x="90" y="1225" fill="#94a3b8" font-size="24" font-weight="600" letter-spacing="3">O QUE ESTÁ INCLUSO</text>
+
+  <!-- Feature list -->
+  <rect x="90" y="1250" width="900" height="340" rx="24" fill="#ffffff" fill-opacity="0.05" stroke="#ffffff" stroke-width="1" stroke-opacity="0.1"/>
+
+  <!-- Checkmark items -->
+  <rect x="120" y="1274" width="36" height="36" rx="8" fill="#ff4b00"/>
+  <text x="138" y="1299" text-anchor="middle" fill="#ffffff" font-size="22" font-weight="900">✓</text>
+  <text x="175" y="1299" fill="#e2e8f0" font-size="30" font-weight="500">Plano de estudo 100% personalizado</text>
+
+  <rect x="120" y="1330" width="36" height="36" rx="8" fill="#ff4b00"/>
+  <text x="138" y="1355" text-anchor="middle" fill="#ffffff" font-size="22" font-weight="900">✓</text>
+  <text x="175" y="1355" fill="#e2e8f0" font-size="30" font-weight="500">Assinatura Estratégia 3 meses (R$ 659)</text>
+
+  <rect x="120" y="1386" width="36" height="36" rx="8" fill="#ff4b00"/>
+  <text x="138" y="1411" text-anchor="middle" fill="#ffffff" font-size="22" font-weight="900">✓</text>
+  <text x="175" y="1411" fill="#e2e8f0" font-size="30" font-weight="500">Suporte no WhatsApp · 7 dias por semana</text>
+
+  <rect x="120" y="1442" width="36" height="36" rx="8" fill="#ff4b00"/>
+  <text x="138" y="1467" text-anchor="middle" fill="#ffffff" font-size="22" font-weight="900">✓</text>
+  <text x="175" y="1467" fill="#e2e8f0" font-size="30" font-weight="500">Lives mensais exclusivas com a turma</text>
+
+  <rect x="120" y="1498" width="36" height="36" rx="8" fill="#ff4b00"/>
+  <text x="138" y="1523" text-anchor="middle" fill="#ffffff" font-size="22" font-weight="900">✓</text>
+  <text x="175" y="1523" fill="#e2e8f0" font-size="30" font-weight="500">Raio-X do Edital · 4.305 questões analisadas</text>
+
+  <rect x="120" y="1554" width="36" height="36" rx="8" fill="#ff4b00"/>
+  <text x="138" y="1579" text-anchor="middle" fill="#ffffff" font-size="22" font-weight="900">✓</text>
+  <text x="175" y="1579" fill="#e2e8f0" font-size="30" font-weight="500">Garantia de 7 dias — risco zero</text>
+
+  <!-- ── SECTION 4: PRICE + CTA ── -->
+  <!-- Price block -->
+  <rect x="90" y="1618" width="900" height="150" rx="20" fill="#ffffff" fill-opacity="0.07" stroke="#ffffff" stroke-width="1" stroke-opacity="0.12"/>
+  <text x="540" y="1665" text-anchor="middle" fill="#94a3b8" font-size="26" font-weight="500">Investimento completo</text>
+  <text x="540" y="1730" text-anchor="middle" fill="#ffffff" font-size="64" font-weight="900" letter-spacing="-2">12x R$ 79,00</text>
+  <text x="540" y="1762" text-anchor="middle" fill="#64748b" font-size="24">sem juros · ou R$ 797 à vista</text>
+
+  <!-- CTA Button -->
+  <rect x="90" y="1793" width="900" height="100" rx="50" fill="url(#accent2)" filter="url(#btnshadow)"/>
+  <text x="540" y="1857" text-anchor="middle" fill="#ffffff" font-size="40" font-weight="900" letter-spacing="1">GARANTIR MINHA VAGA →</text>
+
+  <!-- Footer -->
+  <text x="540" y="1890" text-anchor="middle" fill="#334155" font-size="22" font-weight="500">Somente 10 vagas · Pagamento 100% seguro</text>
+
+  <!-- Bottom bar -->
+  <rect x="0" y="1910" width="1080" height="10" fill="url(#accent2)"/>
+</svg>

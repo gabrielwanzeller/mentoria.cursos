@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" width="1080" height="1080" font-family="'Segoe UI', Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e1f5c"/>
+      <stop offset="60%" style="stop-color:#2e2f83"/>
+      <stop offset="100%" style="stop-color:#1e1f5c"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ff4b00"/>
+      <stop offset="100%" style="stop-color:#ff7a45"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="30%" r="50%">
+      <stop offset="0%" style="stop-color:#ff4b00;stop-opacity:0.25"/>
+      <stop offset="100%" style="stop-color:#ff4b00;stop-opacity:0"/>
+    </radialGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1080" height="1080" fill="url(#bg)"/>
+  <rect width="1080" height="1080" fill="url(#glow)"/>
+
+  <!-- Decorative lines top-right -->
+  <line x1="700" y1="0" x2="1080" y2="380" stroke="#ff4b00" stroke-width="1.5" stroke-opacity="0.15"/>
+  <line x1="760" y1="0" x2="1080" y2="320" stroke="#ff4b00" stroke-width="1" stroke-opacity="0.1"/>
+  <line x1="820" y1="0" x2="1080" y2="260" stroke="#ff4b00" stroke-width="1" stroke-opacity="0.08"/>
+
+  <!-- Decorative lines bottom-left -->
+  <line x1="0" y1="700" x2="380" y2="1080" stroke="#ffffff" stroke-width="1" stroke-opacity="0.06"/>
+  <line x1="0" y1="760" x2="320" y2="1080" stroke="#ffffff" stroke-width="1" stroke-opacity="0.04"/>
+
+  <!-- Top orange bar -->
+  <rect x="0" y="0" width="1080" height="8" fill="url(#accent)"/>
+
+  <!-- Badge pill -->
+  <rect x="90" y="68" width="360" height="52" rx="26" fill="#ff4b00" fill-opacity="0.18" stroke="#ff4b00" stroke-width="1.5" stroke-opacity="0.5"/>
+  <text x="270" y="100" text-anchor="middle" fill="#ff4b00" font-size="20" font-weight="700" letter-spacing="3">MENTORIA · TJ-CE 2026</text>
+
+  <!-- Main headline -->
+  <text x="90" y="210" fill="#ffffff" font-size="78" font-weight="900" letter-spacing="-2">O TJ-CE abriu.</text>
+  <text x="90" y="300" fill="#ffffff" font-size="78" font-weight="900" letter-spacing="-2">A prova é em</text>
+  <text x="90" y="395" fill="url(#accent)" font-size="88" font-weight="900" letter-spacing="-2">9 de agosto.</text>
+
+  <!-- Subheadline -->
+  <text x="90" y="470" fill="#cbd5e1" font-size="34" font-weight="400" letter-spacing="0">Você tem menos de 3 meses.</text>
+  <text x="90" y="515" fill="#cbd5e1" font-size="34" font-weight="400">Método certo não é luxo.</text>
+  <text x="90" y="560" fill="#ffffff" font-size="34" font-weight="700">É necessidade.</text>
+
+  <!-- Divider -->
+  <rect x="90" y="595" width="900" height="2" fill="#ffffff" fill-opacity="0.1"/>
+
+  <!-- Stats row -->
+  <!-- Stat 1 -->
+  <rect x="90" y="620" width="195" height="115" rx="16" fill="#ffffff" fill-opacity="0.07" stroke="#ffffff" stroke-width="1" stroke-opacity="0.12"/>
+  <text x="187" y="672" text-anchor="middle" fill="#ff4b00" font-size="44" font-weight="900">34</text>
+  <text x="187" y="702" text-anchor="middle" fill="#94a3b8" font-size="18" font-weight="500">vagas abertas</text>
+
+  <!-- Stat 2 -->
+  <rect x="305" y="620" width="195" height="115" rx="16" fill="#ffffff" fill-opacity="0.07" stroke="#ffffff" stroke-width="1" stroke-opacity="0.12"/>
+  <text x="402" y="672" text-anchor="middle" fill="#ff4b00" font-size="44" font-weight="900">R$8,8k</text>
+  <text x="402" y="702" text-anchor="middle" fill="#94a3b8" font-size="18" font-weight="500">salário inicial</text>
+
+  <!-- Stat 3 -->
+  <rect x="520" y="620" width="195" height="115" rx="16" fill="#ffffff" fill-opacity="0.07" stroke="#ffffff" stroke-width="1" stroke-opacity="0.12"/>
+  <text x="617" y="672" text-anchor="middle" fill="#ff4b00" font-size="44" font-weight="900">FCC</text>
+  <text x="617" y="702" text-anchor="middle" fill="#94a3b8" font-size="18" font-weight="500">banca</text>
+
+  <!-- Stat 4 -->
+  <rect x="735" y="620" width="255" height="115" rx="16" fill="#ff4b00" fill-opacity="0.15" stroke="#ff4b00" stroke-width="1.5" stroke-opacity="0.4"/>
+  <text x="862" y="672" text-anchor="middle" fill="#ff4b00" font-size="44" font-weight="900">10</text>
+  <text x="862" y="702" text-anchor="middle" fill="#ffffff" font-size="18" font-weight="600">vagas na mentoria</text>
+
+  <!-- Price section -->
+  <rect x="90" y="758" width="600" height="130" rx="20" fill="#ffffff" fill-opacity="0.05" stroke="#ffffff" stroke-width="1" stroke-opacity="0.1"/>
+  <text x="120" y="805" fill="#94a3b8" font-size="22" font-weight="500">Investimento</text>
+  <text x="120" y="855" fill="#ffffff" font-size="50" font-weight="900" letter-spacing="-1">12x R$ 79</text>
+  <text x="379" y="855" fill="#94a3b8" font-size="28" font-weight="400">,00 · sem juros</text>
+  <text x="120" y="885" fill="#94a3b8" font-size="20">ou R$ 797 à vista</text>
+
+  <!-- CTA Button -->
+  <rect x="90" y="912" width="900" height="100" rx="50" fill="url(#accent)" filter="url(#shadow)"/>
+  <text x="540" y="974" text-anchor="middle" fill="#ffffff" font-size="38" font-weight="900" letter-spacing="1">GARANTIR MINHA VAGA →</text>
+
+  <!-- Bottom note -->
+  <text x="540" y="1050" text-anchor="middle" fill="#64748b" font-size="18" font-weight="500">Francisco José · Auditor TCE-PE · 4 aprovações · 2 primeiros lugares</text>
+</svg>
