@@ -24,7 +24,7 @@ import {
   Crosshair,
 } from "lucide-react"
 
-const CTA_LINK = "https://chat.whatsapp.com/GC6XX2njGFcBOrDOhe4mch?mode=gi_t"
+const CTA_LINK = "https://chat.whatsapp.com/KM4wBwDZVOy0BaYrAFhVzz?mode=gi_t"
 
 const testimonials = [
   {
