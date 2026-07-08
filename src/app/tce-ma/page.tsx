@@ -24,7 +24,7 @@ import {
   Crosshair,
 } from "lucide-react"
 
-const CTA_LINK = "https://chat.whatsapp.com/KM4wBwDZVOy0BaYrAFhVzz?mode=gi_t"
+const CTA_LINK = "https://wa.me/5588988058933?text=Ol%C3%A1%2C%20Francisco%21%20Vi%20a%20mentoria%20para%20o%20TCE-MA%20e%20tenho%20interesse.%20Pode%20me%20dar%20mais%20informa%C3%A7%C3%B5es%3F"
 
 const testimonials = [
   {
@@ -222,9 +222,9 @@ export default function TceMaPage() {
           </p>
 
           <div className="flex flex-col items-center gap-3 md:gap-4 mt-2 md:mt-4 w-full">
-            <a href={CTA_LINK} className="group w-full sm:w-auto" data-gtm="join_group">
-              <Button data-gtm="join_group" size="lg" className="w-full sm:w-auto text-base md:text-lg px-8 md:px-10 py-6 md:py-8 font-bold rounded-full shadow-xl bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 group-hover:shadow-[#ff4b00]/30 flex items-center justify-center gap-2 hover:cursor-pointer">
-                Entrar no grupo de lançamento agora
+            <a href={CTA_LINK} className="group w-full sm:w-auto" data-gtm="whatsapp_cta">
+              <Button data-gtm="whatsapp_cta" size="lg" className="w-full sm:w-auto text-base md:text-lg px-8 md:px-10 py-6 md:py-8 font-bold rounded-full shadow-xl bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 group-hover:shadow-[#ff4b00]/30 flex items-center justify-center gap-2 hover:cursor-pointer">
+                Falar com o Francisco agora
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </a>
@@ -267,8 +267,8 @@ export default function TceMaPage() {
           </div>
 
           <div className="mt-10 md:mt-16 text-center">
-            <a href={CTA_LINK} className="inline-block group w-full sm:w-auto" data-gtm="join_group">
-              <Button data-gtm="join_group" size="lg" className="w-full sm:w-auto text-base px-8 py-6 font-bold rounded-full bg-[#1e1f5c] hover:bg-[#151642] text-white transition-all hover:scale-105 active:scale-95 shadow-lg flex items-center justify-center gap-2 hover:cursor-pointer">
+            <a href={CTA_LINK} className="inline-block group w-full sm:w-auto" data-gtm="whatsapp_cta">
+              <Button data-gtm="whatsapp_cta" size="lg" className="w-full sm:w-auto text-base px-8 py-6 font-bold rounded-full bg-[#1e1f5c] hover:bg-[#151642] text-white transition-all hover:scale-105 active:scale-95 shadow-lg flex items-center justify-center gap-2 hover:cursor-pointer">
                 Quero aproveitar essa oportunidade
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Button>
@@ -328,8 +328,8 @@ export default function TceMaPage() {
           </div>
 
           <div className="mt-20 text-center">
-            <a href={CTA_LINK} className="inline-block group" data-gtm="join_group">
-              <Button data-gtm="join_group" size="lg" className="text-lg px-10 py-7 font-bold rounded-full bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 shadow-xl shadow-[#ff4b00]/20 flex items-center gap-2 hover:cursor-pointer">
+            <a href={CTA_LINK} className="inline-block group" data-gtm="whatsapp_cta">
+              <Button data-gtm="whatsapp_cta" size="lg" className="text-lg px-10 py-7 font-bold rounded-full bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 shadow-xl shadow-[#ff4b00]/20 flex items-center gap-2 hover:cursor-pointer">
                 Quero uma das vagas
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
@@ -376,8 +376,8 @@ export default function TceMaPage() {
                 })}
               </div>
               <div className="mt-8 flex justify-center">
-                <a href={CTA_LINK} className="inline-block group" data-gtm="join_group">
-                  <Button data-gtm="join_group" size="lg" className="text-base px-8 py-6 font-bold rounded-full bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 shadow-lg shadow-[#ff4b00]/30 flex items-center gap-2 hover:cursor-pointer">
+                <a href={CTA_LINK} className="inline-block group" data-gtm="whatsapp_cta">
+                  <Button data-gtm="whatsapp_cta" size="lg" className="text-base px-8 py-6 font-bold rounded-full bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 shadow-lg shadow-[#ff4b00]/30 flex items-center gap-2 hover:cursor-pointer">
                     Quero estudar com um Auditor
                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </Button>
@@ -440,8 +440,8 @@ export default function TceMaPage() {
           </div>
 
           <div className="mt-16 text-center">
-            <a href={CTA_LINK} className="inline-block group w-full sm:w-auto" data-gtm="join_group">
-              <Button data-gtm="join_group" size="lg" className="w-full sm:w-auto text-base md:text-lg px-8 md:px-10 py-6 md:py-7 font-bold rounded-full bg-[#1e1f5c] hover:bg-[#151642] text-white transition-all hover:scale-105 active:scale-95 shadow-xl flex items-center justify-center gap-2 hover:cursor-pointer">
+            <a href={CTA_LINK} className="inline-block group w-full sm:w-auto" data-gtm="whatsapp_cta">
+              <Button data-gtm="whatsapp_cta" size="lg" className="w-full sm:w-auto text-base md:text-lg px-8 md:px-10 py-6 md:py-7 font-bold rounded-full bg-[#1e1f5c] hover:bg-[#151642] text-white transition-all hover:scale-105 active:scale-95 shadow-xl flex items-center justify-center gap-2 hover:cursor-pointer">
                 Quero o meu nome nessa lista
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
@@ -483,8 +483,8 @@ export default function TceMaPage() {
           </div>
 
           <div className="mt-16 text-center">
-            <a href={CTA_LINK} className="inline-block group w-full sm:w-auto" data-gtm="join_group">
-              <Button data-gtm="join_group" size="lg" className="w-full sm:w-auto text-base md:text-lg px-8 md:px-10 py-6 md:py-7 font-bold rounded-full bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 shadow-xl flex items-center justify-center gap-2 hover:cursor-pointer shadow-[#ff4b00]/20">
+            <a href={CTA_LINK} className="inline-block group w-full sm:w-auto" data-gtm="whatsapp_cta">
+              <Button data-gtm="whatsapp_cta" size="lg" className="w-full sm:w-auto text-base md:text-lg px-8 md:px-10 py-6 md:py-7 font-bold rounded-full bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 shadow-xl flex items-center justify-center gap-2 hover:cursor-pointer shadow-[#ff4b00]/20">
                 Tirar outra dúvida com o Francisco
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
@@ -520,8 +520,8 @@ export default function TceMaPage() {
             <p className="font-bold text-amber-950">Seu futuro agradece.</p>
           </div>
 
-          <a href={CTA_LINK} className="inline-block group" data-gtm="join_group">
-            <Button data-gtm="join_group" size="lg" className="text-lg px-10 py-7 md:py-8 font-bold rounded-full bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 shadow-xl shadow-[#ff4b00]/20 flex items-center gap-2 hover:cursor-pointer">
+          <a href={CTA_LINK} className="inline-block group" data-gtm="whatsapp_cta">
+            <Button data-gtm="whatsapp_cta" size="lg" className="text-lg px-10 py-7 md:py-8 font-bold rounded-full bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 shadow-xl shadow-[#ff4b00]/20 flex items-center gap-2 hover:cursor-pointer">
               Não vou perder mais tempo
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
