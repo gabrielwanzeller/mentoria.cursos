@@ -56,8 +56,8 @@ const testimonials = [
 
 const faqs = [
   {
-    question: "É muito cedo para começar sem edital?",
-    answer: "Cedo é exatamente onde você quer estar. O edital é iminente — banca já definida. Quem começa agora chega na frente com a preparação para o estilo CEBRASPE dominada.",
+    question: "O edital já saiu, ainda dá tempo?",
+    answer: "Dá, mas o relógio está correndo. As provas são em 22/11 (Analista) e 29/11/2026 (Auditor e Técnico) — cronograma apertado favorece quem já começou. Comece agora e chegue estudando os assuntos certos, no ritmo certo.",
   },
   {
     question: "Consigo estudar sozinho.",
@@ -73,7 +73,7 @@ const faqs = [
   },
   {
     question: "O valor é elevado?",
-    answer: "O salário no TCE-MA supera R$ 20 mil por mês. O investimento na mentoria representa uma fração mínima do seu retorno anual. Você não está gastando — está investindo.",
+    answer: "O salário inicial no TCE-MA chega a R$ 20.112,20 (cargo de Auditor). O investimento na mentoria é de R$ 1.097 (ou 4x sem juros de R$ 274,50) — uma fração mínima do seu retorno no primeiro mês de trabalho. Você não está gastando, está investindo.",
   },
   {
     question: "E se eu não for aprovado?",
@@ -84,8 +84,8 @@ const faqs = [
 const benefits = [
   {
     icon: Coins,
-    title: "Salários de mais de R$ 20.000",
-    description: "Um dos maiores salários iniciais do serviço público do Brasil — com benefícios que tornam a remuneração total ainda mais competitiva.",
+    title: "Salários de até R$ 20.112,20",
+    description: "Auditor: R$ 20.112,20 · Analista: R$ 12.950,00 · Técnico: R$ 11.061,72 — um dos maiores pisos iniciais do serviço público do Brasil, com benefícios que tornam a remuneração total ainda mais competitiva.",
   },
   {
     icon: BadgeCheck,
@@ -99,8 +99,8 @@ const benefits = [
   },
   {
     icon: Clock,
-    title: "O edital ainda não saiu — e isso é uma vantagem",
-    description: "Edital iminente. Você ainda tem tempo de chegar preparado antes da concorrência. Quem começa agora estuda com calma, com método e com direcionamento. Quem espera o edital sair, estuda correndo.",
+    title: "O edital saiu — e a corrida já começou",
+    description: "Inscrições abertas até 21/08/2026. Provas em 22/11 (Analista) e 29/11/2026 (Auditor e Técnico). Quem começa agora estuda com calma, com método e com direcionamento. Quem deixa pra reta final estuda no desespero.",
   },
   {
     icon: CalendarClock,
@@ -126,16 +126,16 @@ const offerings = [
   },
   {
     icon: GraduationCap,
-    title: "5 Meses de Estratégia Concursos Premium",
+    title: "Acesso Estratégia Concursos Premium",
     description:
-      "A melhor plataforma de concursos do Brasil já está no pacote. Você não paga separado. Login próprio, acesso completo, do primeiro ao último dia.",
+      "A melhor plataforma de concursos do Brasil já está no pacote. Você não paga separado. Login próprio, acesso completo.",
     bonus: false,
   },
   {
     icon: MonitorPlay,
-    title: "5 Lives Mensais Exclusivas",
+    title: "Lives Exclusivas",
     description:
-      "Todo mês a gente se encontra com a turma limitada ao vivo. Você recebe direcionamento ao vivo de quem passou em três concursos elaborados pela CEBRASPE.",
+      "A gente se encontra com a turma limitada, ao vivo. Você recebe direcionamento ao vivo de quem passou em três concursos elaborados pela CEBRASPE.",
     bonus: false,
   },
   {
@@ -154,7 +154,7 @@ const offerings = [
     icon: Presentation,
     title: "Live de Análise Completa do Edital",
     description:
-      "Assim que o edital do TCE-MA for publicado, a gente se reúne ao vivo pra dissecar tudo — disciplinas, pesos, perfil da banca, o que priorizar.",
+      "O edital do TCE-MA já saiu. Na Live, a gente se reúne para dissecar tudo — disciplinas, pesos, cronograma de provas e o que priorizar com o tempo que resta.",
     bonus: false,
   },
   {
@@ -207,18 +207,18 @@ export default function TceMaPage() {
 
         <div className="relative z-10 w-full max-w-4xl mx-auto flex flex-col items-center gap-6 md:gap-8">
           <Badge className="h-fit text-xs sm:text-sm px-4 py-1.5 sm:px-5 sm:py-2 font-semibold tracking-wide bg-[#ff4b00] text-white hover:bg-[#e64300] border-none shadow-lg shadow-[#ff4b00]/20 transition-all max-w-[90vw] whitespace-normal text-center leading-snug">
-            🚨 TCE-MA com edital iminente e banca definida — saia na frente
+            🚨 TCE-MA com edital publicado — inscrições até 21/08/2026
           </Badge>
 
           <h1 className="text-[1.75rem] sm:text-4xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight tracking-tight w-full">
-            O concurso do TCE-MA{" "}
+            O edital do TCE-MA{" "}
             <br className="hidden md:block" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff4b00] to-[#ff7a45]">está chegando.</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff4b00] to-[#ff7a45]">saiu.</span>
           </h1>
 
           <p className="text-base sm:text-lg md:text-2xl text-slate-300 max-w-3xl leading-relaxed font-light">
-            Previsão de vagas para Auditor, Analista e Técnico. Salários acima de{" "}
-            <span className="font-bold text-white">R$ 20 mil</span>, estabilidade e uma das maiores oportunidades dos Tribunais de Contas do Nordeste. Receba o plano + direcionamento completo.
+            40 vagas imediatas confirmadas para Auditor, Analista e Técnico. Remuneração de até{" "}
+            <span className="font-bold text-white">R$ 20.112,20</span>, estabilidade e uma das maiores oportunidades dos Tribunais de Contas do Nordeste. Receba o plano + direcionamento completo até a prova.
           </p>
 
           <div className="flex flex-col items-center gap-3 md:gap-4 mt-2 md:mt-4 w-full">
@@ -228,7 +228,7 @@ export default function TceMaPage() {
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </a>
-            <p className="text-white/60 text-sm font-medium">Vagas limitadas. Com direcionamento real.</p>
+            <p className="text-white/60 text-sm font-medium">Apenas 5 vagas para esta turma. Com direcionamento real.</p>
           </div>
         </div>
 
@@ -506,12 +506,11 @@ export default function TceMaPage() {
             O tempo está passando
           </p>
           <h2 className="text-3xl md:text-5xl font-extrabold text-[#1e1f5c] mb-6 tracking-tight">
-            O edital pode sair a qualquer momento.
+            Faltam poucas semanas até a prova.
           </h2>
           <p className="text-slate-600 text-xl leading-relaxed mb-10">
-            Banca definida. CEBRASPE. O processo está em andamento.
-            Quem entrar agora já começa com vantagem real sobre quem vai esperar
-            o edital sair.
+            Banca definida. CEBRASPE. Inscrições até 21/08/2026, provas em novembro.
+            Quem entrar agora já começa com vantagem real sobre quem vai deixar para a reta final.
           </p>
           <div className="inline-block px-8 py-8 rounded-2xl bg-amber-50 text-amber-900 border border-amber-200 text-lg shadow-sm mb-12 text-left max-w-2xl">
             <p className="font-bold mb-4 text-xl text-amber-950">Sabe o que eu aprendi passando em 4 concursos?</p>
@@ -530,8 +529,27 @@ export default function TceMaPage() {
         </div>
       </section>
 
+      {/* ── INVESTIMENTO ── */}
+      <section className="py-16 md:py-24 px-5 md:px-6 bg-[#1e1f5c]">
+        <div className="max-w-lg mx-auto text-center flex flex-col items-center gap-6">
+          <p className="text-sm font-bold uppercase tracking-widest text-[#ff4b00]">Investimento</p>
+          <div>
+            <p className="text-5xl md:text-6xl font-extrabold text-white">R$ 1.097</p>
+            <p className="text-slate-300 text-lg mt-2">ou 4x sem juros de <span className="font-semibold text-white">R$ 274,50</span></p>
+          </div>
+          <p className="text-slate-300 text-base font-medium">Restam apenas 5 vagas para esta turma.</p>
+          <a href={CTA_LINK} className="inline-block group w-full sm:w-auto" data-gtm="whatsapp_cta">
+            <Button data-gtm="whatsapp_cta" size="lg" className="w-full sm:w-auto text-base md:text-lg px-8 md:px-10 py-6 md:py-7 font-bold rounded-full bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 shadow-xl flex items-center justify-center gap-2 hover:cursor-pointer">
+              Garantir minha vaga agora
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </Button>
+          </a>
+        </div>
+      </section>
+
       {/* ── FOOTER ── */}
       <footer className="py-8 text-center text-slate-500 text-sm border-t border-slate-200 mt-auto bg-slate-50">
+        <p className="font-semibold text-slate-700 mb-1">Restam apenas 5 vagas para esta turma.</p>
         <p>Copyright &copy; Francisco José 2026. Todos os direitos reservados.</p>
       </footer>
 
