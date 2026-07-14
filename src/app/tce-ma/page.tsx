@@ -533,9 +533,11 @@ export default function TceMaPage() {
       <section className="py-16 md:py-24 px-5 md:px-6 bg-[#1e1f5c]">
         <div className="max-w-lg mx-auto text-center flex flex-col items-center gap-6">
           <p className="text-sm font-bold uppercase tracking-widest text-[#ff4b00]">Investimento</p>
-          <div>
+          <div className="flex flex-col items-center gap-2">
+            <p className="text-slate-400 text-lg line-through">Valor do pacote completo: R$ 2.497</p>
+            <p className="text-slate-200 text-xl font-semibold">Nesta turma:</p>
             <p className="text-5xl md:text-6xl font-extrabold text-white">R$ 1.097</p>
-            <p className="text-slate-300 text-lg mt-2">ou 4x sem juros de <span className="font-semibold text-white">R$ 274,50</span></p>
+            <p className="text-slate-300 text-lg">à vista ou 4x sem juros de <span className="font-semibold text-white">R$ 274,50</span></p>
           </div>
           <p className="text-slate-300 text-base font-medium">Restam apenas 5 vagas para esta turma.</p>
           <a href={CTA_LINK} className="inline-block group w-full sm:w-auto" data-gtm="whatsapp_cta">
