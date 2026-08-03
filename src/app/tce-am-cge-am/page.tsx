@@ -60,12 +60,12 @@ const faqs = [
     answer: "Vale — e muito. Quem começa antes do edital estuda com calma, constrói a base e chega na reta final com confiança. Quem espera o edital sair estuda em pânico. A diferença aparece no resultado.",
   },
   {
-    question: "Consigo estudar sozinho.",
+    question: "Consigo estudar sozinho?",
     answer: "Talvez. Mas quanto tempo vai perder descobrindo o que funciona? Passei em 4 concursos públicos — coloco tudo isso na sua mão desde o primeiro dia.",
   },
   {
     question: "Sou iniciante. É pra mim?",
-    answer: "É exatamente pra você. Iniciante não é desvantagem — é tela em branco. A gente constrói do zero, do jeito certo.",
+    answer: "É exatamente para você. Ser iniciante não é uma desvantagem — é estar diante de uma tela em branco. A gente constrói do zero, do jeito certo.",
   },
   {
     question: "O suporte é realmente personalizado?",
@@ -73,7 +73,7 @@ const faqs = [
   },
   {
     question: "O valor é elevado?",
-    answer: "Os salários chegam a R$ 13.700,00 no CGE-AM e R$ 11.534,07 no TCE-AM. O investimento na mentoria é de R$ 1.497 (ou 12x de R$ 149) — uma fração do seu retorno no primeiro mês de trabalho. Você não está gastando, está investindo.",
+    answer: "Os salários chegam a R$ 13.700,00 na CGE-AM e a R$ 11.534,07 no TCE-AM. O investimento na mentoria é de R$ 1.497 (ou 12x de R$ 149) — uma fração do seu retorno no primeiro mês de trabalho. Você não está gastando, está investindo.",
   },
   {
     question: "E se eu não for aprovado?",
@@ -90,7 +90,7 @@ const benefits = [
   {
     icon: BadgeCheck,
     title: "Banca a definir — e isso é vantagem",
-    description: "Os editais ainda não saíram. Quem começa agora estuda a base sólida que qualquer banca vai cobrar — e chega na prova com meses de vantagem sobre o campo.",
+    description: "Os editais ainda não saíram. Quem começa agora estuda a base sólida que qualquer banca vai cobrar — e chega à prova com meses de vantagem sobre os demais candidatos.",
   },
   {
     icon: ShieldCheck,
@@ -105,7 +105,7 @@ const benefits = [
   {
     icon: CalendarClock,
     title: "Dois concursos. Um estado. 80 vagas.",
-    description: "Raramente um estado abre dois concursos de Controle ao mesmo tempo. Essa janela não vai durar — e o próximo ciclo como esse demora anos.",
+    description: "Raramente um estado abre dois concursos de controle ao mesmo tempo. Essa janela não vai durar — e o próximo ciclo como esse pode demorar anos.",
   },
 ]
 
@@ -114,7 +114,7 @@ const offerings = [
     icon: Target,
     title: "Plano de Estudos 100% Personalizado",
     description:
-      "Esqueça o plano genérico que serve pra todo mundo e não funciona pra ninguém. Você recebe um planejamento feito exclusivamente pra você — baseado nos temas mais cobrados nos Tribunais de Contas e Controladorias, no seu tempo disponível.",
+      "Esqueça o plano genérico que serve para todo mundo e não funciona para ninguém. Você recebe um planejamento feito exclusivamente para você — baseado nos temas mais cobrados em provas de Tribunais de Contas e Controladorias e no seu tempo disponível.",
     bonus: false,
   },
   {
@@ -126,7 +126,7 @@ const offerings = [
   },
   {
     icon: GraduationCap,
-    title: "Acesso Estratégia Concursos Premium",
+    title: "Acesso ao Estratégia Concursos Premium",
     description:
       "A melhor plataforma de concursos do Brasil já está no pacote. Você não paga separado. Login próprio, acesso completo.",
     bonus: false,
@@ -135,7 +135,7 @@ const offerings = [
     icon: MonitorPlay,
     title: "Lives Exclusivas",
     description:
-      "A gente se encontra com a turma limitada, ao vivo. Você recebe direcionamento ao vivo de quem passou em 4 concursos públicos, incluindo TCE-PA em 1º lugar.",
+      "A gente se encontra com a turma limitada, ao vivo. Você recebe o direcionamento de quem passou em 4 concursos públicos, incluindo o TCE-PA em 1º lugar.",
     bonus: false,
   },
   {
@@ -152,16 +152,16 @@ const offerings = [
   },
   {
     icon: Presentation,
-    title: "Live de Análise do Edital assim que publicado",
+    title: "Live de Análise do Edital assim que for publicado",
     description:
-      "Assim que o edital do TCE-AM ou CGE-AM sair, a gente se reúne ao vivo para dissecar tudo — disciplinas, pesos, cronograma e o que priorizar. Você não vai precisar interpretar o edital sozinho.",
+      "Assim que o edital do TCE-AM ou da CGE-AM sair, a gente se reúne ao vivo para dissecar tudo — disciplinas, pesos, cronograma e o que priorizar. Você não vai precisar interpretar o edital sozinho.",
     bonus: false,
   },
   {
     icon: Crosshair,
     title: "🎁 Raio-X Completo — Tribunais de Contas e Controladorias",
     description:
-      "Análise de mais de 5.000 questões de Controle aplicadas nas maiores bancas do Brasil. Você vai saber exatamente o que mais cai, como cai e onde concentrar energia — seja qual for a banca definida.",
+      "Análise de mais de 5.000 questões de controle aplicadas pelas maiores bancas do Brasil. Você vai saber exatamente o que mais cai, como cai e onde concentrar energia — seja qual for a banca definida.",
     bonus: true,
   },
   {
@@ -192,7 +192,7 @@ const approvals = [
     icon: CheckCircle2,
     title: "ISS Sobral — Aprovado",
     description:
-      "Aprovação no fiscal municipal — o método funciona em qualquer concurso.",
+      "Aprovação na área fiscal municipal — o método funciona em qualquer concurso.",
   },
 ]
 
@@ -206,13 +206,13 @@ export default function TceAmCgeAmPage() {
 
         <div className="relative z-10 w-full max-w-4xl mx-auto flex flex-col items-center gap-6 md:gap-8">
           <Badge className="h-fit text-xs sm:text-sm px-4 py-1.5 sm:px-5 sm:py-2 font-semibold tracking-wide bg-[#ff4b00] text-white hover:bg-[#e64300] border-none shadow-lg shadow-[#ff4b00]/20 transition-all max-w-[90vw] whitespace-normal text-center leading-snug">
-            🚨 Dois concursos de Controle previstos no Amazonas para os próximos 6 meses
+            🚨 Dois concursos de controle previstos no Amazonas para os próximos 6 meses
           </Badge>
 
           <h1 className="text-[1.75rem] sm:text-4xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight tracking-tight w-full">
-            Dois concursos de Controle no Amazonas.{" "}
+            Dois concursos de controle no Amazonas.{" "}
             <br className="hidden md:block" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff4b00] to-[#ff7a45]">Você preparado para os dois?</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff4b00] to-[#ff7a45]">Você está preparado para os dois?</span>
           </h1>
 
           <p className="text-base sm:text-lg md:text-2xl text-slate-300 max-w-3xl leading-relaxed font-light">
@@ -454,7 +454,7 @@ export default function TceAmCgeAmPage() {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16 space-y-4">
             <p className="text-sm font-bold uppercase tracking-widest text-[#ff4b00]">
-              Perguntas Frequentes
+              Perguntas frequentes
             </p>
             <h2 className="text-3xl md:text-5xl font-extrabold text-[#1e1f5c] tracking-tight">
               Ainda tem alguma dúvida?
@@ -513,7 +513,7 @@ export default function TceAmCgeAmPage() {
           <div className="inline-block px-8 py-8 rounded-2xl bg-amber-50 text-amber-900 border border-amber-200 text-lg shadow-sm mb-12 text-left max-w-2xl">
             <p className="font-bold mb-4 text-xl text-amber-950">Sabe o que eu aprendi passando em 4 concursos?</p>
             <p className="mb-4 leading-relaxed">Ninguém começa preparado. Ninguém tem o momento perfeito. Ninguém tem tudo resolvido antes de dar o primeiro passo.</p>
-            <p className="mb-5 leading-relaxed">O que separa quem passa de quem fica tentando não é talento. <span className="font-semibold">É a decisão de começar</span> — mesmo sem ter tudo, mesmo com medo, mesmo sem certeza. Começa hoje com o que você tem. O caminho se constrói andando.</p>
+            <p className="mb-5 leading-relaxed">O que separa quem passa de quem fica tentando não é talento. <span className="font-semibold">É a decisão de começar</span> — mesmo sem ter tudo, mesmo com medo, mesmo sem certeza. Comece hoje com o que você tem. O caminho se constrói andando.</p>
             <p className="font-bold text-amber-950">Seu futuro agradece.</p>
           </div>
 
