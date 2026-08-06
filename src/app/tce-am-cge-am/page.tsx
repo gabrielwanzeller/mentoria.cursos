@@ -24,7 +24,7 @@ import {
   Crosshair,
 } from "lucide-react"
 
-const CTA_LINK = "https://wa.me/5588988058933?text=Ol%C3%A1%2C%20Francisco%21%20Vi%20a%20mentoria%20para%20o%20TCE-AM%20e%20CGE-AM%20e%20tenho%20interesse.%20Pode%20me%20dar%20mais%20informa%C3%A7%C3%B5es%3F"
+const CTA_LINK = "https://wa.me/5588988058933?text=Ol%C3%A1%2C%20Francisco%21%20Vi%20o%20an%C3%BAncio%20sobre%20a%20mentoria%20TCE-AM%20e%20CGE-AM%20e%20tenho%20interesse"
 
 const testimonials = [
   {
