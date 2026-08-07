@@ -15,15 +15,16 @@ import {
   CheckCircle2,
   Clock,
   ShieldCheck,
-  Users,
   Coins,
   CalendarClock,
   ArrowRight,
   Star,
-  HelpCircle
+  HelpCircle,
+  BadgeCheck,
+  Crosshair,
 } from "lucide-react"
 
-const CTA_LINK = "https://chat.whatsapp.com/IlnZMRhz5ra8TnMpNlQF90?mode=gi_t"
+const CTA_LINK = "https://wa.me/5588988058933?text=Ol%C3%A1%2C%20Francisco%21%20Vi%20a%20mentoria%20para%20o%20TCE-PB%20e%20tenho%20interesse.%20Pode%20me%20dar%20mais%20informa%C3%A7%C3%B5es%3F"
 
 const testimonials = [
   {
@@ -55,12 +56,12 @@ const testimonials = [
 
 const faqs = [
   {
-    question: "É muito cedo para começar sem edital?",
-    answer: "Cedo é exatamente onde você quer estar. Quem espera o edital sair estuda correndo. Quem começa agora chega na frente.",
+    question: "O edital está previsto para 2027. Vale começar agora?",
+    answer: "Vale — e é exatamente agora que você deve começar. Com meses de antecedência, você constrói a base com calma, ajusta o plano quando o edital sair e chega à reta final com confiança. Quem espera o edital para começar estuda em pânico e chega à prova sem base.",
   },
   {
     question: "Consigo estudar sozinho.",
-    answer: "Talvez. Mas quanto tempo vai perder descobrindo o que funciona? Passei em 4 concursos — coloco tudo isso na sua mão desde o primeiro dia.",
+    answer: "Talvez. Mas quanto tempo vai perder descobrindo o que funciona? Passei em 4 concursos públicos, incluindo três elaborados pela CEBRASPE — coloco tudo isso na sua mão desde o primeiro dia.",
   },
   {
     question: "Sou iniciante. É pra mim?",
@@ -72,24 +73,24 @@ const faqs = [
   },
   {
     question: "O valor é elevado?",
-    answer: "O salário do Auditor TCE-PB supera R$ 240 mil por ano. O investimento na mentoria representa menos de 0,7% disso.",
+    answer: "O salário do Auditor no TCE-PB é de R$ 18.866,56 — acima de R$ 20 mil com benefícios. O investimento na mentoria é de R$ 1.497 (ou 12x de R$ 149) — uma fração do seu retorno no primeiro mês de trabalho. Você não está gastando, está investindo.",
   },
   {
     question: "E se eu não for aprovado?",
-    answer: "Nenhuma mentoria garante aprovação. O que garanto é o melhor método, material completo e acompanhamento direto de quem passou nesse concurso. O resto depende de você.",
+    answer: "Nenhuma mentoria garante aprovação. O que garanto é o melhor método, material completo e acompanhamento direto de quem passou em 4 concursos públicos, três deles elaborados pela CEBRASPE. O resto depende de você.",
   },
 ]
 
 const benefits = [
   {
     icon: Coins,
-    title: "Salário de mais de R$ 20.000",
-    description: "Um dos maiores salários iniciais do serviço público do Nordeste — sem contar auxílio saúde de R$ 1.500 e auxílio alimentação de R$ 1.100.",
+    title: "Salário acima de R$ 20 mil",
+    description: "O TCE-PB oferece uma das maiores remunerações entre os Tribunais de Contas do Brasil — cargo de Auditor de Controle Externo com salário acima de R$ 20.000,00.",
   },
   {
-    icon: Users,
-    title: "50 vagas — e a intenção de convocar todos",
-    description: "A intenção declarada do órgão é convocar todos os aprovados para suprir o déficit no quadro. É a maior oportunidade de entrada no Tribunal em quase uma década.",
+    icon: BadgeCheck,
+    title: "Banca provável: CEBRASPE",
+    description: "O TCE-PB tem histórico com a CEBRASPE — e esse é exatamente o território onde meu histórico fala mais alto. Três aprovações em concursos elaborados pela CEBRASPE, incluindo o 1º lugar no TCE-PA.",
   },
   {
     icon: ShieldCheck,
@@ -98,13 +99,13 @@ const benefits = [
   },
   {
     icon: Clock,
-    title: "O edital ainda não saiu — e isso é uma vantagem",
-    description: "Edital previsto até junho de 2026. Você ainda tem tempo de chegar preparado antes da concorrência. Quem começa agora estuda com calma, com método e com direcionamento. Quem espera o edital sair, estuda correndo.",
+    title: "Edital previsto para 2027 — e isso é vantagem",
+    description: "Comissão formada, concurso encaminhado. Você tem meses de antecedência para construir uma base sólida. Quem começa agora chega à reta final confiante. Quem espera o edital sair estuda em pânico.",
   },
   {
     icon: CalendarClock,
-    title: "Último concurso: 2017",
-    description: "Quase 10 anos sem abrir vagas. Quem não entrar nessa oportunidade, espera mais uma década. Simples assim.",
+    title: "Vagas para Auditor de Controle Externo",
+    description: "Cargo de nível superior, com ampla abertura para candidatos de diferentes formações. Uma das maiores remunerações do serviço público da Paraíba.",
   },
 ]
 
@@ -113,71 +114,86 @@ const offerings = [
     icon: Target,
     title: "Plano de Estudos 100% Personalizado",
     description:
-      "Esqueça o plano genérico que serve pra todo mundo e não funciona pra ninguém. Você recebe um planejamento feito exclusivamente pra você — baseado nos temas mais cobrados, no seu tempo.",
+      "Esqueça o plano genérico que serve para todo mundo e não funciona para ninguém. Você recebe um planejamento feito exclusivamente para você — baseado nos temas mais cobrados pela CEBRASPE nos Tribunais de Contas, no seu tempo disponível e ordenado pela frequência real de cobrança.",
+    bonus: false,
   },
   {
     icon: MessageCircle,
     title: "WhatsApp Direto Comigo — De Segunda a Segunda",
     description:
       "Sem robô. Sem IA. Sem assistente. Quando você manda mensagem, respondo eu. Um Auditor do TCE-PE ao seu lado de segunda a segunda.",
+    bonus: false,
   },
   {
     icon: GraduationCap,
-    title: "6 Meses de Estratégia Concursos Premium",
+    title: "Acesso Estratégia Concursos Premium",
     description:
-      "A melhor plataforma de concursos do Brasil já está no pacote. Você não paga separado. Login próprio, acesso completo, do primeiro ao último dia.",
+      "A melhor plataforma de concursos do Brasil já está no pacote. Você não paga separado. Login próprio, acesso completo.",
+    bonus: false,
   },
   {
     icon: MonitorPlay,
-    title: "6 Lives Mensais Exclusivas",
+    title: "Lives Exclusivas",
     description:
-      "Todo mês a gente se encontra com a turma limitada ao vivo. Você recebe dicas ao vivo com quem passou no último concurso do TCE-PB.",
+      "A gente se encontra com a turma limitada, ao vivo. Você recebe direcionamento de quem passou em 4 concursos públicos, incluindo três elaborados pela CEBRASPE.",
+    bonus: false,
   },
   {
     icon: BookOpenCheck,
     title: "Técnicas de Estudos + Cadernos de Questões",
     description: "Revisões programadas para fixar o conteúdo certo na hora certa.",
+    bonus: false,
   },
   {
     icon: BookMarked,
     title: "E-books de Apostas e Jurisprudência",
     description: "Material focado no que realmente cai — sem enrolação.",
+    bonus: false,
   },
   {
     icon: Presentation,
-    title: "Live de Análise Completa do Edital",
+    title: "Live de Análise do Edital assim que for publicado",
     description:
-      "Assim que o edital do TCE-PB for publicado, a gente se reúne ao vivo pra dissecar tudo — disciplinas, pesos, perfil da banca, o que priorizar.",
+      "Quando o edital do TCE-PB sair, a gente se reúne ao vivo para dissecar tudo — disciplinas, pesos, cronograma e o que priorizar com o tempo que resta. Você não vai precisar interpretar o edital sozinho.",
+    bonus: false,
+  },
+  {
+    icon: Crosshair,
+    title: "🎁 Raio-X Completo da Banca CEBRASPE",
+    description:
+      "Análise de mais de 5.000 questões de controle aplicadas pela CEBRASPE. Você vai saber exatamente o que mais cai, como cai, os padrões de pegadinha e onde concentrar energia. Material exclusivo para Tribunais de Contas.",
+    bonus: true,
   },
   {
     icon: HeartHandshake,
     title: "Acompanhamento Humanizado com Método Real",
     description: "Você estuda. Eu cuido do resto.",
+    bonus: false,
   },
 ]
 
 const approvals = [
   {
     icon: Trophy,
-    title: "TCE-PA — 1º lugar",
-    description: "Aprovado em 1º lugar nas provas objetivas e discursivas aos 23 anos.",
+    title: "TCE-PA — 1º lugar (CEBRASPE)",
+    description: "Aprovado em 1º lugar nas provas objetivas e discursivas aos 23 anos — em um concurso elaborado pela mesma banca apontada como provável para o TCE-PB.",
   },
   {
     icon: Medal,
-    title: "TCE-PB — Aprovado",
-    description: "Passei no último concurso do TCE-PB — o mesmo que você vai enfrentar.",
+    title: "TCE-PB — Aprovado (CEBRASPE)",
+    description: "Passei no concurso do TCE-PB — o mesmo tribunal para o qual vou preparar você. Conheço a prova por dentro.",
   },
   {
     icon: CheckCircle2,
-    title: "TCE-PE — Auditor",
+    title: "TCE-PE — Auditor (CEBRASPE)",
     description:
-      "Hoje ocupo o cargo de Auditor no melhor Tribunal de Contas do Brasil. Carreira construída com método — não com sorte.",
+      "Hoje ocupo o cargo de Auditor no melhor Tribunal de Contas do Brasil. Três aprovações na mesma banca — não é coincidência, é método.",
   },
   {
     icon: CheckCircle2,
     title: "ISS Sobral — Aprovado",
     description:
-      "Mais um Primeiro Lugar na prova objetiva que confirma que o método funciona em qualquer banca, qualquer concurso.",
+      "Aprovação na área fiscal municipal — o método funciona em qualquer concurso.",
   },
 ]
 
@@ -188,30 +204,31 @@ export default function TcePbPage() {
       <section className="relative flex flex-col items-center justify-center min-h-[92dvh] text-center px-5 pt-16 pb-20 md:py-28 overflow-hidden bg-gradient-to-br from-[#1e1f5c] via-[#2e2f83] to-[#1e1f5c]">
         {/* Glow Effects */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-2xl h-64 bg-[#ff4b00]/20 blur-[120px] rounded-full pointer-events-none" />
-        
+
         <div className="relative z-10 w-full max-w-4xl mx-auto flex flex-col items-center gap-6 md:gap-8">
           <Badge className="h-fit text-xs sm:text-sm px-4 py-1.5 sm:px-5 sm:py-2 font-semibold tracking-wide bg-[#ff4b00] text-white hover:bg-[#e64300] border-none shadow-lg shadow-[#ff4b00]/20 transition-all max-w-[90vw] whitespace-normal text-center leading-snug">
-            🚨 TCE-PB vai abrir cerca de 50 vagas — saia na frente
+            🚨 TCE-PB com concurso previsto para 2027 — comissão formada. Comece agora e torne-se Auditor em 2027.
           </Badge>
 
-          <h1 className="text-[1.75rem] sm:text-4xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight tracking-tight w-full">
-            O concurso do TCE-PB{" "}
+          <h1 className="text-[1.75rem] sm:text-4xl md:text-6xl lg:text-6xl font-extrabold text-white leading-tight tracking-tight w-full">
+            Comece agora e <span className="whitespace-nowrap">torne-se</span>{" "}
             <br className="hidden md:block" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff4b00] to-[#ff7a45]">está chegando.</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff4b00] to-[#ff7a45]">Auditor do TCE-PB em 2027.</span>
           </h1>
 
           <p className="text-base sm:text-lg md:text-2xl text-slate-300 max-w-3xl leading-relaxed font-light">
-            Mais de <span className="font-bold text-white">R$ 20 mil</span>, trabalho de 7 às 13h, estabilidade e uma das melhores capitais do Nordeste. Receba o plano + direcionamento completo.
+            Concurso previsto para Auditor de Controle Externo com salário acima de{" "}
+            <span className="font-bold text-white">R$ 20 mil</span>. Comissão formada e edital ainda não publicado — você tem tempo de chegar preparado. Mentoria de 6 meses com acompanhamento direto de um Auditor aprovado em 4 concursos.
           </p>
 
           <div className="flex flex-col items-center gap-3 md:gap-4 mt-2 md:mt-4 w-full">
-            <a href={CTA_LINK} className="group w-full sm:w-auto" data-gtm="join-group">
-              <Button size="lg" className="w-full sm:w-auto text-base md:text-lg px-8 md:px-10 py-6 md:py-8 font-bold rounded-full shadow-xl bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 group-hover:shadow-[#ff4b00]/30 flex items-center justify-center gap-2 hover:cursor-pointer">
-                Entrar no grupo de lançamento agora
+            <a href={CTA_LINK} className="group w-full sm:w-auto" data-gtm="click_whatsapp">
+              <Button data-gtm="click_whatsapp" size="lg" className="w-full sm:w-auto text-base md:text-lg px-8 md:px-10 py-6 md:py-8 font-bold rounded-full shadow-xl bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 group-hover:shadow-[#ff4b00]/30 flex items-center justify-center gap-2 hover:cursor-pointer">
+                Falar com o Francisco agora
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
             </a>
-            <p className="text-white/60 text-sm font-medium">Vagas limitadas. Com direcionamento real.</p>
+            <p className="text-white/60 text-sm font-medium">Vagas limitadas. Mentoria de 6 meses com acompanhamento direto.</p>
           </div>
         </div>
 
@@ -250,8 +267,8 @@ export default function TcePbPage() {
           </div>
 
           <div className="mt-10 md:mt-16 text-center">
-            <a href={CTA_LINK} className="inline-block group w-full sm:w-auto" data-gtm="join-group">
-              <Button size="lg" className="w-full sm:w-auto text-base px-8 py-6 font-bold rounded-full bg-[#1e1f5c] hover:bg-[#151642] text-white transition-all hover:scale-105 active:scale-95 shadow-lg flex items-center justify-center gap-2 hover:cursor-pointer">
+            <a href={CTA_LINK} className="inline-block group w-full sm:w-auto" data-gtm="click_whatsapp">
+              <Button data-gtm="click_whatsapp" size="lg" className="w-full sm:w-auto text-base px-8 py-6 font-bold rounded-full bg-[#1e1f5c] hover:bg-[#151642] text-white transition-all hover:scale-105 active:scale-95 shadow-lg flex items-center justify-center gap-2 hover:cursor-pointer">
                 Quero aproveitar essa oportunidade
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Button>
@@ -281,16 +298,29 @@ export default function TcePbPage() {
               return (
                 <div
                   key={i}
-                  className="flex flex-col gap-6 p-8 rounded-3xl bg-white border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                  className={`flex flex-col gap-6 p-8 rounded-3xl border shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 ${
+                    item.bonus
+                      ? "bg-amber-50 border-amber-300 ring-2 ring-amber-400/40"
+                      : "bg-white border-slate-200"
+                  }`}
                 >
-                  <div className="w-12 h-12 rounded-xl bg-orange-100 flex items-center justify-center text-[#ff4b00]">
+                  <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${
+                    item.bonus ? "bg-amber-100 text-amber-600" : "bg-orange-100 text-[#ff4b00]"
+                  }`}>
                     <Icon className="w-6 h-6" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-xl text-[#1e1f5c] mb-3 leading-tight">
+                    {item.bonus && (
+                      <span className="inline-block mb-2 text-xs font-bold uppercase tracking-widest text-amber-600 bg-amber-100 px-2 py-0.5 rounded-full">
+                        Bônus exclusivo
+                      </span>
+                    )}
+                    <h3 className={`font-bold text-xl mb-3 leading-tight ${item.bonus ? "text-amber-900" : "text-[#1e1f5c]"}`}>
                       {item.title}
                     </h3>
-                    <p className="text-base text-slate-600 leading-relaxed">{item.description}</p>
+                    <p className={`text-base leading-relaxed ${item.bonus ? "text-amber-800" : "text-slate-600"}`}>
+                      {item.description}
+                    </p>
                   </div>
                 </div>
               )
@@ -298,8 +328,8 @@ export default function TcePbPage() {
           </div>
 
           <div className="mt-20 text-center">
-            <a href={CTA_LINK} className="inline-block group" data-gtm="join-group">
-              <Button size="lg" className="text-lg px-10 py-7 font-bold rounded-full bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 shadow-xl shadow-[#ff4b00]/20 flex items-center gap-2 hover:cursor-pointer">
+            <a href={CTA_LINK} className="inline-block group" data-gtm="click_whatsapp">
+              <Button data-gtm="click_whatsapp" size="lg" className="text-lg px-10 py-7 font-bold rounded-full bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 shadow-xl shadow-[#ff4b00]/20 flex items-center gap-2 hover:cursor-pointer">
                 Quero uma das vagas
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
@@ -323,7 +353,7 @@ export default function TcePbPage() {
               </h2>
               <p className="text-slate-300 text-lg md:text-xl leading-relaxed">
                 Não sou professor que aprendeu sobre concurso em livro. Sou Auditor do TCE-PE — e cheguei
-                aqui passando pelos mesmos concursos que você quer passar. O meu método é real.
+                aqui passando pelos mesmos concursos que você quer passar. O meu método é real. E com a CEBRASPE, especificamente, meu histórico fala por si.
               </p>
 
               <div className="flex flex-col gap-6 w-full mt-6">
@@ -345,9 +375,9 @@ export default function TcePbPage() {
                   )
                 })}
               </div>
-              <div className="mt-8">
-                <a href={CTA_LINK} className="inline-block group" data-gtm="join-group">
-                  <Button size="lg" className="text-base px-8 py-6 font-bold rounded-full bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 shadow-lg shadow-[#ff4b00]/30 flex items-center gap-2 hover:cursor-pointer">
+              <div className="mt-8 flex justify-center">
+                <a href={CTA_LINK} className="inline-block group" data-gtm="click_whatsapp">
+                  <Button data-gtm="click_whatsapp" size="lg" className="text-base px-8 py-6 font-bold rounded-full bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 shadow-lg shadow-[#ff4b00]/30 flex items-center gap-2 hover:cursor-pointer">
                     Quero estudar com um Auditor
                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </Button>
@@ -358,11 +388,11 @@ export default function TcePbPage() {
             {/* Foto */}
             <div className="relative flex justify-center lg:justify-end mt-12 lg:mt-0 lg:ml-10">
               <div className="absolute inset-0 bg-gradient-to-t from-[#0a0f2c] via-transparent to-transparent z-10 bottom-0 h-full w-full pointer-events-none" />
-              <Image 
-                src="/tce-pb/francisco-w-bluer-v3.png" 
-                alt="Francisco José - Auditor do TCE-PE" 
-                width={1000} 
-                height={1000} 
+              <Image
+                src="/tce-pb/francisco-w-bluer-v3.png"
+                alt="Francisco José - Auditor do TCE-PE"
+                width={1000}
+                height={1000}
                 className="max-h-[1000px] w-auto object-contain drop-shadow-2xl relative z-0"
               />
             </div>
@@ -410,8 +440,8 @@ export default function TcePbPage() {
           </div>
 
           <div className="mt-16 text-center">
-            <a href={CTA_LINK} className="inline-block group w-full sm:w-auto" data-gtm="join-group">
-              <Button size="lg" className="w-full sm:w-auto text-base md:text-lg px-8 md:px-10 py-6 md:py-7 font-bold rounded-full bg-[#1e1f5c] hover:bg-[#151642] text-white transition-all hover:scale-105 active:scale-95 shadow-xl flex items-center justify-center gap-2 hover:cursor-pointer">
+            <a href={CTA_LINK} className="inline-block group w-full sm:w-auto" data-gtm="click_whatsapp">
+              <Button data-gtm="click_whatsapp" size="lg" className="w-full sm:w-auto text-base md:text-lg px-8 md:px-10 py-6 md:py-7 font-bold rounded-full bg-[#1e1f5c] hover:bg-[#151642] text-white transition-all hover:scale-105 active:scale-95 shadow-xl flex items-center justify-center gap-2 hover:cursor-pointer">
                 Quero o meu nome nessa lista
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
@@ -453,8 +483,8 @@ export default function TcePbPage() {
           </div>
 
           <div className="mt-16 text-center">
-            <a href={CTA_LINK} className="inline-block group w-full sm:w-auto" data-gtm="join-group">
-              <Button size="lg" className="w-full sm:w-auto text-base md:text-lg px-8 md:px-10 py-6 md:py-7 font-bold rounded-full bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 shadow-xl flex items-center justify-center gap-2 hover:cursor-pointer shadow-[#ff4b00]/20">
+            <a href={CTA_LINK} className="inline-block group w-full sm:w-auto" data-gtm="click_whatsapp">
+              <Button data-gtm="click_whatsapp" size="lg" className="w-full sm:w-auto text-base md:text-lg px-8 md:px-10 py-6 md:py-7 font-bold rounded-full bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 shadow-xl flex items-center justify-center gap-2 hover:cursor-pointer shadow-[#ff4b00]/20">
                 Tirar outra dúvida com o Francisco
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
@@ -467,7 +497,7 @@ export default function TcePbPage() {
       <section className="py-16 md:py-24 px-5 md:px-6 mb-8 md:mb-12 bg-white relative overflow-hidden">
         {/* Abstract pattern */}
         <div className="absolute top-0 right-0 w-64 h-64 bg-orange-50 rounded-full blur-3xl pointer-events-none -mr-20 -mt-20" />
-        
+
         <div className="max-w-3xl mx-auto text-center relative z-10 flex flex-col items-center">
           <div className="w-16 h-16 bg-orange-100 text-[#ff4b00] rounded-full flex items-center justify-center mb-6">
             <Clock className="w-8 h-8" />
@@ -476,12 +506,10 @@ export default function TcePbPage() {
             O tempo está passando
           </p>
           <h2 className="text-3xl md:text-5xl font-extrabold text-[#1e1f5c] mb-6 tracking-tight">
-            O edital pode sair a qualquer momento.
+            Concurso previsto para 2027. O melhor momento para começar é agora.
           </h2>
           <p className="text-slate-600 text-xl leading-relaxed mb-10">
-            Comissão formada. Banca a definir. O processo está em andamento.
-            Quem entrar no grupo agora já começa com vantagem real sobre quem vai esperar
-            o edital sair.
+            Comissão formada, edital encaminhado. Quem entrar agora chegará em 2027 com a base construída, o plano ajustado e meses de vantagem sobre quem decidiu esperar. Com salário acima de R$ 20 mil e banca provável CEBRASPE, o TCE-PB é uma das maiores oportunidades entre os Tribunais de Contas do Nordeste.
           </p>
           <div className="inline-block px-8 py-8 rounded-2xl bg-amber-50 text-amber-900 border border-amber-200 text-lg shadow-sm mb-12 text-left max-w-2xl">
             <p className="font-bold mb-4 text-xl text-amber-950">Sabe o que eu aprendi passando em 4 concursos?</p>
@@ -490,8 +518,8 @@ export default function TcePbPage() {
             <p className="font-bold text-amber-950">Seu futuro agradece.</p>
           </div>
 
-          <a href={CTA_LINK} className="inline-block group" data-gtm="join-group">
-            <Button size="lg" className="text-lg px-10 py-7 md:py-8 font-bold rounded-full bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 shadow-xl shadow-[#ff4b00]/20 flex items-center gap-2 hover:cursor-pointer">
+          <a href={CTA_LINK} className="inline-block group" data-gtm="click_whatsapp">
+            <Button data-gtm="click_whatsapp" size="lg" className="text-lg px-10 py-7 md:py-8 font-bold rounded-full bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 shadow-xl shadow-[#ff4b00]/20 flex items-center gap-2 hover:cursor-pointer">
               Não vou perder mais tempo
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
@@ -500,8 +528,30 @@ export default function TcePbPage() {
         </div>
       </section>
 
+      {/* ── INVESTIMENTO ── */}
+      <section className="py-16 md:py-24 px-5 md:px-6 bg-[#1e1f5c]">
+        <div className="max-w-lg mx-auto text-center flex flex-col items-center gap-6">
+          <p className="text-sm font-bold uppercase tracking-widest text-[#ff4b00]">Investimento</p>
+          <div className="flex flex-col items-center gap-2">
+            <p className="text-slate-400 text-lg line-through">Valor do pacote completo: R$ 2.997</p>
+            <p className="text-slate-200 text-xl font-semibold">Nesta turma:</p>
+            <p className="text-5xl md:text-6xl font-extrabold text-white">R$ 1.497</p>
+            <p className="text-slate-300 text-lg">à vista ou 12x de <span className="font-semibold text-white">R$ 149</span></p>
+            <p className="text-slate-400 text-sm font-semibold uppercase tracking-widest mt-2">Plano semestral</p>
+          </div>
+          <p className="text-slate-300 text-base font-medium">Vagas limitadas por turma.</p>
+          <a href={CTA_LINK} className="inline-block group w-full sm:w-auto" data-gtm="click_whatsapp">
+            <Button data-gtm="click_whatsapp" size="lg" className="w-full sm:w-auto text-base md:text-lg px-8 md:px-10 py-6 md:py-7 font-bold rounded-full bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 shadow-xl flex items-center justify-center gap-2 hover:cursor-pointer">
+              Garantir minha vaga agora
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </Button>
+          </a>
+        </div>
+      </section>
+
       {/* ── FOOTER ── */}
       <footer className="py-8 text-center text-slate-500 text-sm border-t border-slate-200 mt-auto bg-slate-50">
+        <p className="font-semibold text-slate-700 mb-1">Vagas limitadas por turma.</p>
         <p>Copyright &copy; Francisco José 2026. Todos os direitos reservados.</p>
       </footer>
 
