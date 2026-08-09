@@ -58,7 +58,7 @@ const faqs = [
     answer: "Dá — mas o relógio está correndo. A prova é em 29 de novembro. Quem começa agora estuda com método e chega preparado. Quem deixa para a última semana estuda no desespero. Comece hoje.",
   },
   {
-    question: "Consigo estudar sozinho.",
+    question: "Consigo estudar sozinho?",
     answer: "Talvez. Mas quanto tempo vai perder descobrindo o que funciona? Passei no ISS Sobral — o mesmo tipo de concurso — e em mais 3 concursos públicos. Coloco tudo isso na sua mão desde o primeiro dia.",
   },
   {
@@ -67,7 +67,7 @@ const faqs = [
   },
   {
     question: "O suporte é realmente personalizado?",
-    answer: "Quando você manda mensagem, respondo eu. Sem robô. Sem IA. Direto no seu WhatsApp, de segunda a segunda.",
+    answer: "Quando você manda mensagem, respondo eu. Sem robô. Sem IA. Direto no seu WhatsApp, todos os dias da semana.",
   },
   {
     question: "O valor é elevado?",
@@ -117,9 +117,9 @@ const offerings = [
   },
   {
     icon: MessageCircle,
-    title: "WhatsApp Direto Comigo — De Segunda a Segunda",
+    title: "WhatsApp Direto Comigo — Todos os Dias da Semana",
     description:
-      "Sem robô. Sem IA. Sem assistente. Quando você manda mensagem, respondo eu. Um Auditor do TCE-PE ao seu lado de segunda a segunda.",
+      "Sem robô. Sem IA. Sem assistente. Quando você manda mensagem, respondo eu. Um Auditor do TCE-PE ao seu lado todos os dias da semana.",
     bonus: false,
   },
   {
@@ -138,7 +138,7 @@ const offerings = [
   },
   {
     icon: BookOpenCheck,
-    title: "Técnicas de Estudos + Cadernos de Questões",
+    title: "Técnicas de Estudo + Cadernos de Questões",
     description: "Revisões programadas para fixar o conteúdo certo na hora certa.",
     bonus: false,
   },
@@ -334,7 +334,7 @@ export default function IssCaruaruPage() {
                 Eu sou Francisco.
               </h2>
               <p className="text-slate-300 text-lg md:text-xl leading-relaxed">
-                Não sou professor que aprendeu sobre concurso em livro. Sou Auditor do TCE-PE — e cheguei
+                Não sou apenas um professor que aprendeu sobre concursos nos livros. Sou Auditor do TCE-PE — e cheguei
                 aqui passando pelos mesmos concursos que você quer passar. O meu método é real — e inclui uma aprovação no ISS Sobral, em um cargo fiscal municipal como o que você quer agora.
               </p>
 
