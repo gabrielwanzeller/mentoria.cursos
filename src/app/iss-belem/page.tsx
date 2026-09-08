@@ -1,7 +1,6 @@
 import Image from "next/image"
 import type { Metadata } from "next"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
+import franciscoImage from "../../../public/tce-pb/francisco-w-bluer-v3.png"
 import {
   Target,
   MessageCircle,
@@ -202,9 +201,9 @@ export default function IssBelemPage() {
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-2xl h-64 bg-[#ff4b00]/20 blur-[120px] rounded-full pointer-events-none" />
 
         <div className="relative z-10 w-full max-w-4xl mx-auto flex flex-col items-center gap-6 md:gap-8">
-          <Badge className="h-fit text-xs sm:text-sm px-4 py-1.5 sm:px-5 sm:py-2 font-semibold tracking-wide bg-[#ff4b00] text-white hover:bg-[#e64300] border-none shadow-lg shadow-[#ff4b00]/20 transition-all max-w-[90vw] whitespace-normal text-center leading-snug">
+          <span className="inline-flex w-fit shrink-0 items-center justify-center rounded-full h-fit text-xs sm:text-sm px-4 py-1.5 sm:px-5 sm:py-2 font-semibold tracking-wide bg-[#ff4b00] text-white border-none shadow-lg shadow-[#ff4b00]/20 max-w-[90vw] whitespace-normal text-center leading-snug">
             🚨 Primeiro concurso da história da SEFIN Belém está chegando
-          </Badge>
+          </span>
 
           <h1 className="text-[1.75rem] sm:text-4xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight tracking-tight w-full">
             O primeiro concurso da história da SEFIN Belém.{" "}
@@ -218,11 +217,9 @@ export default function IssBelemPage() {
           </p>
 
           <div className="flex flex-col items-center gap-3 md:gap-4 mt-2 md:mt-4 w-full">
-            <a href={CTA_LINK} className="group w-full sm:w-auto" data-gtm="click_whatsapp">
-              <Button data-gtm="click_whatsapp" size="lg" className="w-full sm:w-auto text-base md:text-lg px-8 md:px-10 py-6 md:py-8 font-bold rounded-full shadow-xl bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 group-hover:shadow-[#ff4b00]/30 flex items-center justify-center gap-2 hover:cursor-pointer">
-                Entrar no grupo exclusivo da turma
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
+            <a href={CTA_LINK} className="group w-full sm:w-auto h-9 text-base md:text-lg px-8 md:px-10 font-bold rounded-full shadow-xl bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 hover:shadow-[#ff4b00]/30 flex items-center justify-center gap-2 hover:cursor-pointer" data-gtm="click_whatsapp">
+              Entrar no grupo exclusivo da turma
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
             <p className="text-white/60 text-sm font-medium">Apenas 15 vagas. Mentoria de reta final com acompanhamento direto.</p>
           </div>
@@ -263,11 +260,9 @@ export default function IssBelemPage() {
           </div>
 
           <div className="mt-10 md:mt-16 text-center">
-            <a href={CTA_LINK} className="inline-block group w-full sm:w-auto" data-gtm="click_whatsapp">
-              <Button data-gtm="click_whatsapp" size="lg" className="w-full sm:w-auto text-base px-8 py-6 font-bold rounded-full bg-[#1e1f5c] hover:bg-[#151642] text-white transition-all hover:scale-105 active:scale-95 shadow-lg flex items-center justify-center gap-2 hover:cursor-pointer">
-                Quero uma das 15 vagas
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </Button>
+            <a href={CTA_LINK} className="inline-flex group w-full sm:w-auto h-9 text-base px-8 font-bold rounded-full bg-[#1e1f5c] hover:bg-[#151642] text-white transition-all hover:scale-105 active:scale-95 shadow-lg items-center justify-center gap-2 hover:cursor-pointer" data-gtm="click_whatsapp">
+              Quero uma das 15 vagas
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </a>
           </div>
         </div>
@@ -324,11 +319,9 @@ export default function IssBelemPage() {
           </div>
 
           <div className="mt-20 text-center">
-            <a href={CTA_LINK} className="inline-block group" data-gtm="click_whatsapp">
-              <Button data-gtm="click_whatsapp" size="lg" className="text-lg px-10 py-7 font-bold rounded-full bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 shadow-xl shadow-[#ff4b00]/20 flex items-center gap-2 hover:cursor-pointer">
-                Quero uma das vagas
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
+            <a href={CTA_LINK} className="inline-flex group h-9 text-lg px-10 font-bold rounded-full bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 shadow-xl shadow-[#ff4b00]/20 items-center gap-2 hover:cursor-pointer" data-gtm="click_whatsapp">
+              Quero uma das vagas
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
           </div>
         </div>
@@ -341,9 +334,9 @@ export default function IssBelemPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Texto */}
             <div className="flex flex-col items-start text-left space-y-6">
-              <Badge variant="outline" className="text-sm px-4 py-1.5 font-bold tracking-widest uppercase border-[#ff4b00] text-[#ff4b00]">
+              <span className="inline-flex w-fit items-center justify-center rounded-full text-sm px-4 py-1.5 font-bold tracking-widest uppercase border border-[#ff4b00] text-[#ff4b00]">
                 Quem vai te guiar
-              </Badge>
+              </span>
               <h2 className="text-3xl md:text-5xl font-extrabold text-white tracking-tight">
                 Eu sou Francisco.
               </h2>
@@ -372,11 +365,9 @@ export default function IssBelemPage() {
                 })}
               </div>
               <div className="mt-8 flex justify-center">
-                <a href={CTA_LINK} className="inline-block group" data-gtm="click_whatsapp">
-                  <Button data-gtm="click_whatsapp" size="lg" className="text-base px-8 py-6 font-bold rounded-full bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 shadow-lg shadow-[#ff4b00]/30 flex items-center gap-2 hover:cursor-pointer">
-                    Quero estudar com um Auditor
-                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                  </Button>
+                <a href={CTA_LINK} className="inline-flex group h-9 text-base px-8 font-bold rounded-full bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 shadow-lg shadow-[#ff4b00]/30 items-center gap-2 hover:cursor-pointer" data-gtm="click_whatsapp">
+                  Quero estudar com um Auditor
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </a>
               </div>
             </div>
@@ -385,10 +376,11 @@ export default function IssBelemPage() {
             <div className="relative flex justify-center lg:justify-end mt-12 lg:mt-0 lg:ml-10">
               <div className="absolute inset-0 bg-gradient-to-t from-[#0a0f2c] via-transparent to-transparent z-10 bottom-0 h-full w-full pointer-events-none" />
               <Image
-                src="/tce-pb/francisco-w-bluer-v3.png"
+                src={franciscoImage}
                 alt="Francisco José - Auditor do TCE-PE"
                 width={1000}
                 height={1000}
+                sizes="(max-width: 1023px) 100vw, 50vw"
                 className="max-h-[1000px] w-auto object-contain drop-shadow-2xl relative z-0"
               />
             </div>
@@ -446,11 +438,9 @@ export default function IssBelemPage() {
           </div>
 
           <div className="mt-16 text-center">
-            <a href={CTA_LINK} className="inline-block group w-full sm:w-auto" data-gtm="click_whatsapp">
-              <Button data-gtm="click_whatsapp" size="lg" className="w-full sm:w-auto text-base md:text-lg px-8 md:px-10 py-6 md:py-7 font-bold rounded-full bg-[#1e1f5c] hover:bg-[#151642] text-white transition-all hover:scale-105 active:scale-95 shadow-xl flex items-center justify-center gap-2 hover:cursor-pointer">
-                Quero o meu nome nessa lista
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
+            <a href={CTA_LINK} className="inline-flex group w-full sm:w-auto h-9 text-base md:text-lg px-8 md:px-10 font-bold rounded-full bg-[#1e1f5c] hover:bg-[#151642] text-white transition-all hover:scale-105 active:scale-95 shadow-xl items-center justify-center gap-2 hover:cursor-pointer" data-gtm="click_whatsapp">
+              Quero o meu nome nessa lista
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
           </div>
         </div>
@@ -489,11 +479,9 @@ export default function IssBelemPage() {
           </div>
 
           <div className="mt-16 text-center">
-            <a href={CTA_LINK} className="inline-block group w-full sm:w-auto" data-gtm="click_whatsapp">
-              <Button data-gtm="click_whatsapp" size="lg" className="w-full sm:w-auto text-base md:text-lg px-8 md:px-10 py-6 md:py-7 font-bold rounded-full bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 shadow-xl flex items-center justify-center gap-2 hover:cursor-pointer shadow-[#ff4b00]/20">
-                Tirar outra dúvida com o Francisco
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
+            <a href={CTA_LINK} className="inline-flex group w-full sm:w-auto h-9 text-base md:text-lg px-8 md:px-10 font-bold rounded-full bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 shadow-xl items-center justify-center gap-2 hover:cursor-pointer shadow-[#ff4b00]/20" data-gtm="click_whatsapp">
+              Tirar outra dúvida com o Francisco
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
           </div>
         </div>
@@ -523,11 +511,9 @@ export default function IssBelemPage() {
             <p className="leading-relaxed">O que separa quem passa de quem fica tentando é a decisão de começar, mesmo sem ter tudo resolvido.</p>
           </div>
 
-          <a href={CTA_LINK} className="inline-block group" data-gtm="click_whatsapp">
-            <Button data-gtm="click_whatsapp" size="lg" className="text-lg px-10 py-7 md:py-8 font-bold rounded-full bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 shadow-xl shadow-[#ff4b00]/20 flex items-center gap-2 hover:cursor-pointer">
-              Não vou perder mais tempo
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
+          <a href={CTA_LINK} className="inline-flex group h-9 text-lg px-10 font-bold rounded-full bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 shadow-xl shadow-[#ff4b00]/20 items-center gap-2 hover:cursor-pointer" data-gtm="click_whatsapp">
+            Não vou perder mais tempo
+            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </a>
           <p className="text-slate-500 text-sm mt-4">Apenas 15 vagas para acompanhamento.</p>
         </div>
@@ -543,11 +529,9 @@ export default function IssBelemPage() {
             <p className="text-slate-300 text-lg">Acompanhamento direto, sem robô e sem IA.</p>
           </div>
           <p className="text-slate-300 text-base font-medium">Vagas limitadas para esta turma.</p>
-          <a href={CTA_LINK} className="inline-block group w-full sm:w-auto" data-gtm="click_whatsapp">
-            <Button data-gtm="click_whatsapp" size="lg" className="w-full sm:w-auto text-base md:text-lg px-8 md:px-10 py-6 md:py-7 font-bold rounded-full bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 shadow-xl flex items-center justify-center gap-2 hover:cursor-pointer">
-              Garantir minha vaga agora
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
+          <a href={CTA_LINK} className="inline-flex group w-full sm:w-auto h-9 text-base md:text-lg px-8 md:px-10 font-bold rounded-full bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 shadow-xl items-center justify-center gap-2 hover:cursor-pointer" data-gtm="click_whatsapp">
+            Garantir minha vaga agora
+            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </a>
         </div>
       </section>
