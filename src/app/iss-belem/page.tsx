@@ -182,6 +182,13 @@ const directWhatsappOfferings = offerings.flatMap((item) => {
     }]
   }
 
+  if (item.title === "Lives Exclusivas") {
+    return [{
+      ...item,
+      description: "A gente se encontra com a turma limitada, ao vivo. Direcionamento de quem passou em 4 concursos públicos, incluindo o ISS Sobral, mesmo perfil de cargo que a SEFIN Belém vai cobrar.",
+    }]
+  }
+
   if (item.title === "Relatório de Desempenho Individual") {
     return [
       item,
@@ -240,6 +247,11 @@ type IssBelemPageProps = {
 export function IssBelemPage({ directWhatsapp = false }: IssBelemPageProps) {
   const ctaLink = directWhatsapp ? DIRECT_WHATSAPP_LINK : CTA_LINK
   const displayedOfferings = directWhatsapp ? directWhatsappOfferings : offerings
+  const displayedTestimonials = directWhatsapp
+    ? testimonials.map((testimonial) => testimonial.featured
+      ? { ...testimonial, note: "Vai participar ao vivo da turma do ISS Belém." }
+      : testimonial)
+    : testimonials
 
   return (
     <main className="min-h-screen font-sans selection:bg-[#ff4b00] selection:text-white pb-12">
@@ -265,11 +277,13 @@ export function IssBelemPage({ directWhatsapp = false }: IssBelemPageProps) {
           </p>
 
           <div className="flex flex-col items-center gap-3 md:gap-4 mt-2 md:mt-4 w-full">
-            <a href={ctaLink} className="group w-full sm:w-auto h-9 text-base md:text-lg px-8 md:px-10 font-bold rounded-full shadow-xl bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 hover:shadow-[#ff4b00]/30 flex items-center justify-center gap-2 hover:cursor-pointer" data-gtm="click_whatsapp">
-              Entrar no grupo exclusivo da turma
+            <a href={ctaLink} className={`group w-full sm:w-auto text-base md:text-lg px-8 md:px-10 font-bold rounded-full shadow-xl bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 hover:shadow-[#ff4b00]/30 flex items-center justify-center gap-2 hover:cursor-pointer ${directWhatsapp ? "min-h-12 py-3" : "h-9"}`} data-gtm="click_whatsapp">
+              {directWhatsapp ? "Falar com Francisco" : "Entrar no grupo exclusivo da turma"}
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
-            <p className="text-white/60 text-sm font-medium">Apenas 15 vagas. Mentoria de reta final com acompanhamento direto.</p>
+            <p className="text-white/60 text-sm font-medium">
+              Apenas 15 vagas. Mentoria de reta final com acompanhamento direto.
+            </p>
           </div>
         </div>
 
@@ -308,8 +322,8 @@ export function IssBelemPage({ directWhatsapp = false }: IssBelemPageProps) {
           </div>
 
           <div className="mt-10 md:mt-16 text-center">
-            <a href={ctaLink} className="inline-flex group w-full sm:w-auto h-9 text-base px-8 font-bold rounded-full bg-[#1e1f5c] hover:bg-[#151642] text-white transition-all hover:scale-105 active:scale-95 shadow-lg items-center justify-center gap-2 hover:cursor-pointer" data-gtm="click_whatsapp">
-              Quero uma das 15 vagas
+            <a href={ctaLink} className={`inline-flex group w-full sm:w-auto text-base px-8 font-bold rounded-full bg-[#1e1f5c] hover:bg-[#151642] text-white transition-all hover:scale-105 active:scale-95 shadow-lg items-center justify-center gap-2 hover:cursor-pointer ${directWhatsapp ? "min-h-12 py-3" : "h-9"}`} data-gtm="click_whatsapp">
+              {directWhatsapp ? "Falar com Francisco" : "Quero uma das 15 vagas"}
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </a>
           </div>
@@ -367,8 +381,8 @@ export function IssBelemPage({ directWhatsapp = false }: IssBelemPageProps) {
           </div>
 
           <div className="mt-20 text-center">
-            <a href={ctaLink} className="inline-flex group h-9 text-lg px-10 font-bold rounded-full bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 shadow-xl shadow-[#ff4b00]/20 items-center gap-2 hover:cursor-pointer" data-gtm="click_whatsapp">
-              Quero uma das vagas
+            <a href={ctaLink} className={`inline-flex group text-lg px-10 font-bold rounded-full bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 shadow-xl shadow-[#ff4b00]/20 items-center gap-2 hover:cursor-pointer ${directWhatsapp ? "min-h-12 py-3" : "h-9"}`} data-gtm="click_whatsapp">
+              {directWhatsapp ? "Falar com Francisco" : "Quero uma das vagas"}
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
           </div>
@@ -413,8 +427,8 @@ export function IssBelemPage({ directWhatsapp = false }: IssBelemPageProps) {
                 })}
               </div>
               <div className="mt-8 flex justify-center">
-                <a href={ctaLink} className="inline-flex group h-9 text-base px-8 font-bold rounded-full bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 shadow-lg shadow-[#ff4b00]/30 items-center gap-2 hover:cursor-pointer" data-gtm="click_whatsapp">
-                  Quero estudar com um Auditor
+                <a href={ctaLink} className={`inline-flex group text-base px-8 font-bold rounded-full bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 shadow-lg shadow-[#ff4b00]/30 items-center gap-2 hover:cursor-pointer ${directWhatsapp ? "min-h-12 py-3" : "h-9"}`} data-gtm="click_whatsapp">
+                  {directWhatsapp ? "Falar com Francisco" : "Quero estudar com um Auditor"}
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </a>
               </div>
@@ -452,7 +466,7 @@ export function IssBelemPage({ directWhatsapp = false }: IssBelemPageProps) {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {testimonials.map((t, i) => (
+            {displayedTestimonials.map((t, i) => (
               <div
                 key={i}
                 className={`flex flex-col gap-4 p-8 rounded-3xl border shadow-sm hover:shadow-xl transition-all duration-300 relative ${
@@ -486,8 +500,8 @@ export function IssBelemPage({ directWhatsapp = false }: IssBelemPageProps) {
           </div>
 
           <div className="mt-16 text-center">
-            <a href={ctaLink} className="inline-flex group w-full sm:w-auto h-9 text-base md:text-lg px-8 md:px-10 font-bold rounded-full bg-[#1e1f5c] hover:bg-[#151642] text-white transition-all hover:scale-105 active:scale-95 shadow-xl items-center justify-center gap-2 hover:cursor-pointer" data-gtm="click_whatsapp">
-              Quero o meu nome nessa lista
+            <a href={ctaLink} className={`inline-flex group w-full sm:w-auto text-base md:text-lg px-8 md:px-10 font-bold rounded-full bg-[#1e1f5c] hover:bg-[#151642] text-white transition-all hover:scale-105 active:scale-95 shadow-xl items-center justify-center gap-2 hover:cursor-pointer ${directWhatsapp ? "min-h-12 py-3" : "h-9"}`} data-gtm="click_whatsapp">
+              {directWhatsapp ? "Falar com Francisco" : "Quero o meu nome nessa lista"}
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
           </div>
@@ -527,8 +541,8 @@ export function IssBelemPage({ directWhatsapp = false }: IssBelemPageProps) {
           </div>
 
           <div className="mt-16 text-center">
-            <a href={ctaLink} className="inline-flex group w-full sm:w-auto h-9 text-base md:text-lg px-8 md:px-10 font-bold rounded-full bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 shadow-xl items-center justify-center gap-2 hover:cursor-pointer shadow-[#ff4b00]/20" data-gtm="click_whatsapp">
-              Tirar outra dúvida com o Francisco
+            <a href={ctaLink} className={`inline-flex group w-full sm:w-auto text-base md:text-lg px-8 md:px-10 font-bold rounded-full bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 shadow-xl items-center justify-center gap-2 hover:cursor-pointer shadow-[#ff4b00]/20 ${directWhatsapp ? "min-h-12 py-3" : "h-9"}`} data-gtm="click_whatsapp">
+              {directWhatsapp ? "Falar com Francisco" : "Tirar outra dúvida com o Francisco"}
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
           </div>
@@ -559,11 +573,13 @@ export function IssBelemPage({ directWhatsapp = false }: IssBelemPageProps) {
             <p className="leading-relaxed">O que separa quem passa de quem fica tentando é a decisão de começar, mesmo sem ter tudo resolvido.</p>
           </div>
 
-          <a href={ctaLink} className="inline-flex group h-9 text-lg px-10 font-bold rounded-full bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 shadow-xl shadow-[#ff4b00]/20 items-center gap-2 hover:cursor-pointer" data-gtm="click_whatsapp">
-            Não vou perder mais tempo
+          <a href={ctaLink} className={`inline-flex group text-lg px-10 font-bold rounded-full bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 shadow-xl shadow-[#ff4b00]/20 items-center gap-2 hover:cursor-pointer ${directWhatsapp ? "min-h-12 py-3" : "h-9"}`} data-gtm="click_whatsapp">
+            {directWhatsapp ? "Falar com Francisco" : "Não vou perder mais tempo"}
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </a>
-          <p className="text-slate-500 text-sm mt-4">Apenas 15 vagas para acompanhamento.</p>
+          <p className="text-slate-500 text-sm mt-4">
+            Apenas 15 vagas para acompanhamento.
+          </p>
         </div>
       </section>
 
@@ -592,10 +608,10 @@ export function IssBelemPage({ directWhatsapp = false }: IssBelemPageProps) {
             <div className="rounded-3xl bg-white px-6 py-8 md:px-10 w-full shadow-2xl">
               <p className="text-4xl md:text-5xl font-extrabold text-[#1e1f5c]">R$ 1.697 à vista</p>
               <p className="text-xl md:text-2xl font-bold text-[#ff4b00] mt-3">ou 12x de R$ 175</p>
-              <p className="text-slate-600 text-base mt-5">Apenas 15 vagas. Acompanhamento direto, sem robô e sem IA.</p>
+              <p className="text-slate-600 text-base mt-5">Apenas 15 vagas. Acompanhamento direto pelo WhatsApp, sem robô e sem IA.</p>
             </div>
             <a href={ctaLink} className="inline-flex group w-full sm:w-auto min-h-11 text-base md:text-lg px-8 md:px-10 py-3 font-bold rounded-full bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 shadow-xl items-center justify-center gap-2 hover:cursor-pointer" data-gtm="click_whatsapp">
-              Garantir minha vaga agora
+              Falar com Francisco
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
             <p className="text-slate-300 text-base font-medium">Vagas limitadas para esta turma.</p>
@@ -621,7 +637,9 @@ export function IssBelemPage({ directWhatsapp = false }: IssBelemPageProps) {
 
       {/* ── FOOTER ── */}
       <footer className="py-8 text-center text-slate-500 text-sm border-t border-slate-200 mt-auto bg-slate-50">
-        <p className="font-semibold text-slate-700 mb-1">Vagas limitadas para esta turma.</p>
+        <p className="font-semibold text-slate-700 mb-1">
+          Vagas limitadas para esta turma.
+        </p>
         <p>Copyright &copy; Francisco José 2026. Todos os direitos reservados.</p>
       </footer>
 
