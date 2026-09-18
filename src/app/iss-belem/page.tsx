@@ -21,6 +21,9 @@ import {
   BadgeCheck,
   Crosshair,
   Mic2,
+  FileCheck2,
+  Database,
+  LibraryBig,
 } from "lucide-react"
 
 export const metadata: Metadata = {
@@ -29,6 +32,8 @@ export const metadata: Metadata = {
 }
 
 const CTA_LINK = "https://chat.whatsapp.com/KyzaBYbdnWJ6FPMFKSYRMZ?s=cl&p=i&mlu=0&ilr=4"
+
+export const DIRECT_WHATSAPP_LINK = "https://wa.me/5588988058933?text=Ol%C3%A1%2C%20Francisco%21%20Vi%20a%20mentoria%20para%20o%20ISS%20Bel%C3%A9m%20e%20tenho%20interesse.%20Pode%20me%20dar%20mais%20informa%C3%A7%C3%B5es%3F"
 
 const testimonials = [
   {
@@ -168,6 +173,42 @@ const offerings = [
   },
 ]
 
+const directWhatsappOfferings = offerings.flatMap((item) => {
+  if (item.title === "Acesso ao Estratégia Concursos Premium") {
+    return [{
+      ...item,
+      title: "Acesso ao Estratégia Concursos, curso específico do ISS Belém",
+      description: "O curso do Estratégia direcionado para o ISS Belém já está incluso, sem você pagar nada separado. Login próprio, videoaulas, PDFs e sistema de questões, direto do melhor cursinho do Brasil.",
+    }]
+  }
+
+  if (item.title === "Relatório de Desempenho Individual") {
+    return [
+      item,
+      {
+        icon: FileCheck2,
+        title: "Correção de Provas Discursivas",
+        description: "Você tem direito a 2 correções de discursiva. Candidato bom de teoria também perde vaga por discursiva mal escrita, e isso a gente resolve junto.",
+        bonus: false,
+      },
+      {
+        icon: Database,
+        title: "Banco de Questões da Área Fiscal",
+        description: "Acesso a um banco com mais de 30.000 questões, direto na plataforma da mentoria, pra você treinar repetição no que realmente importa.",
+        bonus: false,
+      },
+      {
+        icon: LibraryBig,
+        title: "E-books Exclusivos",
+        description: "E-book de Apostas Pós-Edital e e-book de Jurisprudência Comentada, pra você chegar na reta final com o material certo, sem garimpar nada sozinho.",
+        bonus: false,
+      },
+    ]
+  }
+
+  return [item]
+})
+
 const approvals = [
   {
     icon: Trophy,
@@ -192,7 +233,14 @@ const approvals = [
   },
 ]
 
-export default function IssBelemPage() {
+type IssBelemPageProps = {
+  directWhatsapp?: boolean
+}
+
+export function IssBelemPage({ directWhatsapp = false }: IssBelemPageProps) {
+  const ctaLink = directWhatsapp ? DIRECT_WHATSAPP_LINK : CTA_LINK
+  const displayedOfferings = directWhatsapp ? directWhatsappOfferings : offerings
+
   return (
     <main className="min-h-screen font-sans selection:bg-[#ff4b00] selection:text-white pb-12">
       {/* ── HERO ── */}
@@ -217,7 +265,7 @@ export default function IssBelemPage() {
           </p>
 
           <div className="flex flex-col items-center gap-3 md:gap-4 mt-2 md:mt-4 w-full">
-            <a href={CTA_LINK} className="group w-full sm:w-auto h-9 text-base md:text-lg px-8 md:px-10 font-bold rounded-full shadow-xl bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 hover:shadow-[#ff4b00]/30 flex items-center justify-center gap-2 hover:cursor-pointer" data-gtm="click_whatsapp">
+            <a href={ctaLink} className="group w-full sm:w-auto h-9 text-base md:text-lg px-8 md:px-10 font-bold rounded-full shadow-xl bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 hover:shadow-[#ff4b00]/30 flex items-center justify-center gap-2 hover:cursor-pointer" data-gtm="click_whatsapp">
               Entrar no grupo exclusivo da turma
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
@@ -260,7 +308,7 @@ export default function IssBelemPage() {
           </div>
 
           <div className="mt-10 md:mt-16 text-center">
-            <a href={CTA_LINK} className="inline-flex group w-full sm:w-auto h-9 text-base px-8 font-bold rounded-full bg-[#1e1f5c] hover:bg-[#151642] text-white transition-all hover:scale-105 active:scale-95 shadow-lg items-center justify-center gap-2 hover:cursor-pointer" data-gtm="click_whatsapp">
+            <a href={ctaLink} className="inline-flex group w-full sm:w-auto h-9 text-base px-8 font-bold rounded-full bg-[#1e1f5c] hover:bg-[#151642] text-white transition-all hover:scale-105 active:scale-95 shadow-lg items-center justify-center gap-2 hover:cursor-pointer" data-gtm="click_whatsapp">
               Quero uma das 15 vagas
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </a>
@@ -284,7 +332,7 @@ export default function IssBelemPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {offerings.map((item, i) => {
+            {displayedOfferings.map((item, i) => {
               const Icon = item.icon
               return (
                 <div
@@ -319,7 +367,7 @@ export default function IssBelemPage() {
           </div>
 
           <div className="mt-20 text-center">
-            <a href={CTA_LINK} className="inline-flex group h-9 text-lg px-10 font-bold rounded-full bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 shadow-xl shadow-[#ff4b00]/20 items-center gap-2 hover:cursor-pointer" data-gtm="click_whatsapp">
+            <a href={ctaLink} className="inline-flex group h-9 text-lg px-10 font-bold rounded-full bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 shadow-xl shadow-[#ff4b00]/20 items-center gap-2 hover:cursor-pointer" data-gtm="click_whatsapp">
               Quero uma das vagas
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
@@ -365,7 +413,7 @@ export default function IssBelemPage() {
                 })}
               </div>
               <div className="mt-8 flex justify-center">
-                <a href={CTA_LINK} className="inline-flex group h-9 text-base px-8 font-bold rounded-full bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 shadow-lg shadow-[#ff4b00]/30 items-center gap-2 hover:cursor-pointer" data-gtm="click_whatsapp">
+                <a href={ctaLink} className="inline-flex group h-9 text-base px-8 font-bold rounded-full bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 shadow-lg shadow-[#ff4b00]/30 items-center gap-2 hover:cursor-pointer" data-gtm="click_whatsapp">
                   Quero estudar com um Auditor
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </a>
@@ -438,7 +486,7 @@ export default function IssBelemPage() {
           </div>
 
           <div className="mt-16 text-center">
-            <a href={CTA_LINK} className="inline-flex group w-full sm:w-auto h-9 text-base md:text-lg px-8 md:px-10 font-bold rounded-full bg-[#1e1f5c] hover:bg-[#151642] text-white transition-all hover:scale-105 active:scale-95 shadow-xl items-center justify-center gap-2 hover:cursor-pointer" data-gtm="click_whatsapp">
+            <a href={ctaLink} className="inline-flex group w-full sm:w-auto h-9 text-base md:text-lg px-8 md:px-10 font-bold rounded-full bg-[#1e1f5c] hover:bg-[#151642] text-white transition-all hover:scale-105 active:scale-95 shadow-xl items-center justify-center gap-2 hover:cursor-pointer" data-gtm="click_whatsapp">
               Quero o meu nome nessa lista
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
@@ -479,7 +527,7 @@ export default function IssBelemPage() {
           </div>
 
           <div className="mt-16 text-center">
-            <a href={CTA_LINK} className="inline-flex group w-full sm:w-auto h-9 text-base md:text-lg px-8 md:px-10 font-bold rounded-full bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 shadow-xl items-center justify-center gap-2 hover:cursor-pointer shadow-[#ff4b00]/20" data-gtm="click_whatsapp">
+            <a href={ctaLink} className="inline-flex group w-full sm:w-auto h-9 text-base md:text-lg px-8 md:px-10 font-bold rounded-full bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 shadow-xl items-center justify-center gap-2 hover:cursor-pointer shadow-[#ff4b00]/20" data-gtm="click_whatsapp">
               Tirar outra dúvida com o Francisco
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
@@ -511,7 +559,7 @@ export default function IssBelemPage() {
             <p className="leading-relaxed">O que separa quem passa de quem fica tentando é a decisão de começar, mesmo sem ter tudo resolvido.</p>
           </div>
 
-          <a href={CTA_LINK} className="inline-flex group h-9 text-lg px-10 font-bold rounded-full bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 shadow-xl shadow-[#ff4b00]/20 items-center gap-2 hover:cursor-pointer" data-gtm="click_whatsapp">
+          <a href={ctaLink} className="inline-flex group h-9 text-lg px-10 font-bold rounded-full bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 shadow-xl shadow-[#ff4b00]/20 items-center gap-2 hover:cursor-pointer" data-gtm="click_whatsapp">
             Não vou perder mais tempo
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </a>
@@ -520,21 +568,56 @@ export default function IssBelemPage() {
       </section>
 
       {/* ── INVESTIMENTO ── */}
-      <section className="py-16 md:py-24 px-5 md:px-6 bg-[#1e1f5c]">
-        <div className="max-w-lg mx-auto text-center flex flex-col items-center gap-6">
-          <p className="text-sm font-bold uppercase tracking-widest text-[#ff4b00]">Vagas</p>
-          <div className="flex flex-col items-center gap-2">
-            <p className="text-slate-200 text-xl font-semibold">Mentoria de Reta Final — ISS Belém</p>
-            <p className="text-5xl md:text-6xl font-extrabold text-white">Apenas 15 vagas</p>
-            <p className="text-slate-300 text-lg">Acompanhamento direto, sem robô e sem IA.</p>
+      {directWhatsapp ? (
+        <section className="py-16 md:py-24 px-5 md:px-6 bg-[#1e1f5c]">
+          <div className="max-w-3xl mx-auto text-center flex flex-col items-center gap-7">
+            <p className="text-sm font-bold uppercase tracking-widest text-[#ff4b00]">O investimento</p>
+            <h2 className="text-3xl md:text-5xl font-extrabold text-white tracking-tight">Tudo o que você precisa em um só lugar</h2>
+            <p className="text-slate-200 text-lg leading-relaxed">
+              Se você fosse atrás de cada peça dessa mentoria separada, veja quanto custaria:
+            </p>
+            <div className="w-full grid gap-3 text-left rounded-3xl bg-white/10 border border-white/15 p-6 md:p-8 text-slate-100">
+              <p><span className="font-semibold">Curso específico do ISS Belém no Estratégia:</span> R$ 1.498,80</p>
+              <p><span className="font-semibold">Mentoria individual comigo por 6 meses:</span> R$ 1.500</p>
+              <p><span className="font-semibold">Duas correções de discursiva:</span> R$ 200</p>
+              <p><span className="font-semibold">Banco com mais de 30 mil questões:</span> R$ 100</p>
+              <p><span className="font-semibold">Raio-X completo da banca:</span> R$ 75</p>
+              <p><span className="font-semibold">As 6 lives da turma, com participação do Victor Cortez:</span> R$ 600</p>
+              <p><span className="font-semibold">Dois e-books, de apostas e de jurisprudência:</span> R$ 150</p>
+            </div>
+            <p className="text-2xl md:text-3xl font-extrabold text-white">Soma tudo e passa de R$ 4.123,80.</p>
+            <p className="text-slate-200 text-lg leading-relaxed">
+              Na Mentoria de Reta Final ISS Belém, com suporte direto comigo no WhatsApp, relatório de desempenho e Rota Adaptável inclusos sem custo, tudo isso sai por:
+            </p>
+            <div className="rounded-3xl bg-white px-6 py-8 md:px-10 w-full shadow-2xl">
+              <p className="text-4xl md:text-5xl font-extrabold text-[#1e1f5c]">R$ 1.697 à vista</p>
+              <p className="text-xl md:text-2xl font-bold text-[#ff4b00] mt-3">ou 12x de R$ 175</p>
+              <p className="text-slate-600 text-base mt-5">Apenas 15 vagas. Acompanhamento direto, sem robô e sem IA.</p>
+            </div>
+            <a href={ctaLink} className="inline-flex group w-full sm:w-auto min-h-11 text-base md:text-lg px-8 md:px-10 py-3 font-bold rounded-full bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 shadow-xl items-center justify-center gap-2 hover:cursor-pointer" data-gtm="click_whatsapp">
+              Garantir minha vaga agora
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </a>
+            <p className="text-slate-300 text-base font-medium">Vagas limitadas para esta turma.</p>
           </div>
-          <p className="text-slate-300 text-base font-medium">Vagas limitadas para esta turma.</p>
-          <a href={CTA_LINK} className="inline-flex group w-full sm:w-auto h-9 text-base md:text-lg px-8 md:px-10 font-bold rounded-full bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 shadow-xl items-center justify-center gap-2 hover:cursor-pointer" data-gtm="click_whatsapp">
-            Garantir minha vaga agora
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </a>
-        </div>
-      </section>
+        </section>
+      ) : (
+        <section className="py-16 md:py-24 px-5 md:px-6 bg-[#1e1f5c]">
+          <div className="max-w-lg mx-auto text-center flex flex-col items-center gap-6">
+            <p className="text-sm font-bold uppercase tracking-widest text-[#ff4b00]">Vagas</p>
+            <div className="flex flex-col items-center gap-2">
+              <p className="text-slate-200 text-xl font-semibold">Mentoria de Reta Final — ISS Belém</p>
+              <p className="text-5xl md:text-6xl font-extrabold text-white">Apenas 15 vagas</p>
+              <p className="text-slate-300 text-lg">Acompanhamento direto, sem robô e sem IA.</p>
+            </div>
+            <p className="text-slate-300 text-base font-medium">Vagas limitadas para esta turma.</p>
+            <a href={ctaLink} className="inline-flex group w-full sm:w-auto h-9 text-base md:text-lg px-8 md:px-10 font-bold rounded-full bg-[#ff4b00] hover:bg-[#e64300] text-white transition-all hover:scale-105 active:scale-95 shadow-xl items-center justify-center gap-2 hover:cursor-pointer" data-gtm="click_whatsapp">
+              Garantir minha vaga agora
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </a>
+          </div>
+        </section>
+      )}
 
       {/* ── FOOTER ── */}
       <footer className="py-8 text-center text-slate-500 text-sm border-t border-slate-200 mt-auto bg-slate-50">
@@ -544,4 +627,8 @@ export default function IssBelemPage() {
 
     </main>
   )
+}
+
+export default function IssBelemRoute() {
+  return <IssBelemPage />
 }
