@@ -35,13 +35,23 @@ export type PreEditalLandingConfig = {
   heroSubtitle: string
   highlights: string[]
   heroCta: string
+  heroNote?: string
   whatsappLink: string
+  reasonsEyebrow?: string
+  reasonsTitle?: string
   reasons: InfoItem[]
+  reasonsFootnote?: string
+  examSection?: {
+    title: string
+    intro: string
+    items: InfoItem[]
+  }
   offerings: InfoItem[]
   bonuses: InfoItem[]
   faqs: Array<{ question: string; answer: string }>
   closingTitle: string
   closingText: string
+  footerNote?: string
 }
 
 const reasonIcons: LucideIcon[] = [CalendarClock, BriefcaseBusiness, Users, FilePenLine, ShieldCheck, Clock]
@@ -91,22 +101,32 @@ export function PreEditalLandingPage({ config }: { config: PreEditalLandingConfi
           <div className="flex flex-wrap justify-center gap-2">
             {config.highlights.map((highlight) => <span key={highlight} className="max-w-full whitespace-normal break-words rounded-full border border-white/20 bg-white/10 px-4 py-2 text-center text-sm font-semibold leading-snug text-white">{highlight}</span>)}
           </div>
-          <div className="mt-2 flex w-full flex-col items-center gap-3 md:mt-4"><Cta href={config.whatsappLink}>{config.heroCta}</Cta><p className="text-sm font-medium text-white/60">Vagas limitadas. Acompanhamento individual e direto.</p></div>
+          <div className="mt-2 flex w-full flex-col items-center gap-3 md:mt-4"><Cta href={config.whatsappLink}>{config.heroCta}</Cta><p className="text-sm font-medium text-white/60">{config.heroNote ?? "Vagas limitadas. Acompanhamento individual e direto."}</p></div>
         </div>
       </section>
 
       <section className="relative z-10 px-5 py-16 md:px-6 md:py-24">
         <div className="mx-auto max-w-5xl">
-          <div className="mb-12 space-y-3 text-center"><p className="text-sm font-bold uppercase tracking-widest text-[#ff4b00]">Por que começar agora</p><h2 className="text-3xl font-extrabold tracking-tight text-[#1e1f5c] md:text-5xl">Comece antes do edital</h2></div>
+          <div className="mb-12 space-y-3 text-center"><p className="text-sm font-bold uppercase tracking-widest text-[#ff4b00]">{config.reasonsEyebrow ?? "Por que começar agora"}</p><h2 className="text-3xl font-extrabold tracking-tight text-[#1e1f5c] md:text-5xl">{config.reasonsTitle ?? "Comece antes do edital"}</h2></div>
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-8">
             {config.reasons.map((item, index) => {
               const Icon = reasonIcons[index % reasonIcons.length]
               return <div key={item.title} className="group flex items-start gap-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition-shadow hover:shadow-md md:gap-5 md:rounded-3xl md:p-8"><div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#f0f1fa] text-[#2e2f83] transition-colors group-hover:bg-[#ff4b00] group-hover:text-white"><Icon className="h-6 w-6" /></div><div><h3 className="mb-2 font-bold text-[#1e1f5c]">{item.title}</h3><p className="leading-relaxed text-slate-600">{item.description}</p></div></div>
             })}
           </div>
+          {config.reasonsFootnote && <p className="mx-auto mt-8 max-w-4xl text-center text-sm leading-relaxed text-slate-500">{config.reasonsFootnote}</p>}
           <div className="mt-12 text-center"><Cta href={config.whatsappLink} dark>{config.heroCta}</Cta></div>
         </div>
       </section>
+
+      {config.examSection && (
+        <section className="bg-[#1e1f5c] px-5 py-16 text-white md:px-6 md:py-24">
+          <div className="mx-auto max-w-5xl">
+            <div className="mb-12 space-y-4 text-center"><p className="text-sm font-bold uppercase tracking-widest text-[#ff7a45]">Estrutura e calendário</p><h2 className="text-3xl font-extrabold md:text-5xl">{config.examSection.title}</h2><p className="mx-auto max-w-4xl text-lg leading-relaxed text-slate-300">{config.examSection.intro}</p></div>
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-3">{config.examSection.items.map((item) => <div key={item.title} className="rounded-3xl border border-white/15 bg-white/10 p-7"><h3 className="mb-3 text-xl font-bold text-white">{item.title}</h3><p className="leading-relaxed text-slate-300">{item.description}</p></div>)}</div>
+          </div>
+        </section>
+      )}
 
       <section className="mx-3 rounded-[2rem] bg-slate-100 px-5 py-16 md:mx-8 md:rounded-[3rem] md:px-6 md:py-28">
         <div className="mx-auto max-w-6xl">
@@ -142,7 +162,7 @@ export function PreEditalLandingPage({ config }: { config: PreEditalLandingConfi
 
       <section className="relative bg-white px-5 py-20 md:px-6 md:py-28"><div className="mx-auto flex max-w-3xl flex-col items-center text-center"><div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-orange-100 text-[#ff4b00]"><Clock className="h-8 w-8" /></div><h2 className="mb-6 text-3xl font-extrabold text-[#1e1f5c] md:text-5xl">{config.closingTitle}</h2><p className="mb-10 text-xl leading-relaxed text-slate-600">{config.closingText}</p><Cta href={config.whatsappLink}>Quero falar com o Francisco</Cta></div></section>
 
-      <footer className="border-t border-slate-200 bg-slate-50 py-8 text-center text-sm text-slate-500"><p className="mb-1 font-semibold text-slate-700">Vagas limitadas para acompanhamento individual.</p><p>Copyright &copy; Francisco José 2026. Todos os direitos reservados.</p></footer>
+      <footer className="border-t border-slate-200 bg-slate-50 py-8 text-center text-sm text-slate-500"><p className="mb-1 font-semibold text-slate-700">{config.footerNote ?? "Vagas limitadas para acompanhamento individual."}</p><p>Copyright &copy; Francisco José 2026. Todos os direitos reservados.</p></footer>
     </main>
   )
 }
