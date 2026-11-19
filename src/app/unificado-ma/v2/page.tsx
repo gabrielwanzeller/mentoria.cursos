@@ -219,32 +219,6 @@ function SectionHeader({ eyebrow, title, text, dark = false }: { eyebrow: string
 export default function UnificadoMaV2Page() {
   return (
     <main className="min-h-screen bg-white pb-24 font-sans text-slate-900 selection:bg-[#ff4b00] selection:text-white md:pb-0">
-      {/* Barra de urgência */}
-      <div className="sticky top-0 z-50 border-b border-white/10 bg-[#0b0c2a]/95 backdrop-blur">
-        <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-2.5 text-white sm:px-6">
-          <p className="flex items-center gap-2 text-xs font-medium sm:text-sm">
-            <span className="relative flex h-2 w-2 shrink-0">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#ff4b00] opacity-75" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-[#ff4b00]" />
-            </span>
-            <span>
-              Prova em <strong className="text-[#ff8a57]"><DaysUntil date={PROVA} /> dias</strong>
-              <span className="hidden sm:inline"> · Edital publicado · Banca FCC</span>
-            </span>
-          </p>
-          <a
-            href={WHATSAPP}
-            target="_blank"
-            rel="noopener noreferrer"
-            data-gtm="click_whatsapp"
-            data-cta-position="topbar"
-            className="hidden rounded-full bg-[#ff4b00] px-4 py-1.5 text-xs font-bold transition-colors hover:bg-[#ff5f1f] sm:inline-flex sm:text-sm"
-          >
-            Garantir minha vaga
-          </a>
-        </div>
-      </div>
-
       {/* Hero */}
       <section className="relative overflow-hidden bg-[#0b0c2a] text-white">
         <div
