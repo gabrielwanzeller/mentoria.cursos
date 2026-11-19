@@ -48,11 +48,7 @@ export const metadata: Metadata = {
 const PROVA = "2027-04-04T08:00:00-03:00"
 const TOTAL_VAGAS_MENTORIA = 20
 
-const WHATSAPP_NUMBER = "5588988058933"
-const wa = (text: string) => `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`
-const WHATSAPP = wa("Olá, Francisco! Vi a mentoria para o Concurso Unificado do MA e tenho interesse. Pode me dar mais informações?")
-const WHATSAPP_CARGO = (cargo: string) =>
-  wa(`Olá, Francisco! Vi a mentoria para o Concurso Unificado do MA e quero me preparar para ${cargo}. Pode me explicar como funciona?`)
+const GRUPO_LANCAMENTO = "https://chat.whatsapp.com/L843nNIaLM7GkjL3ea29Oy?s=cl&p=i&iam=2"
 
 const cargos = {
   STC: {
@@ -86,17 +82,19 @@ const cargos = {
 const totalVagas = [...cargos.STC.lista, ...cargos.SEPLAN.lista].reduce((sum, c) => sum + c.vagas, 0)
 
 const calendario = [
-  { data: "Agora", titulo: "Comece a preparação", texto: "Plano montado e metas definidas antes das inscrições abrirem.", destaque: true },
+  { data: "Agora", titulo: "Entre no grupo do lançamento", texto: "Quem está no grupo fica sabendo primeiro da abertura das vagas.", destaque: true },
+  { data: "02/12/2026", titulo: "Lançamento do plano", texto: "Abertura da turma de reta final, com 20 vagas." },
   { data: "14/12/2026", titulo: "Abertura das inscrições", texto: "Escolha um único cargo por período de prova." },
   { data: "29/01/2027", titulo: "Fim das inscrições", texto: "Pagamento da taxa até 01/02/2027." },
   { data: "04/04/2027", titulo: "Prova objetiva e discursiva", texto: "Data prevista, sujeita a alteração." },
 ]
 
 const passos: Array<{ icon: LucideIcon; titulo: string; texto: string }> = [
-  { icon: MessageCircle, titulo: "Conversa no WhatsApp", texto: "Você me conta seu cargo, sua base e quantas horas tem por dia. Sem bot e sem fila." },
-  { icon: ClipboardList, titulo: "Diagnóstico + edital", texto: "Mapeamos juntos as disciplinas, os pesos e o que a FCC mais cobra para o seu cargo." },
-  { icon: Target, titulo: "Plano personalizado", texto: "Metas semanais até 04/04, na ordem certa dos assuntos, encaixadas na sua rotina." },
-  { icon: LineChart, titulo: "Acompanhamento até a prova", texto: "Suporte diário, lives com a turma e relatório de desempenho a cada 45 dias." },
+  { icon: ClipboardList, titulo: "Questionário individual", texto: "Você responde um questionário sobre o seu cargo, a sua base em cada disciplina, as horas disponíveis por dia e as suas maiores dificuldades. É a partir dele que o plano é construído." },
+  { icon: Target, titulo: "Personalização do plano", texto: "Com as suas respostas, eu monto o plano para o seu cargo, com as disciplinas ordenadas pelo que mais pesa na prova da FCC e encaixadas na sua rotina." },
+  { icon: MonitorPlay, titulo: "Live de estratégia para a execução", texto: "Uma live com a turma para explicar como executar as metas nessa reta final: por onde começar, como dividir a semana e como revisar. O objetivo é que você comece sem dúvida sobre o que fazer." },
+  { icon: CalendarDays, titulo: "Metas pensadas para você, do primeiro ao último dia", texto: "Cada dia até a prova tem uma meta definida. Você abre o plano e sabe o que estudar naquele dia, sem precisar decidir nada." },
+  { icon: MessageCircle, titulo: "Suporte e ajustes até a data da prova", texto: "Você tem suporte direto comigo até o dia da prova. Se a rotina mudar, se algum assunto não render ou se o edital for retificado, o plano é ajustado." },
 ]
 
 const sozinho = [
@@ -161,7 +159,7 @@ const faqs = [
 /* ------------------------------------------------------------------ */
 
 function Cta({
-  href = WHATSAPP,
+  href = GRUPO_LANCAMENTO,
   children,
   position,
   variant = "primary",
@@ -248,12 +246,12 @@ export default function UnificadoMaV2Page() {
             </ul>
 
             <div className="mt-2 flex w-full flex-col items-stretch gap-3 sm:w-auto sm:flex-row sm:items-center">
-              <Cta position="hero">Quero uma das {TOTAL_VAGAS_MENTORIA} vagas</Cta>
+              <Cta position="hero">Entrar no grupo do lançamento</Cta>
               <a href="#cargos" className="inline-flex min-h-14 items-center justify-center rounded-full border border-white/20 px-7 text-base font-semibold text-white transition-colors hover:bg-white/10">
                 Ver cargos e salários
               </a>
             </div>
-            <p className="text-sm text-slate-400">Turma de reta final limitada a {TOTAL_VAGAS_MENTORIA} alunos, porque o acompanhamento é individual.</p>
+            <p className="text-sm text-slate-400">Lançamento em 02/12/2026. Quem está no grupo fica sabendo primeiro da abertura das {TOTAL_VAGAS_MENTORIA} vagas.</p>
           </div>
 
           {/* Foto + selos */}
@@ -338,14 +336,14 @@ export default function UnificadoMaV2Page() {
                 </ul>
                 <div className="border-t border-slate-100 p-5 md:px-8">
                   <a
-                    href={WHATSAPP_CARGO(org.orgao === "STC" ? "a STC (Auditor)" : "a SEPLAN")}
+                    href={GRUPO_LANCAMENTO}
                     target="_blank"
                     rel="noopener noreferrer"
                     data-gtm="click_whatsapp"
                     data-cta-position={`cargo_${org.orgao.toLowerCase()}`}
                     className="group inline-flex items-center gap-2 font-bold text-[#ff4b00] hover:text-[#c23800]"
                   >
-                    Quero me preparar para a {org.orgao}
+                    Quero a {org.orgao}: entrar no grupo
                     <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </a>
                 </div>
@@ -391,6 +389,7 @@ export default function UnificadoMaV2Page() {
               </ul>
             </div>
           </div>
+          <div className="mt-12 text-center"><Cta position="metodo">Quero estudar do jeito certo</Cta></div>
         </div>
       </section>
 
@@ -398,19 +397,20 @@ export default function UnificadoMaV2Page() {
       <section className="px-5 py-20 sm:px-6 md:py-28">
         <div className="mx-auto max-w-6xl">
           <SectionHeader eyebrow="Como funciona" title="Do primeiro contato até o dia da prova" />
-          <ol className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <ol className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-6">
             {passos.map((p, i) => {
               const Icon = p.icon
               return (
-                <li key={p.titulo} className="relative rounded-3xl border border-slate-200 bg-white p-7">
+                <li key={p.titulo} className={`relative rounded-3xl border border-slate-200 bg-white p-7 ${i < 3 ? "lg:col-span-2" : "lg:col-span-3"} ${i === 4 ? "sm:col-span-2 lg:col-span-3" : ""}`}>
                   <span className="absolute right-6 top-5 text-5xl font-extrabold text-slate-100">{String(i + 1).padStart(2, "0")}</span>
                   <span className="relative mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-orange-50 text-[#ff4b00]"><Icon className="h-6 w-6" /></span>
-                  <h3 className="relative mb-2 text-lg font-bold text-[#14154a]">{p.titulo}</h3>
+                  <h3 className="relative mb-2 pr-12 text-lg font-bold leading-snug text-[#14154a]">{p.titulo}</h3>
                   <p className="relative text-sm leading-relaxed text-slate-600">{p.texto}</p>
                 </li>
               )
             })}
           </ol>
+          <div className="mt-12 text-center"><Cta position="como_funciona" variant="dark">Quero começar pelo grupo</Cta></div>
         </div>
       </section>
 
@@ -469,6 +469,7 @@ export default function UnificadoMaV2Page() {
               </div>
             </div>
           </div>
+          <div className="mt-12 text-center"><Cta position="calendario">Não quero perder a abertura</Cta></div>
         </div>
       </section>
 
@@ -523,7 +524,7 @@ export default function UnificadoMaV2Page() {
                     </div>
                     <p className="text-xs text-slate-500">O número é limitado para que eu consiga acompanhar cada aluno de perto.</p>
                   </div>
-                  <Cta position="oferta" className="w-full">Quero minha vaga</Cta>
+                  <Cta position="oferta" className="w-full">Quero ser avisado da abertura</Cta>
                 </div>
               </div>
             </div>
@@ -534,7 +535,7 @@ export default function UnificadoMaV2Page() {
       {/* Mentor (seção original, só o botão mudou) */}
       <section className="relative overflow-hidden bg-[#0a0f2c] px-5 py-16 shadow-2xl md:px-6 md:py-28">
         <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
-          <div className="flex flex-col items-start space-y-6 text-left"><span className="rounded-full border border-[#ff4b00] px-4 py-1.5 text-sm font-bold uppercase tracking-widest text-[#ff4b00]">Quem vai te guiar</span><h2 className="text-3xl font-extrabold text-white md:text-5xl">Eu sou Francisco.</h2><p className="text-lg leading-relaxed text-slate-300 md:text-xl">Quatro aprovações em concursos públicos. Hoje sou Auditor do TCE-PE — e cheguei aqui passando pelos mesmos processos seletivos que você quer passar.</p><div className="flex w-full flex-col gap-6">{approvals.map((item) => { const Icon = item.icon; return <div key={item.title} className="flex items-start gap-5"><div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-[#2e2f83] bg-[#1e1f5c] text-[#ff4b00]"><Icon className="h-6 w-6" /></div><div><h3 className="mb-1 text-xl font-bold text-white">{item.title}</h3><p className="leading-relaxed text-slate-300">{item.description}</p></div></div> })}</div><div className="rounded-2xl border border-white/10 bg-white/5 p-5 text-slate-300">Antes disso, fui reprovado no TCE-CE. Estudava muito e errava no que importava. Mudei o método e, seis meses depois, fui 1º lugar no TCE-PA. É esse método que aplico com cada aluno.</div><Cta position="mentor">Quero estudar com um Auditor</Cta></div>
+          <div className="flex flex-col items-start space-y-6 text-left"><span className="rounded-full border border-[#ff4b00] px-4 py-1.5 text-sm font-bold uppercase tracking-widest text-[#ff4b00]">Quem vai te guiar</span><h2 className="text-3xl font-extrabold text-white md:text-5xl">Eu sou Francisco.</h2><p className="text-lg leading-relaxed text-slate-300 md:text-xl">Quatro aprovações em concursos públicos. Hoje sou Auditor do TCE-PE — e cheguei aqui passando pelos mesmos processos seletivos que você quer passar.</p><div className="flex w-full flex-col gap-6">{approvals.map((item) => { const Icon = item.icon; return <div key={item.title} className="flex items-start gap-5"><div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-[#2e2f83] bg-[#1e1f5c] text-[#ff4b00]"><Icon className="h-6 w-6" /></div><div><h3 className="mb-1 text-xl font-bold text-white">{item.title}</h3><p className="leading-relaxed text-slate-300">{item.description}</p></div></div> })}</div><div className="rounded-2xl border border-white/10 bg-white/5 p-5 text-slate-300">Antes disso, fui reprovado no TCE-CE. Estudava muito e errava no que importava. Mudei o método e, seis meses depois, fui 1º lugar no TCE-PA. É esse método que aplico com cada aluno.</div><Cta position="mentor">Quero entrar no lançamento</Cta></div>
           <div className="relative flex justify-center lg:justify-end"><div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-t from-[#0a0f2c] via-transparent to-transparent" /><Image src={franciscoImage} alt="Francisco José, Auditor do TCE-PE aprovado em 4 concursos públicos" width={1000} height={1000} sizes="(max-width: 1023px) 100vw, 50vw" className="relative z-0 w-auto object-contain drop-shadow-2xl" /></div>
         </div>
       </section>
@@ -558,9 +559,7 @@ export default function UnificadoMaV2Page() {
             ))}
           </div>
           <div className="mt-10 text-center">
-            <Cta position="faq" variant="dark" href={wa("Olá, Francisco! Tenho uma dúvida sobre a mentoria do Concurso Unificado do MA.")}>
-              Tirar uma dúvida com o Francisco
-            </Cta>
+            <Cta position="faq" variant="dark">Tirar minhas dúvidas no grupo</Cta>
           </div>
         </div>
       </section>
@@ -575,9 +574,9 @@ export default function UnificadoMaV2Page() {
             </p>
             <h2 className="mx-auto max-w-3xl text-3xl font-extrabold leading-[1.1] md:text-5xl">A prova é em 04/04. Cada semana conta.</h2>
             <p className="mx-auto mt-5 max-w-2xl text-lg text-white/90">
-              Turma de reta final com {TOTAL_VAGAS_MENTORIA} vagas. Me chama no WhatsApp que eu te explico como funciona e começamos o seu plano.
+              Turma de reta final com só {TOTAL_VAGAS_MENTORIA} vagas. O lançamento é em 02/12/2026. Entre no grupo para ser avisado primeiro quando as vagas abrirem.
             </p>
-            <div className="mt-9"><Cta position="fechamento" variant="light">Quero falar com o Francisco</Cta></div>
+            <div className="mt-9"><Cta position="fechamento" variant="light">Garantir meu lugar no lançamento</Cta></div>
           </div>
         </div>
       </section>
@@ -589,14 +588,14 @@ export default function UnificadoMaV2Page() {
       {/* CTA fixo no celular */}
       <div className="fixed inset-x-0 bottom-0 z-50 border-t border-slate-200 bg-white/95 p-3 backdrop-blur md:hidden">
         <a
-          href={WHATSAPP}
+          href={GRUPO_LANCAMENTO}
           target="_blank"
           rel="noopener noreferrer"
           data-gtm="click_whatsapp"
           data-cta-position="sticky_mobile"
           className="flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#ff4b00] px-5 text-base font-bold text-white shadow-lg"
         >
-          <WhatsAppIcon className="h-5 w-5" /> Quero uma das {TOTAL_VAGAS_MENTORIA} vagas
+          <WhatsAppIcon className="h-5 w-5" /> Entrar no grupo do lançamento
         </a>
       </div>
     </main>
