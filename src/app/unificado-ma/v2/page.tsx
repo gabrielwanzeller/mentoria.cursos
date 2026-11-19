@@ -221,10 +221,6 @@ export default function UnificadoMaV2Page() {
     <main className="min-h-screen bg-white pb-24 font-sans text-slate-900 selection:bg-[#ff4b00] selection:text-white md:pb-0">
       {/* Hero */}
       <section className="relative overflow-hidden bg-[#0b0c2a] text-white">
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-0 opacity-[0.07] [background-image:linear-gradient(white_1px,transparent_1px),linear-gradient(90deg,white_1px,transparent_1px)] [background-size:48px_48px] [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_75%)]"
-        />
         <div aria-hidden className="pointer-events-none absolute -left-40 top-10 h-[28rem] w-[28rem] rounded-full bg-[#2e2f83] opacity-60 blur-[120px]" />
         <div aria-hidden className="pointer-events-none absolute -right-20 bottom-0 h-[26rem] w-[26rem] rounded-full bg-[#ff4b00] opacity-25 blur-[140px]" />
 
